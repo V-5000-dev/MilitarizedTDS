@@ -20,9 +20,6 @@ public class GridElement : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         BuildBuilidng b = FindObjectOfType<BuildBuilidng>();
 
-        GameObject trees = transform.Find("Trees").gameObject;
-        GameObject rocks = transform.Find("Rocks").gameObject;
-
 
         for (int i = 0; i < b.grid.Length; i++)
         {
