@@ -6,14 +6,22 @@ public class GridElement : MonoBehaviour
 {
     public int gridID;
     public bool occupied;
+    public int gridType;
     public Building connectedBuilding;
     public MeshRenderer meshRenderer;
 
+    public Color colorDefault;
 
     
     // Start is called before the first frame update
     private void Start()
     {
+        gridType = Random.Range(1, 10);
+        meshRenderer = GetComponent<MeshRenderer>();
+        BuildBuilidng b = FindObjectOfType<BuildBuilidng>();
+
+        GameObject trees = transform.Find("Trees").gameObject;
+        GameObject rocks = transform.Find("Rocks").gameObject;
 
 
         for (int i = 0; i < b.grid.Length; i++)
@@ -32,7 +40,15 @@ public class GridElement : MonoBehaviour
     }
     private void Update()
     {
+ 
+                meshRenderer.material.color = colorDefault;
+                gameObject.tag = "Grid";
+    
 
+
+        
+       
+        
 
     }
 
