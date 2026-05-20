@@ -1,0 +1,23 @@
+Made by: SnowyCocoon
+
+Version: 1.2
+Asset Version: FREE
+License Type: Unity License
+
+Includes Free assets
+
+    Attribution is not required (but appreciated).
+
+    You may NOT share, redistribute, or resell the PRO-exclusive assets in their original or modified form.
+
+    You may distribute projects (games, apps, videos, etc.) that include these assets as part of the project, but the raw assets must not be extractable.
+
+Check out my other assets and works: https://www.snowycocoon.com
+
+If you need any specific pattern, material, or even shader, mail me: snowycocoon@gmail.com
+
+Instructions:
+
+All files are just .png files, that you can easily use in any Unity version
+
+– SnowyCocoon

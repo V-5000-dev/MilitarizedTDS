@@ -20,7 +20,7 @@ public class HealthBarManager : EnemyManager
     private float durationTimer;
     private float timeSinceDamage = 0f;
 
-    public Color[] armorHealthBarColor;
+    public Color armorHealthBarColor;
 
 
     // Start is called before the first frame update
@@ -37,23 +37,9 @@ public class HealthBarManager : EnemyManager
         scale.z = 0.05f;
         outlineHPBar.transform.localScale = scale;
         TakeDamage(50);
-        switch (armorLevel)
-        {
-            case 0:
-                frontHPBar.color = armorHealthBarColor[0];
-                break;
-            case 1:
-                frontHPBar.color = armorHealthBarColor[1];
-                break;
-            case 2:
-                frontHPBar.color = armorHealthBarColor[2];
-                break;
-            case 3:
-                frontHPBar.color = armorHealthBarColor[3];
-                break;
 
-
-        }
+        frontHPBar.color = armorHealthBarColor;
+    
 
      
 
@@ -63,7 +49,7 @@ public class HealthBarManager : EnemyManager
     void Update()
     {
         health = Mathf.Clamp(health, 0, defaultHealth);
-        UpddateHealthUI();
+        UpdateHealthUI();
 
         if (health < 1)
         {
@@ -73,7 +59,7 @@ public class HealthBarManager : EnemyManager
         
     }
    
-    public void UpddateHealthUI()
+    public void UpdateHealthUI()
     {
       
         float FillF = frontHPBar.fillAmount;
@@ -107,7 +93,6 @@ public class HealthBarManager : EnemyManager
         lerpTimer = 0f;
         timeSinceDamage = 0f;
         durationTimer = 0;
-        UpddateHealthUI();
     }
     public void Restorehealth(float healAmount)
     {
