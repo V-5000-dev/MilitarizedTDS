@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : EnemyManager
 {
-    public float speed = 10f;
     private Transform targetWaypoint;
     private int indexWaypoint;
 
@@ -23,15 +22,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (indexWaypoint >= WaypointsScript.waypoints.Length - 1)
         {
-            EndWaypoint();
+            KillEnemy(true);
             return;
         }
            
         indexWaypoint++;
         targetWaypoint = WaypointsScript.waypoints[indexWaypoint];
-    }
-    void EndWaypoint()
-    {
-        Destroy(gameObject);
     }
 }
