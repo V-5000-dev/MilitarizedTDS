@@ -29,13 +29,14 @@ public class HealthBarManager : EnemyManager
         health = defaultHealth;
 
         Vector3 scale = backHPBar.transform.localScale;
-        scale.x = 0.0025f * defaultHealth;
+        scale.x = 0.001f * defaultHealth;
         backHPBar.transform.localScale = scale;
         frontHPBar.transform.localScale = scale;
         scale.x = scale.x + 0.01f;
-        scale.y = 0.06f;
-        scale.z = 0.06f;
+        scale.y = 0.05f;
+        scale.z = 0.05f;
         outlineHPBar.transform.localScale = scale;
+        TakeDamage(50);
         switch (armorLevel)
         {
             case 0:
@@ -54,7 +55,7 @@ public class HealthBarManager : EnemyManager
 
         }
 
-        TakeDamage(50);
+     
 
     }
 
@@ -106,6 +107,7 @@ public class HealthBarManager : EnemyManager
         lerpTimer = 0f;
         timeSinceDamage = 0f;
         durationTimer = 0;
+        UpddateHealthUI();
     }
     public void Restorehealth(float healAmount)
     {

@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     public float scrollSpeed = 10f;
     public float minZoom = 5f;
     public float maxZoom = 50f;
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 40f;
     public float maxRotation = 90f;
     public float minRotation = 10f;
 
@@ -21,10 +21,10 @@ public class CameraController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float pan = Input.GetAxisRaw("Pan");
 
-        float newRotationY = transform.eulerAngles.y + pan * rotationSpeed * Time.deltaTime;
-        newRotationY = Mathf.Clamp(newRotationY, minRotation, maxRotation);
+        float newRotationX = transform.eulerAngles.x + pan * rotationSpeed * Time.deltaTime;
+        newRotationX = Mathf.Clamp(newRotationX, minRotation, maxRotation);
 
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, newRotationY, transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(newRotationX, transform.eulerAngles.y, transform.eulerAngles.z);
         Vector3 move = new Vector3(horizontal, 0, vertical).normalized;
         transform.Translate(move * moveSpeed * Time.deltaTime, Space.World);
        

@@ -5916,7 +5916,7 @@ RectTransform:
   m_GameObject: {fileID: 378356596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1795268187}
@@ -12360,7 +12360,7 @@ RectTransform:
   m_GameObject: {fileID: 783579850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1795268187}
@@ -14333,7 +14333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5681601, y: -0, z: -0, w: 0.822918}
+  m_LocalRotation: {x: 0.5681605, y: -0, z: -0, w: 0.82291776}
   m_LocalPosition: {x: 0, y: 3.4, z: -4.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14356,6 +14356,9 @@ MonoBehaviour:
   scrollSpeed: 10
   minZoom: 1
   maxZoom: 1
+  rotationSpeed: 10
+  maxRotation: 90
+  minRotation: 10
 --- !u!1 &964274658
 GameObject:
   m_ObjectHideFlags: 0
@@ -16739,6 +16742,8 @@ MonoBehaviour:
   health: 0
   armorLevel: 0
   speed: 5
+  targetWaypoint: {fileID: 0}
+  indexWaypoint: 0
 --- !u!4 &1097187020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1017837246299264587, guid: 6098e44b697f645b8ba1b933cfb63ae1, type: 3}
@@ -16771,6 +16776,19 @@ MonoBehaviour:
   - {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   - {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
   - {r: 0.2302866, g: 0.2302866, b: 0.23584908, a: 1}
+--- !u!114 &1097187022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097187015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad64ccee55204e5fbb44a4a72f47263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  speed: 2
 --- !u!1 &1108562568
 GameObject:
   m_ObjectHideFlags: 0
@@ -23822,7 +23840,7 @@ RectTransform:
   m_GameObject: {fileID: 1585151842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1795268187}
@@ -32714,6 +32732,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8517080200913714485, guid: 6098e44b697f645b8ba1b933cfb63ae1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1097187021}
+    - targetCorrespondingSourceObject: {fileID: 8517080200913714485, guid: 6098e44b697f645b8ba1b933cfb63ae1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097187022}
   m_SourcePrefab: {fileID: 100100000, guid: 6098e44b697f645b8ba1b933cfb63ae1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
