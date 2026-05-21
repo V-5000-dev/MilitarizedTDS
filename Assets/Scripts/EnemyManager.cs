@@ -6,6 +6,8 @@ public class EnemyManager : MonoBehaviour
     public float health;
     public int armorLevel;
     public float speed;
+    public int spawnCost;
+
     public void KillEnemy(bool damagePlayer)
     {
         if (damagePlayer)
