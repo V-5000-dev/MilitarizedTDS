@@ -182,7 +182,8 @@ public class BuildBuilidng : MonoBehaviour
     public void PlaceBuilding()
     {
         buildings.builtObjects.Add(currentSelectedBuilding);
-        Building b = currentSelectedBuilding.GetComponent<Building>();
+        Building b = null;
+        //currentSelectedBuilding.GetComponent<Building>();
         if (!currentSelectedBuilding || currentHoveredGridElement.occupied || !currentHoveredGridElement.CompareTag(b.requiredTag))
             return;
 
