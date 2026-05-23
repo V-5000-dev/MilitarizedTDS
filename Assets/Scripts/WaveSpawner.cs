@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance.Provider;
+using Random = UnityEngine.Random;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -10,24 +12,37 @@ public class WaveSpawner : MonoBehaviour
     public Material enemyMaterials;
     public int currentWave;
     public EnemyManager enemyManager;
-    void SpawnWave(int minEnemies, int maxEnemies, Transform[] allowedEnemies)
+    public List<Transform> SpawnWave(int minEnemies, int maxEnemies, Transform[] allowedEnemies, float waveBudget)
     {
-        int index = 0;
-        int totalSpawned = 0;
-        bool startSpawn = false;
-        float averageCost = 0;
-        int[] spawnCosts = new int[allowedEnemies.Length];
-        foreach (Transform enemy in allowedEnemies)
-        {
-            enemyManager = enemy.GetComponent<EnemyManager>();
-            averageCost += enemyManager.spawnCost;
+        int waveTotal = Random.Range(minEnemies, maxEnemies + 1);
+        List<Transform> spawnList = new List<Transform>();
 
-        }
-        averageCost /= allowedEnemies.Length;
-        foreach (Transform enemy in allowedEnemies)
+        List<Transform> sorted = new List<Transform>();
+        List<Transform> remaining = new List<Transform>(allowedEnemies);
+        while (remaining.Count > 0)
         {
-            enemyManager = enemy.GetComponent<EnemyManager>();
-            float spawnChance = Mathf.Clamp(averageCost / enemyManager.spawnCost, 0.1f, 1f;)
+            int index = 0;
+            for(int i = 1; i < remaining.Count; i++)
+            {
+                if(remaining[i].GetComponent<EnemyManager>().spawnCost > remaining[index].GetComponent<EnemyManager>().spawnCost)
+                    index++;
+            }
+            sorted.Add(remaining[index]);
+            remaining.RemoveAt(index);
         }
+        float remainingBudget = waveBudget;
+        while(spawnList.Count < waveTotal && remainingBudget > 0)
+        {
+            List<Transform> weightedPool = new List<Transform>();
+            for (int i = weightedPool.co)
+        }
+
+  
+
+        
+
+
+
     }
+
 }
