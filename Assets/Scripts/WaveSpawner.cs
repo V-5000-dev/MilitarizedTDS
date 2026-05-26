@@ -25,7 +25,28 @@ public class WaveSpawner : MonoBehaviour
         foreach (Transform enemy in allowedEnemies)
         {
             float inverseCost = 100 - enemy.GetComponent<EnemyManager>().spawnCost;
+            InverseCosts[System.Array.IndexOf(allowedEnemies, enemy)] = inverseCost;
+            totalInverse += inverseCost;
         }
+
+        float[] spawnPercentages = new float[allowedEnemies.Length];
+        for (int i = 0; i < allowedEnemies.Length; i++)
+            spawnPercentages[i] = InverseCosts[i] / totalInverse;
+
+        for (int i = 0; i < allowedEnemies.Length; i++)
+        {
+            int count = Mathf.RoundToInt(spawnPercentages[i] * waveTotal);
+            for (int j = 0; j < count; j++)
+                spawnList.Add(allowedEnemies[i]);
+        }
+        for (int i = spawnList.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            Transform t = spawnList[i];
+            spawnList[i] = spawnList[j];
+            spawnList[j] = t;
+        }
+        return spawnList;
 
 
     }
