@@ -6,7 +6,6 @@ public class GridElement : MonoBehaviour
 {
     public int gridID;
     public bool occupied;
-    public int gridType;
     public Building connectedBuilding;
     public MeshRenderer meshRenderer;
 
@@ -17,7 +16,7 @@ public class GridElement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        gridType = Random.Range(1, 10);
+        colorDefault = this.gameObject.GetComponent<Color>();
         meshRenderer = GetComponent<MeshRenderer>();
         BuildBuilidng b = FindObjectOfType<BuildBuilidng>();
 

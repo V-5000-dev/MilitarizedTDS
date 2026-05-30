@@ -23,7 +23,6 @@ public class BuyButton : MonoBehaviour
     void Awake()
     {
         btn = GetComponent<Button>();
-        resources = FindObjectOfType<Resources>();
         Buildings buildings = FindObjectOfType<Buildings>();
 
         foreach (GameObject g0 in buildings.buildabables)
@@ -44,13 +43,13 @@ public class BuyButton : MonoBehaviour
     public void Update()
     {
 
-        if(resources.wood >= connectedBuilding.price.price_wood && resources.stone >= connectedBuilding.price.price_stone)
+       /* if(resources.wood >= connectedBuilding.price.price_wood && resources.stone >= connectedBuilding.price.price_stone)
         {
             isInteractable = true;
 
         }
         btn.interactable = isInteractable;
-        
+     */   
 
 
 
