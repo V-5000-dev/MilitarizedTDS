@@ -10,6 +10,7 @@ public class GridElement : MonoBehaviour
     public Building connectedBuilding;
     public MeshRenderer meshRenderer;
 
+    [SerializeField]
     public Color colorDefault;
 
     
@@ -37,16 +38,8 @@ public class GridElement : MonoBehaviour
     }
     private void Update()
     {
- 
                 meshRenderer.material.color = colorDefault;
                 gameObject.tag = "Grid";
-    
-
-
-        
-       
-        
-
     }
 
 
