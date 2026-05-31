@@ -23,7 +23,6 @@ public class SaveGame : MonoBehaviour
     void Awake()
     {
         build = FindObjectOfType<BuildBuilidng>();
-        resources = FindObjectOfType<Resources>();
         buildings = FindObjectOfType<Buildings>();
         //LoadGame();
     }
@@ -33,9 +32,7 @@ public class SaveGame : MonoBehaviour
     {
         if (profile == null)
             profile = new SavedProfile();
-        profile.sv_wood = resources.wood;
-        profile.sv_stones = resources.stone;
-        profile.sv_food = resources.food;
+;
 
         foreach(GameObject g in buildings.builtObjects)
         {
@@ -72,9 +69,7 @@ public class SaveGame : MonoBehaviour
         SavedProfile loadedProfile = bf.Deserialize(fs) as SavedProfile;
         fs.Close();
 
-        resources.wood = loadedProfile.sv_wood;
-        resources.stone = loadedProfile.sv_stones;
-        resources.food = loadedProfile.sv_food;
+
 
         for (int i = 0; i < loadedProfile.buildingsSVData.Count; i++)
         {

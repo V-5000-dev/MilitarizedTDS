@@ -16,14 +16,12 @@ public class GridElement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        colorDefault = this.gameObject.GetComponent<Color>();
         meshRenderer = GetComponent<MeshRenderer>();
         BuildBuilidng b = FindObjectOfType<BuildBuilidng>();
 
 
         for (int i = 0; i < b.grid.Length; i++)
         {
-            Debug.Log(b.grid[i].transform == transform);
             if (b.grid[i].transform == transform)
             {
                 gridID = i;

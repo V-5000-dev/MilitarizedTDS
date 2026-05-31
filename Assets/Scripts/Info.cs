@@ -13,14 +13,12 @@ public class Info : MonoBehaviour
     public TextMeshProUGUI expenseText;
     private BuildBuilidng build;
     private Building selectedBuilding;
-    private Resources resources;
     
    
     // Start is called before the first frame update
     void Awake()
     {
         build = FindObjectOfType<BuildBuilidng>();
-        resources = FindObjectOfType<Resources>();
 
     }
 
@@ -67,8 +65,6 @@ public class Info : MonoBehaviour
     }
     public void RefundResources()
     {
-        resources.wood += selectedBuilding.price.price_wood;
-        resources.stone += selectedBuilding.price.price_stone;
         
     }
     public void DisplayInfo()
