@@ -1524,7 +1524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724705099396977863, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.5
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 724705099396977863, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1565,6 +1565,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 724705099397400807, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
       insertIndex: -1
       addedObject: {fileID: 752660030}
+    - targetCorrespondingSourceObject: {fileID: 724705099397400807, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 752660032}
   m_SourcePrefab: {fileID: 100100000, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
 --- !u!1 &191195025
 GameObject:
@@ -3458,6 +3461,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &489578451 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1306771618176262040, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
+  m_PrefabInstance: {fileID: 186849021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &521170496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,6 +4367,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerController
   target: {fileID: 0}
   range: 3
+  enemyTag: Enemy
+  turretBase: {fileID: 752660031}
+  rotationSpeed: 10
+--- !u!4 &752660031 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 724705099396977863, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
+  m_PrefabInstance: {fileID: 186849021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &752660032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752660028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
+  towerRotate: {fileID: 752660030}
+  fireRate: 1
+  bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+  barrelPoint: {fileID: 489578451}
 --- !u!1 &758645621
 GameObject:
   m_ObjectHideFlags: 0
@@ -13229,7 +13261,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &39768034006459691
 GameObject:
   m_ObjectHideFlags: 0
@@ -13439,7 +13471,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &73222945405589988
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13536,7 +13568,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &89424330542242641
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13666,7 +13698,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &127561334930816526
 GameObject:
   m_ObjectHideFlags: 0
@@ -13931,7 +13963,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &153830462330101255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14031,7 +14063,7 @@ GameObject:
   - component: {fileID: 8555897134611914193}
   - component: {fileID: 1459162542586298370}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14132,7 +14164,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &167061389131183106
 GameObject:
   m_ObjectHideFlags: 0
@@ -14189,7 +14221,7 @@ GameObject:
   - component: {fileID: 2368382744895504453}
   - component: {fileID: 8327751025540184556}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14442,7 +14474,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &261371408253893707
 GameObject:
   m_ObjectHideFlags: 0
@@ -14561,7 +14593,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &289314629560114249
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14794,7 +14826,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &311265134440680936
 Transform:
   m_ObjectHideFlags: 0
@@ -15031,7 +15063,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &342424374207029110
 Transform:
   m_ObjectHideFlags: 0
@@ -15290,7 +15322,7 @@ GameObject:
   - component: {fileID: 1613542143992494196}
   - component: {fileID: 7002488933405507613}
   m_Layer: 0
-  m_Name: GridElement _7
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15498,7 +15530,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &405789983682109438
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15822,7 +15854,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &501067364139318907
 GameObject:
   m_ObjectHideFlags: 0
@@ -16178,7 +16210,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &569083660604152293
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16243,7 +16275,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &579900609165208430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16373,7 +16405,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &596045587050310430
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16725,7 +16757,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &644003184443064391
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17285,7 +17317,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &717356877558023122
 GameObject:
   m_ObjectHideFlags: 0
@@ -17322,7 +17354,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &725393110547335926
 Transform:
   m_ObjectHideFlags: 0
@@ -17831,7 +17863,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &798622789605066654
 GameObject:
   m_ObjectHideFlags: 0
@@ -18048,7 +18080,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &830181595058952838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18065,7 +18097,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &832076013478737603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18729,7 +18761,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &906170576170215974
 Transform:
   m_ObjectHideFlags: 0
@@ -19298,7 +19330,7 @@ GameObject:
   - component: {fileID: 2603527073995649725}
   - component: {fileID: 2121444829094618382}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19320,7 +19352,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &980248144909503353
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19414,7 +19446,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1006032036831433251
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19510,7 +19542,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &1026900019029946588
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19535,7 +19567,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &1038356588217515304
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19589,7 +19621,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1050874894907284600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19670,7 +19702,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1055902626237530383
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19808,7 +19840,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &1091746026361249975
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19833,7 +19865,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1096654666433289569
 GameObject:
   m_ObjectHideFlags: 0
@@ -19848,7 +19880,7 @@ GameObject:
   - component: {fileID: 1064536846052865628}
   - component: {fileID: 936333896636019393}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20072,7 +20104,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1135568340152516161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20089,7 +20121,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1136982293958953948
 Transform:
   m_ObjectHideFlags: 0
@@ -20134,7 +20166,7 @@ GameObject:
   - component: {fileID: 5137396035598649952}
   - component: {fileID: 2993324655706257749}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20357,7 +20389,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1198775795776111950
 GameObject:
   m_ObjectHideFlags: 0
@@ -20458,7 +20490,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &1219395172339194066
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20648,7 +20680,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1253516064271071479
 GameObject:
   m_ObjectHideFlags: 0
@@ -20685,7 +20717,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &1262160513491351885
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21033,7 +21065,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1334865261291927029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21050,7 +21082,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1337082772784891104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21116,7 +21148,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1339426757320229455
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21542,7 +21574,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &1400641045901102147
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21985,7 +22017,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1467008948598486144
 GameObject:
   m_ObjectHideFlags: 0
@@ -22149,7 +22181,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1488082931427432482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22166,7 +22198,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &1492686636296279632
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22205,7 +22237,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1493135682462315092
 GameObject:
   m_ObjectHideFlags: 0
@@ -22246,7 +22278,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1497646347679835880
 Transform:
   m_ObjectHideFlags: 0
@@ -22335,7 +22367,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &1516412764097296332
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22505,7 +22537,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1540036405397489074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22522,7 +22554,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1547497258363682591
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22684,7 +22716,7 @@ GameObject:
   - component: {fileID: 110663747923407313}
   - component: {fileID: 2840244131497712418}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23184,7 +23216,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &1613542143992494196
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23265,7 +23297,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &1623500047887625082
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23326,7 +23358,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1631005476386891040
 GameObject:
   m_ObjectHideFlags: 0
@@ -23719,7 +23751,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1685071086593659572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23736,7 +23768,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1687352584527249221
 Transform:
   m_ObjectHideFlags: 0
@@ -23798,7 +23830,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1702110526254854067
 Transform:
   m_ObjectHideFlags: 0
@@ -23915,7 +23947,7 @@ GameObject:
   - component: {fileID: 3514717158319555973}
   - component: {fileID: 5021989502084940069}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23945,7 +23977,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1718291968934847844
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24009,7 +24041,7 @@ GameObject:
   - component: {fileID: 1663552996061353791}
   - component: {fileID: 984349113008839864}
   m_Layer: 0
-  m_Name: GridElement _2
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24031,7 +24063,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1727715469070051829
 Transform:
   m_ObjectHideFlags: 0
@@ -24128,7 +24160,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1748007845756532841
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24192,7 +24224,7 @@ GameObject:
   - component: {fileID: 727038693692575753}
   - component: {fileID: 5916081857831271544}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24589,7 +24621,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1798454076577728614
 Transform:
   m_ObjectHideFlags: 0
@@ -24794,7 +24826,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1824075794134014334
 Transform:
   m_ObjectHideFlags: 0
@@ -24928,7 +24960,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1845873126925019221
 Transform:
   m_ObjectHideFlags: 0
@@ -25010,7 +25042,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &1866930725336120239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25228,7 +25260,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1898187318648909132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25245,7 +25277,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &1901476680551862476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25262,7 +25294,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &1902168976377420833
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25336,7 +25368,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1913554113027436048
 Transform:
   m_ObjectHideFlags: 0
@@ -25418,7 +25450,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1934741234003152858
 GameObject:
   m_ObjectHideFlags: 0
@@ -25526,7 +25558,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1945932058154312219
 Transform:
   m_ObjectHideFlags: 0
@@ -25605,7 +25637,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &1968579990292145939
 GameObject:
   m_ObjectHideFlags: 0
@@ -25755,7 +25787,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &1990140392206429108
 Transform:
   m_ObjectHideFlags: 0
@@ -25809,7 +25841,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &1999574453560901926
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25834,7 +25866,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &2004770169816956041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26034,7 +26066,7 @@ GameObject:
   - component: {fileID: 5762957046265319916}
   - component: {fileID: 5401423268672268127}
   m_Layer: 0
-  m_Name: GridElement _1
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26353,7 +26385,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &2083706050130813525
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26724,7 +26756,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2121444829094618382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26893,7 +26925,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &2139676941737448548
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27076,7 +27108,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2190470996557937154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27093,7 +27125,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2192690701646242674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27110,7 +27142,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2193963984446454310
 GameObject:
   m_ObjectHideFlags: 0
@@ -27125,7 +27157,7 @@ GameObject:
   - component: {fileID: 6342590405091327631}
   - component: {fileID: 3204359116258117818}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27242,7 +27274,64 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
+--- !u!1001 &2221329664436814349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.628
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.17103
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88013115453623926, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+      propertyPath: m_Name
+      value: Bullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
 --- !u!64 &2225795771564163827
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27303,7 +27392,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2234282261451480590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27320,7 +27409,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &2241416274420387643
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27359,7 +27448,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2257333822237834278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27376,7 +27465,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2264391389800601628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27393,7 +27482,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2271349872896159034
 GameObject:
   m_ObjectHideFlags: 0
@@ -27579,7 +27668,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2316559203977876750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27596,7 +27685,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &2321095691368682616
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27657,7 +27746,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2332549927175774604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27674,7 +27763,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2340148504708954850
 GameObject:
   m_ObjectHideFlags: 0
@@ -27719,7 +27808,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &2351436942455149300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27837,7 +27926,7 @@ GameObject:
   - component: {fileID: 5430382531189460587}
   - component: {fileID: 2991813778567753293}
   m_Layer: 0
-  m_Name: GridElement _5
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27979,7 +28068,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2381387061181958013
 GameObject:
   m_ObjectHideFlags: 0
@@ -27994,7 +28083,7 @@ GameObject:
   - component: {fileID: 4923580570195502762}
   - component: {fileID: 5930408373680160980}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28337,7 +28426,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &2426398844849693310
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28468,7 +28557,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &2433983910882477032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28491,7 +28580,7 @@ GameObject:
   - component: {fileID: 5909152471090788685}
   - component: {fileID: 3359177145390187864}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28577,7 +28666,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &2452700408584759902
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28616,7 +28705,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &2463309976868331950
 Transform:
   m_ObjectHideFlags: 0
@@ -28694,7 +28783,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &2488310171349215333
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28788,7 +28877,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &2510789918300828559
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28885,7 +28974,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2537187171262003915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28902,7 +28991,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2543863166556012631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28919,7 +29008,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2553583450566349089
 GameObject:
   m_ObjectHideFlags: 0
@@ -29084,7 +29173,7 @@ GameObject:
   - component: {fileID: 202077294906180151}
   - component: {fileID: 532478429837120244}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29166,7 +29255,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &2586583469108003036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29316,7 +29405,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &2618370928670571818
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29390,7 +29479,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2623912841800578766
 GameObject:
   m_ObjectHideFlags: 0
@@ -29548,7 +29637,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2637469523243629476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29565,7 +29654,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &2640525929218653879
 Transform:
   m_ObjectHideFlags: 0
@@ -29605,7 +29694,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &2650235451373961102
 Transform:
   m_ObjectHideFlags: 0
@@ -29662,7 +29751,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &2666019228807590627
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29819,7 +29908,7 @@ GameObject:
   - component: {fileID: 8182100615360101334}
   - component: {fileID: 5720726269816252149}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30130,7 +30219,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &2744720750008226998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30218,7 +30307,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &2757910527566492473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30510,7 +30599,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &2834081861068467540
 Transform:
   m_ObjectHideFlags: 0
@@ -30550,7 +30639,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2840244131497712418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30641,7 +30730,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2861162568051291349
 GameObject:
   m_ObjectHideFlags: 0
@@ -30742,7 +30831,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &2866731548446925536
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30767,7 +30856,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2872195386989206233
 GameObject:
   m_ObjectHideFlags: 0
@@ -30782,7 +30871,7 @@ GameObject:
   - component: {fileID: 7402001807948033674}
   - component: {fileID: 7944364910424077708}
   m_Layer: 0
-  m_Name: GridElement _9
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30971,7 +31060,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2913158996408381784
 GameObject:
   m_ObjectHideFlags: 0
@@ -31068,7 +31157,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &2933520397136322208
 Transform:
   m_ObjectHideFlags: 0
@@ -31177,7 +31266,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &2953847729906563578
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31224,7 +31313,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &2962162412849393440
 GameObject:
   m_ObjectHideFlags: 0
@@ -31313,7 +31402,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &2979337470722900036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31546,7 +31635,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3024881539948617362
 Transform:
   m_ObjectHideFlags: 0
@@ -31586,7 +31675,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &3027348815993320403
 GameObject:
   m_ObjectHideFlags: 0
@@ -31672,7 +31761,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3035534336081703375
 Transform:
   m_ObjectHideFlags: 0
@@ -31727,7 +31816,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3063901446602717171
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31848,7 +31937,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3094809715333119016
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31914,7 +32003,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3103088890910874899
 Transform:
   m_ObjectHideFlags: 0
@@ -32138,7 +32227,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3127886309137285668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32420,7 +32509,7 @@ GameObject:
   - component: {fileID: 5939163329657902500}
   - component: {fileID: 4212654406094699441}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32491,7 +32580,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &3171045776871634327
 GameObject:
   m_ObjectHideFlags: 0
@@ -32891,7 +32980,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3233351556038988163
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32956,7 +33045,7 @@ GameObject:
   - component: {fileID: 4980116174082974268}
   - component: {fileID: 553900638274975799}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33130,7 +33219,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &3264238432969050293
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33480,7 +33569,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3354658785018486780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33563,7 +33652,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3379824697300347240
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33588,7 +33677,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3382291030785346454
 Transform:
   m_ObjectHideFlags: 0
@@ -33651,7 +33740,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3401240049473878362
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33778,7 +33867,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3425484022912454170
 Transform:
   m_ObjectHideFlags: 0
@@ -33818,7 +33907,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3443209325425342076
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34259,7 +34348,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &3489370474004808770
 GameObject:
   m_ObjectHideFlags: 0
@@ -34344,7 +34433,7 @@ GameObject:
   - component: {fileID: 5285192614083087716}
   - component: {fileID: 3176960888386441092}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34366,7 +34455,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3513549846949379622
 Transform:
   m_ObjectHideFlags: 0
@@ -34396,7 +34485,7 @@ GameObject:
   - component: {fileID: 7915035374897843533}
   - component: {fileID: 8861584756548515103}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34512,7 +34601,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3540707589083550040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34681,7 +34770,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &3555710068665572255
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34852,7 +34941,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3597835272572917805
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35137,7 +35226,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3648392909933087898
 Transform:
   m_ObjectHideFlags: 0
@@ -35281,7 +35370,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &3660732019264635285
 GameObject:
   m_ObjectHideFlags: 0
@@ -35389,7 +35478,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &3679978552646402858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35406,7 +35495,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3681148472211750973
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35630,7 +35719,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &3721194589316490391
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35909,7 +35998,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &3784699522459264326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35926,7 +36015,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &3788719471640630669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35943,7 +36032,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &3794541514914569477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35960,7 +36049,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3795636836544808167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36078,7 +36167,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3807867948464429135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36219,7 +36308,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &3836937486413228374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36236,7 +36325,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &3842909272522898063
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36302,7 +36391,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &3845182261934218361
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36463,7 +36552,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &3906044284411782127
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36500,7 +36589,7 @@ GameObject:
   - component: {fileID: 4435337679009719948}
   - component: {fileID: 1589104203639064054}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36829,7 +36918,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &3945323040888304977
 Transform:
   m_ObjectHideFlags: 0
@@ -37323,7 +37412,7 @@ GameObject:
   - component: {fileID: 8538766016433557202}
   - component: {fileID: 5687975155752902573}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37469,7 +37558,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4064752077385243667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -37526,7 +37615,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &4074112342172903247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37543,7 +37632,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4086176611169858844
 GameObject:
   m_ObjectHideFlags: 0
@@ -37592,7 +37681,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4105447775675877145
 GameObject:
   m_ObjectHideFlags: 0
@@ -37649,7 +37738,7 @@ GameObject:
   - component: {fileID: 5159916262300955078}
   - component: {fileID: 5668550535639641939}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37759,7 +37848,7 @@ GameObject:
   - component: {fileID: 4525626909659883263}
   - component: {fileID: 3443839712798654312}
   m_Layer: 0
-  m_Name: GridElement _7
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37921,7 +38010,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4151011185137915105
 Transform:
   m_ObjectHideFlags: 0
@@ -37953,7 +38042,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &4156348868205065192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38598,7 +38687,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4220715156173190781
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38733,7 +38822,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4250778596172240259
 Transform:
   m_ObjectHideFlags: 0
@@ -38891,7 +38980,7 @@ GameObject:
   - component: {fileID: 685497296293798014}
   - component: {fileID: 1813662468978364612}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39026,7 +39115,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4285081903670778732
 GameObject:
   m_ObjectHideFlags: 0
@@ -39071,7 +39160,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &4287364925579334344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39444,7 +39533,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4357972735787430915
 GameObject:
   m_ObjectHideFlags: 0
@@ -39628,7 +39717,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4412615049827809742
 Transform:
   m_ObjectHideFlags: 0
@@ -39808,7 +39897,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4443334446079494145
 Transform:
   m_ObjectHideFlags: 0
@@ -39927,7 +40016,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &4457321952188917958
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40015,7 +40104,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4458740822351378330
 Transform:
   m_ObjectHideFlags: 0
@@ -40094,7 +40183,7 @@ GameObject:
   - component: {fileID: 1523331529963873959}
   - component: {fileID: 3655090433885157313}
   m_Layer: 0
-  m_Name: 'GridElement '
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40187,7 +40276,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &4474763861144740712
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40226,7 +40315,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4480741683242626911
 GameObject:
   m_ObjectHideFlags: 0
@@ -40263,7 +40352,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &4485162566073483815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40719,7 +40808,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4545632246677905526
 Transform:
   m_ObjectHideFlags: 0
@@ -40931,7 +41020,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &4584389343163791297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40948,7 +41037,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4586239525678775763
 GameObject:
   m_ObjectHideFlags: 0
@@ -40963,7 +41052,7 @@ GameObject:
   - component: {fileID: 5328387913270123588}
   - component: {fileID: 6140369162437256620}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41079,7 +41168,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4620413670205201282
 GameObject:
   m_ObjectHideFlags: 0
@@ -41146,7 +41235,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &4637908156410767924
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41183,7 +41272,7 @@ GameObject:
   - component: {fileID: 3447905802529081181}
   - component: {fileID: 695298953091721430}
   m_Layer: 0
-  m_Name: GridElement _7
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41255,7 +41344,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &4665497576389090279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41272,7 +41361,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &4670715278466621913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41289,7 +41378,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4672103299403102484
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41314,7 +41403,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4679349545076863855
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41347,7 +41436,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &4688018388722628068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41364,7 +41453,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &4699765378655006447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41479,7 +41568,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4717144036424641157
 GameObject:
   m_ObjectHideFlags: 0
@@ -41649,7 +41738,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4746266981419469063
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41784,7 +41873,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4781672038124273553
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41822,7 +41911,7 @@ GameObject:
   - component: {fileID: 4168650181474455551}
   - component: {fileID: 4195264874493896021}
   m_Layer: 0
-  m_Name: GridElement _7
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41870,7 +41959,7 @@ GameObject:
   - component: {fileID: 8173066958934239073}
   - component: {fileID: 8503352101088735062}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41892,7 +41981,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4807413522023812394
 GameObject:
   m_ObjectHideFlags: 0
@@ -41978,7 +42067,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &4814497418902490929
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42310,7 +42399,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &4860802960430993259
 GameObject:
   m_ObjectHideFlags: 0
@@ -42576,7 +42665,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &4911693231451734078
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43014,7 +43103,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &4983442463753280660
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43037,7 +43126,7 @@ GameObject:
   - component: {fileID: 5686383854171845146}
   - component: {fileID: 6834741629651048450}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43059,7 +43148,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &4993939349362967913
 Transform:
   m_ObjectHideFlags: 0
@@ -43089,7 +43178,7 @@ GameObject:
   - component: {fileID: 2386002548800051091}
   - component: {fileID: 2351611481598918732}
   m_Layer: 0
-  m_Name: GridElement _9
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43226,7 +43315,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &5034799383595228561
 GameObject:
   m_ObjectHideFlags: 0
@@ -43263,7 +43352,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5043401241710662511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43280,7 +43369,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5061141625911040086
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43389,7 +43478,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5093382869964730685
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43654,7 +43743,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5127754158917130591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43741,7 +43830,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5137396035598649952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43800,7 +43889,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &5147636683186425049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43948,7 +44037,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5178822240588818125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43965,7 +44054,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5180391886468865875
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44042,7 +44131,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &5205986997665766767
 Transform:
   m_ObjectHideFlags: 0
@@ -44202,7 +44291,7 @@ GameObject:
   - component: {fileID: 9072153555578797597}
   - component: {fileID: 7664235760688501996}
   m_Layer: 0
-  m_Name: GridElement _5
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44254,7 +44343,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &5227883271077079388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44480,7 +44569,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5243166099762130741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44497,7 +44586,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5246607457183428288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44610,7 +44699,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5279033230563739562
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44804,7 +44893,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5312274133544827546
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44829,7 +44918,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5326771722064528577
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44911,7 +45000,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &5330157494341684790
 GameObject:
   m_ObjectHideFlags: 0
@@ -44948,7 +45037,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &5342050798708896547
 Transform:
   m_ObjectHideFlags: 0
@@ -45075,7 +45164,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5367490048454762348
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45471,7 +45560,7 @@ GameObject:
   - component: {fileID: 4700338461193968873}
   - component: {fileID: 8318578812939920229}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45493,7 +45582,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5430382531189460587
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45609,7 +45698,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &5444095758490823603
 Transform:
   m_ObjectHideFlags: 0
@@ -45699,7 +45788,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5474518019511855884
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45752,7 +45841,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5512411181762555700
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46016,7 +46105,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5567616274945872171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46033,7 +46122,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &5571846971105684291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46357,7 +46446,7 @@ GameObject:
   - component: {fileID: 392136130726623492}
   - component: {fileID: 7125719942999914512}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46551,7 +46640,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &5653387413729929517
 GameObject:
   m_ObjectHideFlags: 0
@@ -46638,7 +46727,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &5665271897171377474
 GameObject:
   m_ObjectHideFlags: 0
@@ -46906,7 +46995,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5705649275784761289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46923,7 +47012,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &5707302663266596932
 GameObject:
   m_ObjectHideFlags: 0
@@ -46938,7 +47027,7 @@ GameObject:
   - component: {fileID: 2757910527566492473}
   - component: {fileID: 8366500770885169436}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47049,7 +47138,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5727682043796724020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47066,7 +47155,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &5732373305629129071
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47245,7 +47334,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5760082594628005128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47262,7 +47351,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5760854060543027350
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47309,7 +47398,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &5771588278854329517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47375,7 +47464,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5779162998803314419
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47574,7 +47663,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &5804761729460241432
 Transform:
   m_ObjectHideFlags: 0
@@ -47754,7 +47843,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5844102283359401279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47771,7 +47860,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5844164739628095187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47788,7 +47877,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5853284823432106233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47822,7 +47911,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5866603439366400731
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47892,7 +47981,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5889480796230432886
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48002,7 +48091,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5899349486958139996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48019,7 +48108,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5903647417443999594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48036,7 +48125,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5909152471090788685
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48129,7 +48218,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &5930408373680160980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48161,7 +48250,7 @@ GameObject:
   - component: {fileID: 1212541369209450553}
   - component: {fileID: 8440224704195232738}
   m_Layer: 0
-  m_Name: GridElement _5
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48225,7 +48314,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &5953110835471461426
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48313,7 +48402,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &5967287685028429765
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -48476,7 +48565,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &6000322274012149821
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48839,7 +48928,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &6050419348429872807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48905,7 +48994,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6054235965057691065
 Transform:
   m_ObjectHideFlags: 0
@@ -48986,7 +49075,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &6058081538093255135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49003,7 +49092,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6065218287876226738
 Transform:
   m_ObjectHideFlags: 0
@@ -49035,7 +49124,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &6075212992621500923
 GameObject:
   m_ObjectHideFlags: 0
@@ -49050,7 +49139,7 @@ GameObject:
   - component: {fileID: 2924326396467483909}
   - component: {fileID: 5853284823432106233}
   m_Layer: 0
-  m_Name: GridElement _6
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49100,7 +49189,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6104820956545686165
 Transform:
   m_ObjectHideFlags: 0
@@ -49248,7 +49337,7 @@ GameObject:
   - component: {fileID: 1884100305404938296}
   - component: {fileID: 6317675548344727010}
   m_Layer: 0
-  m_Name: GridElement _7
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49270,7 +49359,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &6131257447269230338
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49325,7 +49414,7 @@ GameObject:
   - component: {fileID: 7410672472472009211}
   - component: {fileID: 4699765378655006447}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49633,7 +49722,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &6187992072427680134
 GameObject:
   m_ObjectHideFlags: 0
@@ -49686,7 +49775,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &6201265856210688485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49703,7 +49792,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &6201575759652592633
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49787,7 +49876,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &6228600963726654786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50013,7 +50102,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &6265374242302965811
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50132,7 +50221,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &6287154441611490009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50149,7 +50238,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &6288386373196897171
 GameObject:
   m_ObjectHideFlags: 0
@@ -50327,7 +50416,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6339878111037623990
 Transform:
   m_ObjectHideFlags: 0
@@ -50445,7 +50534,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &6347724593683488974
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -50841,7 +50930,7 @@ GameObject:
   - component: {fileID: 8103906043734160511}
   - component: {fileID: 7815045575557970198}
   m_Layer: 0
-  m_Name: GridElement _5
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50995,7 +51084,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &6441775191561777647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51012,7 +51101,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6448948526727618014
 Transform:
   m_ObjectHideFlags: 0
@@ -51209,7 +51298,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &6509939328039935805
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51281,7 +51370,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &6522922419967944910
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51347,7 +51436,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &6531715771765403519
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51449,7 +51538,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6558091674250258236
 Transform:
   m_ObjectHideFlags: 0
@@ -51582,7 +51671,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6581210973035486620
 Transform:
   m_ObjectHideFlags: 0
@@ -51779,7 +51868,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &6622885477461886576
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52172,7 +52261,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6717172975776203355
 Transform:
   m_ObjectHideFlags: 0
@@ -52550,7 +52639,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &6771359226828265977
 GameObject:
   m_ObjectHideFlags: 0
@@ -52602,7 +52691,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &6782063472816241868
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52649,7 +52738,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6793783167146962539
 Transform:
   m_ObjectHideFlags: 0
@@ -52959,7 +53048,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &6836544216442741350
 GameObject:
   m_ObjectHideFlags: 0
@@ -52996,7 +53085,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &6841085027939540097
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53163,7 +53252,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &6854903531629952877
 GameObject:
   m_ObjectHideFlags: 0
@@ -53715,7 +53804,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &6935675311979157216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53732,7 +53821,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &6938800195722692020
 Transform:
   m_ObjectHideFlags: 0
@@ -53943,7 +54032,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &6952775102749849181
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54674,7 +54763,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7069706207259262486
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55229,7 +55318,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &7149062118497735550
 Transform:
   m_ObjectHideFlags: 0
@@ -55601,7 +55690,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &7213208050511292021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55618,7 +55707,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7217219034820146689
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55657,7 +55746,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &7218914915713128788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55674,7 +55763,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7219408608955724640
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55755,7 +55844,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7234812589694395394
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55843,7 +55932,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7241223729132048985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55909,7 +55998,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &7247582647970806359
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -55972,7 +56061,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &7265525253100311882
 GameObject:
   m_ObjectHideFlags: 0
@@ -56027,7 +56116,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7269635236957917419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56113,7 +56202,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &7271245996847086077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56130,7 +56219,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7273822309382442249
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56557,7 +56646,7 @@ GameObject:
   - component: {fileID: 2241416274420387643}
   - component: {fileID: 4385635110159523100}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56717,7 +56806,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &7381399390412831257
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -56780,7 +56869,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &7400396740137497422
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -57040,7 +57129,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &7431917334263823374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57057,7 +57146,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7433037841025600844
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57215,7 +57304,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7452088166642903603
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57446,7 +57535,7 @@ GameObject:
   - component: {fileID: 1800225077956667531}
   - component: {fileID: 2979337470722900036}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57490,7 +57579,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7494014756179466572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57767,7 +57856,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7537171178490993832
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57918,7 +58007,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &7554564128668884151
 Transform:
   m_ObjectHideFlags: 0
@@ -58065,7 +58154,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7584667708025270407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58131,7 +58220,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7601521181733355874
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58379,7 +58468,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7625866341504511344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58494,7 +58583,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &7650096675011960363
 Transform:
   m_ObjectHideFlags: 0
@@ -58592,7 +58681,7 @@ GameObject:
   - component: {fileID: 2958255029797730116}
   - component: {fileID: 5247157207185320917}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58983,7 +59072,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &7742191702359988026
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59037,7 +59126,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &7749966851977322458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59054,7 +59143,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &7750070072274800753
 GameObject:
   m_ObjectHideFlags: 0
@@ -59124,7 +59213,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &7764665414186529820
 GameObject:
   m_ObjectHideFlags: 0
@@ -59204,7 +59293,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &7766964335039935479
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59229,7 +59318,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &7771745587046874538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59246,7 +59335,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7775429891420622544
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59345,7 +59434,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7785943331446037849
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59480,7 +59569,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &7797328298634268591
 Transform:
   m_ObjectHideFlags: 0
@@ -59713,7 +59802,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &7847487758612038887
 GameObject:
   m_ObjectHideFlags: 0
@@ -59796,7 +59885,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &7893473414511809397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59843,7 +59932,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &7903219161095286688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60064,7 +60153,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &7930037074274601151
 Transform:
   m_ObjectHideFlags: 0
@@ -60411,7 +60500,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8004277142365314450
 Transform:
   m_ObjectHideFlags: 0
@@ -60662,7 +60751,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8023669842998761210
 GameObject:
   m_ObjectHideFlags: 0
@@ -60901,7 +60990,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &8082253231593665812
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -60948,7 +61037,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &8090303506495865830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60965,7 +61054,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &8091692690666430792
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -61062,7 +61151,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8102731502768374088
 Transform:
   m_ObjectHideFlags: 0
@@ -61184,7 +61273,7 @@ GameObject:
   - component: {fileID: 4911693231451734078}
   - component: {fileID: 8585669749315074248}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61255,7 +61344,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &8137146651450730591
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62102,7 +62191,7 @@ GameObject:
   - component: {fileID: 1639024490448472360}
   - component: {fileID: 4191755020340136681}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63411,7 +63500,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8474396267105666850
 GameObject:
   m_ObjectHideFlags: 0
@@ -63780,7 +63869,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8536653176115018978
 Transform:
   m_ObjectHideFlags: 0
@@ -63924,7 +64013,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &8585669749315074248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64068,7 +64157,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8615492091498818228
 GameObject:
   m_ObjectHideFlags: 0
@@ -64125,7 +64214,7 @@ GameObject:
   - component: {fileID: 6651664875197983735}
   - component: {fileID: 6180539482178886615}
   m_Layer: 0
-  m_Name: GridElement _8
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64187,7 +64276,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &8632901240779611294
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64274,7 +64363,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8668311319555659664
 GameObject:
   m_ObjectHideFlags: 0
@@ -64311,7 +64400,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &8685512697260844930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64456,7 +64545,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &8709932425529086352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64473,7 +64562,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &8711330038668829905
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64496,7 +64585,7 @@ GameObject:
   - component: {fileID: 7418690195979032688}
   - component: {fileID: 2657394819232246913}
   m_Layer: 0
-  m_Name: GridElement _3
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64693,7 +64782,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8759519976734471546
 GameObject:
   m_ObjectHideFlags: 0
@@ -64738,7 +64827,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &8785134447627607761
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64819,7 +64908,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &8801704933390472345
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64917,7 +65006,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8815152226959611907
 Transform:
   m_ObjectHideFlags: 0
@@ -64998,7 +65087,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8820219230312694175
 GameObject:
   m_ObjectHideFlags: 0
@@ -65117,7 +65206,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &8839865035325863711
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65400,7 +65489,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!64 &8865932083712790164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -65488,7 +65577,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8878808786592463516
 Transform:
   m_ObjectHideFlags: 0
@@ -65655,7 +65744,7 @@ GameObject:
   - component: {fileID: 6952775102749849181}
   - component: {fileID: 4428357905955508790}
   m_Layer: 0
-  m_Name: GridElement _4
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65699,7 +65788,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8920240639310210670
 Transform:
   m_ObjectHideFlags: 0
@@ -65852,7 +65941,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &8959635258370137209
 GameObject:
   m_ObjectHideFlags: 0
@@ -65961,7 +66050,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!4 &8978584769035573846
 Transform:
   m_ObjectHideFlags: 0
@@ -66105,7 +66194,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &8999159955926575478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66171,7 +66260,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &9002950825126685235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66358,7 +66447,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &9030715604034434860
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66444,7 +66533,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!114 &9046365061124641458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66461,7 +66550,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!33 &9055716207816502215
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -66501,7 +66590,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &9068016477717877537
 GameObject:
   m_ObjectHideFlags: 0
@@ -66532,7 +66621,7 @@ GameObject:
   - component: {fileID: 2008711215328840772}
   - component: {fileID: 6518571193212742688}
   m_Layer: 0
-  m_Name: GridElement _8
+  m_Name: PathElement
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66687,7 +66776,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &9091558869922391497
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66768,7 +66857,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0.23549303, g: 0.26415092, b: 0.23852028, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!23 &9111181429522499344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67284,7 +67373,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1 &9199615722637572166
 GameObject:
   m_ObjectHideFlags: 0
@@ -67397,7 +67486,7 @@ MonoBehaviour:
   occupied: 0
   connectedBuilding: {fileID: 0}
   meshRenderer: {fileID: 0}
-  colorDefault: {r: 0, g: 0.5568628, b: 0.05882353, a: 0}
+  colorDefault: {r: 0.008009953, g: 0.5660378, b: 0.06695652, a: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -67412,3 +67501,4 @@ SceneRoots:
   - {fileID: 1250292329}
   - {fileID: 667915733873242752}
   - {fileID: 186849021}
+  - {fileID: 2221329664436814349}

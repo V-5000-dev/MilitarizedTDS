@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 2898869467055404577}
   m_Layer: 0
   m_Name: EnemyNormalArmor2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   health: 0
   armorLevel: 2
   speed: 0
+  spawnCost: 0
   chipSpeed: 1.5
   frontHPBar: {fileID: 3213053631131028689}
   backHPBar: {fileID: 1823764842510269788}
