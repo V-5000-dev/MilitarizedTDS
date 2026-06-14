@@ -28,6 +28,7 @@ public class TowerShoot : MonoBehaviour
     }
     void Shoot()
     {
+        Debug.Log("Shoot");
         GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelPoint.position, barrelPoint.rotation);
         BulletController bulletScript = bullet.GetComponent<BulletController>();
         if (bullet = null)

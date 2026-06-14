@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
     public float speed = 70f;
     void Update()
     {
         if (target == null)
         {
-            Destroy(gameObject);
+  //          Destroy(gameObject);
             return;
         }
         Vector3 dir = target.position - transform.position;

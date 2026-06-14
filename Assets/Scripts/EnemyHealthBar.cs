@@ -36,7 +36,6 @@ public class HealthBarManager : EnemyManager
         scale.y = 0.05f;
         scale.z = 0.05f;
         outlineHPBar.transform.localScale = scale;
-        TakeDamage(50);
 
         frontHPBar.color = armorHealthBarColor;
     
