@@ -28,7 +28,6 @@ public class BuildingInfo: MonoBehaviour
 public class BuildingInfoSaveData
 {
     public float bisd_buildingLevel = 0;
-    public float bisd_buildingRecourceProduction;
     public int bisd_ID;
     public int bisd_connectedGridID;
     public float bisd_yRot;

@@ -5,6 +5,7 @@ public class BulletController : MonoBehaviour
     public Transform target;
     public GameObject impactEffect;
     public float speed = 70f;
+    public float damage;
     void Update()
     {
         if (target == null)

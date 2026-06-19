@@ -12,12 +12,13 @@ public class GridElement : MonoBehaviour
     [SerializeField]
     public Color colorDefault;
 
-    
+
     // Start is called before the first frame update
+    [System.Obsolete]
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        BuildBuilidng b = FindObjectOfType<BuildBuilidng>();
+        BuildBuilding b = FindObjectOfType<BuildBuilding>();
 
 
         for (int i = 0; i < b.grid.Length; i++)

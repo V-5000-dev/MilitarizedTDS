@@ -525,15 +525,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -587,10 +587,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4410025259136841235}
+      addedObject: {fileID: 6293833388243711892}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4209561391052704115}
+      addedObject: {fileID: -1897942994292172377}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3391057295740341270}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 106285335942444969}
   m_SourcePrefab: {fileID: 100100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
 --- !u!4 &724705099396977863 stripped
 Transform:
@@ -602,29 +608,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
   m_PrefabInstance: {fileID: 724705099397369415}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4410025259136841235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724705099397400807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e384dba657074c2aa5baf1ef1ac6f0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Building
-  info: {fileID: 0}
-  price: {fileID: 0}
-  objName: 
-  objDisc: 
-  objIncome: 
-  objExpense: 
-  placed: 0
-  requiredTag: 
-  requiredBuilding: 
-  requiredDistanceFromBuidling: 0
---- !u!114 &-4209561391052704115
+--- !u!114 &6293833388243711892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -638,7 +622,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingInfo
   buidlingInfoSaves:
     bisd_buildingLevel: 0
-    bisd_buildingRecourceProduction: 0
     bisd_ID: 0
     bisd_connectedGridID: 0
     bisd_yRot: 0
@@ -652,7 +635,57 @@ MonoBehaviour:
       z: 0
       w: 0
   ID: 0
-  buildingLevel: 0
+  buildingLevel: 1
   baseCost: 0
   yRotation: 0
   connectedGridID: 0
+--- !u!114 &-1897942994292172377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e384dba657074c2aa5baf1ef1ac6f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  info: {fileID: 6293833388243711892}
+  price: 100
+  objName: Pistol Tower
+  objDisc: Pistol Tower
+  placed: 0
+--- !u!114 &-3391057295740341270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76dd2949454144c0caaf98e9ed19a1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotate
+  target: {fileID: 0}
+  range: 3
+  enemyTag: Enemy
+  turretBase: {fileID: 724705099396977863}
+  rotationSpeed: 10
+--- !u!114 &106285335942444969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
+  towerRotate: {fileID: -3391057295740341270}
+  fireRate: 1
+  bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+  barrelPoint: {fileID: 1306771618176262040}

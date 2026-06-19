@@ -11,14 +11,14 @@ public class Info : MonoBehaviour
     public TextMeshProUGUI discText;
     public TextMeshProUGUI incomeText;
     public TextMeshProUGUI expenseText;
-    private BuildBuilidng build;
+    private BuildBuilding build;
     private Building selectedBuilding;
     
    
     // Start is called before the first frame update
     void Awake()
     {
-        build = FindObjectOfType<BuildBuilidng>();
+        build = FindObjectOfType<BuildBuilding>();
 
     }
 
@@ -75,7 +75,5 @@ public class Info : MonoBehaviour
             selectedBuilding = build.currentSelectedBuilding.GetComponent<Building>();
         nameText.text = selectedBuilding.objName;
         discText.text = selectedBuilding.objDisc;
-        incomeText.text = selectedBuilding.objIncome;
-        expenseText.text = selectedBuilding.objExpense;
     }
 }

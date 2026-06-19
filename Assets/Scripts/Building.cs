@@ -10,10 +10,6 @@ public class Building : MonoBehaviour
     public string objDisc;
 
     public bool placed;
-    public string requiredTag;
-
-    public string requiredBuilding;
-    public int requiredDistanceFromBuidling;
 
 
     public float requiredDistanceFromBuilding { get; internal set; }

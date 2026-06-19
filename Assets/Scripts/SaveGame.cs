@@ -16,13 +16,13 @@ public class SaveGame : MonoBehaviour
     public SavedProfile profile;
     private Resources resources;
     private Buildings buildings;
-    private BuildBuilidng build;
+    private BuildBuilding build;
     
 
 
     void Awake()
     {
-        build = FindObjectOfType<BuildBuilidng>();
+        build = FindObjectOfType<BuildBuilding>();
         buildings = FindObjectOfType<Buildings>();
         //LoadGame();
     }

@@ -24,9 +24,9 @@ public class HealthBarManager : EnemyManager
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        health = defaultHealth;
+        
 
         Vector3 scale = backHPBar.transform.localScale;
         scale.x = 0.001f * defaultHealth;
@@ -38,10 +38,15 @@ public class HealthBarManager : EnemyManager
         outlineHPBar.transform.localScale = scale;
 
         frontHPBar.color = armorHealthBarColor;
-    
+        
 
      
 
+    }
+    void Start()
+    {
+        health = 1;
+        health = defaultHealth;
     }
 
     // Update is called once per frame

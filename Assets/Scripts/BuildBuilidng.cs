@@ -1,16 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public class BuildBuilidng : MonoBehaviour
+
+public class BuildBuilding : MonoBehaviour
 {
     public GridElement currentSelectedGridElement;
     public GridElement currentHoveredGridElement;
 
     public Info info;
-
     public GridElement[] grid;
-
     public Buildings buildings;
     public BuyButton buyButton;
 
@@ -19,237 +16,231 @@ public class BuildBuilidng : MonoBehaviour
     public Color colorOnOccupied = Color.red;
 
     private RaycastHit rayHit;
-    //private Color colorDefault;
-
     private bool buildingAlreadySelected;
-
     public GameObject currentSelectedBuilding;
-
     public string targetTag = "Grid";
-
-
-
 
     void Awake()
     {
-       // colorDefault = grid[0].GetComponentInChildren<MeshRenderer>().material.color;
         buildings = GetComponent<Buildings>();
-
-      
-
     }
+
     private void OnEnable()
     {
-        // OnButtonCreateBuilding(1);
         GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("Grid");
         grid = new GridElement[taggedObjects.Length];
-        
+
         for (int i = 0; i < taggedObjects.Length; i++)
         {
-            Debug.Log("TaggedObjects" + taggedObjects[i]);
             grid[i] = taggedObjects[i].GetComponent<GridElement>();
         }
-
-
     }
-
 
     void Update()
     {
-//        Debug.Log(currentHoveredGridElement);
+        HandleHover();
+        MoveBuilding();
+        PlaceBuilding();
+    }
 
+    // -------------------------------------------------------------------------
+    // Hover / selection
+    // -------------------------------------------------------------------------
+    private void HandleHover()
+    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(transform.position, Vector3.forward, Color.red);
-        if (Physics.Raycast(ray, out rayHit))
+
+        if (!Physics.Raycast(ray, out rayHit))
         {
-            GridElement g = rayHit.transform.GetComponent<GridElement>();
-            if (!g)
+            if (currentHoveredGridElement != null)
             {
-                if (currentHoveredGridElement)
-                {
-                    currentHoveredGridElement.GetComponent<MeshRenderer>().material.color = currentHoveredGridElement.colorDefault;
-                    return;
-                }
+                currentHoveredGridElement.GetComponent<MeshRenderer>().material.color =
+                    currentHoveredGridElement.colorDefault;
+                currentHoveredGridElement = null;
+            }
+            return;
+        }
 
-            }
-            if (Input.GetMouseButtonDown(0))
-            {
-                currentSelectedGridElement = g;
-            }
-            if (g != currentHoveredGridElement)
-            {
-                if (!g.occupied)
-                {
-                    rayHit.transform.GetComponent<MeshRenderer>().material.color = colorHover;
-                }
-                else
-                    rayHit.transform.GetComponent<MeshRenderer>().material.color = colorOnOccupied;
-            }
-            if (currentHoveredGridElement && currentHoveredGridElement != g)
-            {
-                Debug.Log("Set Default");
-                currentHoveredGridElement.GetComponent<MeshRenderer>().material.color = currentHoveredGridElement.colorDefault;
+        GridElement g = rayHit.transform.GetComponent<GridElement>();
 
-                
+        if (g == null)
+        {
+            if (currentHoveredGridElement != null)
+            {
+                currentHoveredGridElement.GetComponent<MeshRenderer>().material.color =
+                    currentHoveredGridElement.colorDefault;
+                currentHoveredGridElement = null;
+            }
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+            currentSelectedGridElement = g;
+
+        if (g != currentHoveredGridElement)
+        {
+            g.GetComponent<MeshRenderer>().material.color = g.occupied ? colorOnOccupied : colorHover;
+
+            if (currentHoveredGridElement != null)
+            {
+                currentHoveredGridElement.GetComponent<MeshRenderer>().material.color =
+                    currentHoveredGridElement.colorDefault;
             }
 
             currentHoveredGridElement = g;
-
-
-
         }
-        else
-        {
-        
-            //if (currentHoveredGridElement)
-            
-//            currentHoveredGridElement.GetComponent<MeshRenderer>().material.color = colorDefault;
-
-        }
-        MoveBuilding();
-        PlaceBuilding();
-
-
-
     }
+
+    // -------------------------------------------------------------------------
+    // Spawning
+    // -------------------------------------------------------------------------
     public void OnButtonCreateBuilding(int id)
     {
-
-            
-        Debug.Log("Test1");
         if (buildingAlreadySelected)
             return;
 
-        GameObject g = null;
-
-        foreach (GameObject gO in buildings.buildabables)
+        GameObject prefab = FindBuildingPrefabByID(id);
+        if (prefab == null)
         {
-            Building b = gO.GetComponent<Building>();
-            if (b.info.ID == id)
-            {
-                g = b.gameObject;
-              
-            }
-
+            Debug.LogWarning($"No building prefab found with ID {id}");
+            return;
         }
 
-        Debug.Log("currentSelectedBuilding, " + currentSelectedBuilding);
         Vector3 spawnPos = new Vector3(5, 0, 0);
-        currentSelectedBuilding = Instantiate(g, spawnPos, Quaternion.identity);
-        
-
+        currentSelectedBuilding = Instantiate(prefab, spawnPos, Quaternion.identity);
 
         info.DisplayInfo();
-
-        currentSelectedBuilding.transform.rotation = Quaternion.Euler(0, 0, 0);
         buildingAlreadySelected = true;
     }
+
+    // -------------------------------------------------------------------------
+    // Moving (follows cursor before placement)
+    // -------------------------------------------------------------------------
     public void MoveBuilding()
     {
-        if (!currentSelectedBuilding)
+        if (currentSelectedBuilding == null)
             return;
-        currentSelectedBuilding.gameObject.layer = 2;
-        if (currentHoveredGridElement)
+
+        // Ignore raycasts so the building doesn't block its own grid detection
+        currentSelectedBuilding.layer = 2;
+
+        if (currentHoveredGridElement == null)
+            return;
+
+        currentSelectedBuilding.transform.position = new Vector3(
+            currentHoveredGridElement.transform.position.x,
+            currentHoveredGridElement.transform.position.y + 0.4f,
+            currentHoveredGridElement.transform.position.z
+        );
+
+        // Right-click cancels placement
+        if (Input.GetMouseButtonDown(1))
         {
-            //currentSelectedBuilding.transform.position = currentHoveredGridElement.transform.position;
-            currentSelectedBuilding.transform.position = new Vector3(currentHoveredGridElement.transform.position.x, currentHoveredGridElement.transform.position.y +0.4f, currentHoveredGridElement.transform.position.z);
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                Destroy(currentSelectedBuilding);
-                currentSelectedBuilding = null;
-
-            }
-            if (Input.GetMouseButton(2) || Input.GetKeyDown(KeyCode.R))
-            {
-                currentSelectedBuilding.transform.Rotate(transform.up * 30);
-            }
-            if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift))
-            {
-                currentSelectedBuilding.transform.Rotate(transform.up * -30);
-            }
-
+            Destroy(currentSelectedBuilding);
+            currentSelectedBuilding = null;
+            buildingAlreadySelected = false;
+            return;
         }
 
-    
-
-
-
-
-
-
+        // R rotates 30 degrees; Shift+R rotates -30 degrees
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            float direction = Input.GetKey(KeyCode.LeftShift) ? -30f : 30f;
+            currentSelectedBuilding.transform.Rotate(Vector3.up * direction);
+        }
+        // Middle-mouse also rotates forward 30 degrees
+        else if (Input.GetMouseButtonDown(2))
+        {
+            currentSelectedBuilding.transform.Rotate(Vector3.up * 30f);
+        }
     }
+
+    // -------------------------------------------------------------------------
+    // Placing
+    // -------------------------------------------------------------------------
     public void PlaceBuilding()
     {
-        buildings.builtObjects.Add(currentSelectedBuilding);
-        Building b = null;
-        //currentSelectedBuilding.GetComponent<Building>();
-        if (!currentSelectedBuilding || currentHoveredGridElement.occupied || !currentHoveredGridElement.CompareTag(b.requiredTag))
+        if (currentSelectedBuilding == null)
             return;
 
-       if (Input.GetMouseButtonDown(0))
-        {
-            bool canPlace = b.requiredBuilding == null;
-            foreach (Transform T in FindObjectsOfType<Transform>())
-            {
+        if (currentHoveredGridElement == null)
+            return;
 
-                if (string.IsNullOrEmpty(b.requiredBuilding) || (T.name == b.requiredBuilding && Vector3.Distance(transform.position, T.position) <= b.requiredDistanceFromBuilding))
+        Building b = currentSelectedBuilding.GetComponent<Building>();
+        if (b == null)
+            return;
 
-                {
-                    canPlace = true;
-                    break;
-                }
+        if (!Input.GetMouseButtonDown(0))
+            return;
 
+        // Tile must be free
+        if (currentHoveredGridElement.occupied)
+            return;
 
-            }
-            if (canPlace)
-            {
-                currentHoveredGridElement.occupied = true;
-                currentHoveredGridElement.connectedBuilding = b;
-                b.placed = true;
-                b.info.connectedGridID = currentHoveredGridElement.gridID;
-                b.info.yRotation = b.transform.localEulerAngles.y;
-                b.ConstructBuilding();
-                currentSelectedBuilding = null;
-                buildingAlreadySelected = false;
-            }
-            else
-            {
-                Debug.LogWarning("Cannot place building: no required building found within the required distance.");
-            }
+        // Commit placement
+        buildings.builtObjects.Add(currentSelectedBuilding);
 
+        currentHoveredGridElement.occupied = true;
+        currentHoveredGridElement.connectedBuilding = b;
 
-        }
+        b.placed = true;
+        b.info.connectedGridID = currentHoveredGridElement.gridID;
+        b.info.yRotation = b.transform.localEulerAngles.y;
+        b.ConstructBuilding();
+
+        // Restore layer so future raycasts hit it
+        currentSelectedBuilding.layer = 0;
+
+        currentSelectedBuilding = null;
+        buildingAlreadySelected = false;
     }
-    public void RebuildBuilding(int builingID, int gridID, float buildingLevel, float rotY)
-    {
-        GameObject g = null;
-        foreach(GameObject g0 in buildings.buildabables)
-        {
-            Building b = g0.GetComponent<Building>();
-            if(b.info.ID == builingID)
-            {
-                g =  b.gameObject;
-            }
 
+    // -------------------------------------------------------------------------
+    // Rebuilding from save data
+    // -------------------------------------------------------------------------
+    public void RebuildBuilding(int buildingID, int gridID, float buildingLevel, float rotY)
+    {
+        GameObject prefab = FindBuildingPrefabByID(buildingID);
+        if (prefab == null)
+        {
+            Debug.LogWarning($"RebuildBuilding: no prefab found for ID {buildingID}");
+            return;
         }
-        GameObject building = Instantiate(g);
-        
+
+        GameObject building = Instantiate(prefab);
         buildings.builtObjects.Add(building);
+
         Building loadedBuilding = building.GetComponent<Building>();
         loadedBuilding.info.buildingLevel = buildingLevel;
         loadedBuilding.placed = true;
         loadedBuilding.info.connectedGridID = gridID;
-        
 
-        GridElement myElement = grid[gridID].GetComponent<GridElement>();
-        building.transform.position = new Vector3(myElement.transform.position.x, 0.356f, myElement.transform.position.z);
+        GridElement myElement = grid[gridID];
+        building.transform.position = new Vector3(
+            myElement.transform.position.x,
+            0.356f,
+            myElement.transform.position.z
+        );
         building.transform.rotation = Quaternion.Euler(0, rotY, 0);
         loadedBuilding.info.yRotation = rotY;
 
         myElement.occupied = true;
         myElement.connectedBuilding = loadedBuilding;
-        
     }
 
+    // -------------------------------------------------------------------------
+    // Helpers
+    // -------------------------------------------------------------------------
+
+    /// <summary>Finds the first building prefab whose ID matches.</summary>
+    private GameObject FindBuildingPrefabByID(int id)
+    {
+        foreach (GameObject go in buildings.buildabables)
+        {
+            Building b = go.GetComponent<Building>();
+            if (b != null && b.info.ID == id)
+                return b.gameObject;
+        }
+        return null;
+    }
 }
