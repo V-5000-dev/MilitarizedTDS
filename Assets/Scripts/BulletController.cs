@@ -3,6 +3,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public Transform target;
+    public GameObject impactEffect;
     public float speed = 70f;
     void Update()
     {
@@ -27,7 +28,9 @@ public class BulletController : MonoBehaviour
     }
     public void HitTarget()
     {
-        Debug.Log("HIT");
+        Destroy(gameObject);
+        GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(effect, 2f);
 
     }
 }

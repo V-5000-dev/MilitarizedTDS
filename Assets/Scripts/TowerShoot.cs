@@ -13,12 +13,11 @@ public class TowerShoot : MonoBehaviour
         towerRotate = GetComponent<TowerRotate>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (towerRotate.target = null)
+        if (towerRotate.target == null)
             return;
-        
+
         if (fireCountdown <= 0)
         {
             Shoot();
@@ -26,15 +25,15 @@ public class TowerShoot : MonoBehaviour
         }
         fireCountdown -= Time.deltaTime;
     }
+
     void Shoot()
     {
         Debug.Log("Shoot");
         GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelPoint.position, barrelPoint.rotation);
-        BulletController bulletScript = bullet.GetComponent<BulletController>();
-        if (bullet = null)
+        if (bullet == null)
             return;
-        bulletScript.SeekTarget(towerRotate.target);
-        
-    }
 
+        BulletController bulletScript = bullet.GetComponent<BulletController>();
+        bulletScript.SeekTarget(towerRotate.target);
+    }
 }
