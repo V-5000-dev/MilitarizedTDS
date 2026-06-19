@@ -5,18 +5,16 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public BuildingInfo info;
-    public BuildingPrice price;
+    public float price;
     public string objName;
     public string objDisc;
-    public string objIncome;
-    public string objExpense;
+
     public bool placed;
     public string requiredTag;
 
     public string requiredBuilding;
     public int requiredDistanceFromBuidling;
 
-    private Resources resources;
 
     public float requiredDistanceFromBuilding { get; internal set; }
 

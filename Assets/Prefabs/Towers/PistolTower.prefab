@@ -584,10 +584,75 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1306771618176262040}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4410025259136841235}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4209561391052704115}
   m_SourcePrefab: {fileID: 100100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
 --- !u!4 &724705099396977863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
   m_PrefabInstance: {fileID: 724705099397369415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &724705099397400807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
+  m_PrefabInstance: {fileID: 724705099397369415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4410025259136841235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e384dba657074c2aa5baf1ef1ac6f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  info: {fileID: 0}
+  price: {fileID: 0}
+  objName: 
+  objDisc: 
+  objIncome: 
+  objExpense: 
+  placed: 0
+  requiredTag: 
+  requiredBuilding: 
+  requiredDistanceFromBuidling: 0
+--- !u!114 &-4209561391052704115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c114a3d89c945abaeea26623afae8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingInfo
+  buidlingInfoSaves:
+    bisd_buildingLevel: 0
+    bisd_buildingRecourceProduction: 0
+    bisd_ID: 0
+    bisd_connectedGridID: 0
+    bisd_yRot: 0
+    position:
+      x: 0
+      y: 0
+      z: 0
+    rotation:
+      x: 0
+      y: 0
+      z: 0
+      w: 0
+  ID: 0
+  buildingLevel: 0
+  baseCost: 0
+  yRotation: 0
+  connectedGridID: 0

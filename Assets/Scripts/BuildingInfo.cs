@@ -7,9 +7,7 @@ public class BuildingInfo: MonoBehaviour
     public BuildingInfoSaveData buidlingInfoSaves;
     public int ID;
     public float buildingLevel = 0;
-    public float buildingRecourceProduction;
-    public float baseBuildingProduction;
-    public float baseBuildingExpense;
+    public float baseCost;
     public float yRotation = 0;
     public int connectedGridID;
     public BuildingInfoSaveData GetSaveData()
@@ -19,7 +17,6 @@ public class BuildingInfo: MonoBehaviour
             bisd_connectedGridID = connectedGridID,
             bisd_ID = ID,
             bisd_buildingLevel = buildingLevel,
-            bisd_buildingRecourceProduction = buildingRecourceProduction,
             position = new SerializableVector3(transform.position),
             rotation = new SerializableQuaternion(transform.rotation),
             bisd_yRot = yRotation,
