@@ -31,6 +31,7 @@ public class BulletController : MonoBehaviour
     {
         Destroy(gameObject);
         GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation);
+        target.GetComponent<EnemyHealthBar>().TakeDamage(damage);
         Destroy(effect, 2f);
 
     }

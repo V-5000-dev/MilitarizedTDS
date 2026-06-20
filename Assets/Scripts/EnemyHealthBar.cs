@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class HealthBarManager : EnemyManager
+public class EnemyHealthBar : EnemyManager
 {
  
     private float lerpTimer;
@@ -24,10 +24,8 @@ public class HealthBarManager : EnemyManager
 
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        
-
         Vector3 scale = backHPBar.transform.localScale;
         scale.x = 0.001f * defaultHealth;
         backHPBar.transform.localScale = scale;
@@ -38,16 +36,19 @@ public class HealthBarManager : EnemyManager
         outlineHPBar.transform.localScale = scale;
 
         frontHPBar.color = armorHealthBarColor;
+        health = defaultHealth + 1;
+        TakeDamage(1);
+
+        frontHPBar.fillAmount = 1f;
+        backHPBar.fillAmount = 1f;
+        
+        
         
 
      
 
     }
-    void Start()
-    {
-        health = 1;
-        health = defaultHealth;
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -62,16 +63,15 @@ public class HealthBarManager : EnemyManager
         }      
         
     }
-   
+
     public void UpdateHealthUI()
     {
-      
+
         float FillF = frontHPBar.fillAmount;
         float FillB = backHPBar.fillAmount;
         float HPFraction = health / defaultHealth;
-        if(FillB > HPFraction)
+        if (FillB > HPFraction)
         {
-
             frontHPBar.fillAmount = HPFraction;
             backHPBar.color = Color.red;
             lerpTimer += Time.deltaTime;
@@ -79,7 +79,7 @@ public class HealthBarManager : EnemyManager
             percentComplete = percentComplete * percentComplete;
             backHPBar.fillAmount = Mathf.Lerp(FillB, HPFraction, percentComplete);
         }
-        if(FillF < HPFraction)
+        else if (FillF < HPFraction)   // ← add "else"  
         {
             backHPBar.color = Color.green;
             backHPBar.fillAmount = HPFraction;
@@ -87,8 +87,12 @@ public class HealthBarManager : EnemyManager
             float percentComplete = lerpTimer / chipSpeed;
             percentComplete = percentComplete * percentComplete;
             frontHPBar.fillAmount = Mathf.Lerp(FillF, backHPBar.fillAmount, percentComplete);
-            
         }
+        else
+        {
+            lerpTimer = 0f;
+        }
+
         
     }
     public void TakeDamage(float damage)
