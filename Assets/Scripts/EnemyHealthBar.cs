@@ -20,6 +20,7 @@ public class EnemyHealthBar : EnemyManager
     public float fadeSpeed = 1.5f;
     private float durationTimer;
     private float timeSinceDamage = 0f;
+    public Camera cam;
 
     public Color armorHealthBarColor;
 
@@ -27,6 +28,7 @@ public class EnemyHealthBar : EnemyManager
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Vector3 scale = backHPBar.transform.localScale;
         scale.x = 0.001f * defaultHealth;
         backHPBar.transform.localScale = scale;
@@ -43,6 +45,8 @@ public class EnemyHealthBar : EnemyManager
         backHPBar.fillAmount = 1f;
 
         damageText.gameObject.SetActive(false);
+        damageText.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward,
+        cam.transform.rotation * Vector3.up);
     }
 
 
@@ -50,6 +54,7 @@ public class EnemyHealthBar : EnemyManager
     // Update is called once per frame
     void Update()
     {
+        
         health = Mathf.Clamp(health, 0, defaultHealth);
 
         if (health < 1)
