@@ -26,18 +26,26 @@ public class GridElement : MonoBehaviour
             if (b.grid[i].transform == transform)
             {
                 gridID = i;
-                
+
                 break;
             }
         }
         return;
-        
-     
+
+
     }
     private void Update()
     {
-                meshRenderer.material.color = colorDefault;
-                gameObject.tag = "Grid";
+        meshRenderer.material.color = colorDefault;
+        gameObject.tag = "Grid";
+    }
+    void OnMouseEnter()
+    {
+        meshRenderer.material.color = Color.white;
+    }
+    void OnMouseExit()
+    {
+        meshRenderer.material.color = colorDefault;
     }
 
 
