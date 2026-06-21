@@ -54,14 +54,13 @@ public class EnemyHealthBar : EnemyManager
     void Update()
     {
         health = Mathf.Clamp(health, 0, defaultHealth);
-        UpdateHealthUI();
 
         if (health < 1)
         {
             KillEnemy(false);
 
-        }      
-        
+        }
+        UpdateHealthUI();
     }
 
     public void UpdateHealthUI()
@@ -100,7 +99,8 @@ public class EnemyHealthBar : EnemyManager
         health -= damage;
         lerpTimer = 0f;
         timeSinceDamage = 0f;
-        durationTimer = 0;
+        durationTimer = 0; 
+
     }
     public void Restorehealth(float healAmount)
     {
