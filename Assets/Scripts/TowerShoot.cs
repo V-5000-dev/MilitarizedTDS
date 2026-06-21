@@ -4,18 +4,22 @@ public class TowerShoot : MonoBehaviour
 {
     public TowerRotate towerRotate;
     public float damage ;
-    public float fireRate = 1f;
+    public float fireRate;
+    public string fireType;
+    public float range;
     public int magSize;
     public float reloadSpeed;
     public int armorPen = 0;
     public bool hiddenDetect = false;
     
     private float fireCountdown = 0f;
+    
     public GameObject bulletPrefab;
     public Transform barrelPoint;
 
     void Start()
     {
+        range = towerRotate.range;
         towerRotate = GetComponent<TowerRotate>();
     }
 

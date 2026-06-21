@@ -7,6 +7,8 @@ public class EnemyManager : MonoBehaviour
     public int armorLevel;
     public float speed;
     public int spawnCost;
+    public Material[] materials;
+    public MeshRenderer enemyMesh;
 
     public void KillEnemy(bool damagePlayer)
     {
@@ -14,6 +16,12 @@ public class EnemyManager : MonoBehaviour
             Debug.Log("Damage player");
 
         Destroy(this.gameObject);
-    } 
+    }
+    public void Start()
+    {
+        enemyMesh.material = materials[Random.Range(0, materials.Length)];
+
+    }
+    
 
 }

@@ -576,7 +576,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 78d2b19a1961f47e0af30aa566fc88fd, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -640,6 +640,8 @@ MonoBehaviour:
   armorLevel: 0
   speed: 10
   spawnCost: 0
+  materials: []
+  enemyMesh: {fileID: 0}
   chipSpeed: 1.5
   frontHPBar: {fileID: 5470876361897859081}
   backHPBar: {fileID: 4063845366274842704}
@@ -661,7 +663,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad64ccee55204e5fbb44a4a72f47263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  defaultHealth: 0
+  health: 0
+  armorLevel: 0
   speed: 1
+  spawnCost: 0
+  materials:
+  - {fileID: 2100000, guid: 3b1749178eb794719bef705083590959, type: 2}
+  - {fileID: 2100000, guid: 79426193aa4bd4deeb7e0af67709f416, type: 2}
+  enemyMesh: {fileID: 0}
 --- !u!1 &7508045382342468528
 GameObject:
   m_ObjectHideFlags: 0

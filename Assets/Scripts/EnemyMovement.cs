@@ -1,19 +1,24 @@
+using UnityEditor.SpeedTree.Importer;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : EnemyManager
 {
-    public float speed;
     private Transform targetWaypoint;
     private int indexWaypoint;
 
     void Start()
     {
         targetWaypoint = WaypointsScript.waypoints[0];
+        
+        {
+
+        }
     }
     void Update()
     {
         Vector3 direction = targetWaypoint.position - transform.position;
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+        transform.LookAt(targetWaypoint);
         if (Vector3.Distance(transform.position, targetWaypoint.position) <= 0.01f)
         {
             GetNextWaypoint();
