@@ -24,7 +24,7 @@ public class EnemyHealthBar : EnemyManager
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Vector3 scale = backHPBar.transform.localScale;
         scale.x = 0.001f * defaultHealth;
@@ -36,17 +36,13 @@ public class EnemyHealthBar : EnemyManager
         outlineHPBar.transform.localScale = scale;
 
         frontHPBar.color = armorHealthBarColor;
-        health = defaultHealth + 1;
-        TakeDamage(1);
-
+        health = defaultHealth;
         frontHPBar.fillAmount = 1f;
         backHPBar.fillAmount = 1f;
-        
-        
-        
-
-     
-
+    }
+    void Start()
+    {
+        health -= 1;
     }
 
 
@@ -77,8 +73,9 @@ public class EnemyHealthBar : EnemyManager
             float percentComplete = lerpTimer / chipSpeed;
             percentComplete = percentComplete * percentComplete;
             backHPBar.fillAmount = Mathf.Lerp(FillB, HPFraction, percentComplete);
+            backHPBar.color = armorHealthBarColor;
         }
-        else if (FillF < HPFraction)   // ← add "else"  
+        else if (FillF < HPFraction)
         {
             backHPBar.color = Color.green;
             backHPBar.fillAmount = HPFraction;
