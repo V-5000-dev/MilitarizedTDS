@@ -58,6 +58,7 @@ public class EnemyHealthBar : EnemyManager
         }
         UpdateHealthUI();
     }
+    //commit
 
     public void UpdateHealthUI()
     {
@@ -89,7 +90,7 @@ public class EnemyHealthBar : EnemyManager
             lerpTimer = 0f;
         }
 
-        
+
     }
     public void TakeDamage(float damage)
     {
