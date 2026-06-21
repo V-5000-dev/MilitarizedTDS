@@ -537,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.168
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalPosition.y
@@ -545,23 +545,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.5359998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3826854
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9238787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -569,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -686,6 +686,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
   towerRotate: {fileID: -3391057295740341270}
+  damage: 0
   fireRate: 1
+  magSize: 0
+  reloadSpeed: 0
+  armorPen: 0
+  hiddenDetect: 0
   bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
   barrelPoint: {fileID: 1306771618176262040}

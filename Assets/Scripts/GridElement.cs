@@ -36,12 +36,12 @@ public class GridElement : MonoBehaviour
     }
     private void Update()
     {
-        meshRenderer.material.color = colorDefault;
         gameObject.tag = "Grid";
     }
     void OnMouseEnter()
     {
         meshRenderer.material.color = Color.white;
+        Debug.Log("Mouse Enter");
     }
     void OnMouseExit()
     {
