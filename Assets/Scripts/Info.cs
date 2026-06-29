@@ -9,6 +9,7 @@ public class Info : MonoBehaviour
     public Button btnDestory;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI discText;
+    public TextMeshProUGUI statsText;
     public Image[] levelImages;
     public Image towerlevel;
     public TowerInfoUI towerInfoUI;
@@ -38,7 +39,6 @@ public class Info : MonoBehaviour
         // Only update the UI when the selection actually changes
         if (newSelection != _lastDisplayedBuilding)
         {
-            Debug.Log($"Selection changed: {newSelection}");
             _lastDisplayedBuilding = newSelection;
 
             if (newSelection != null)
@@ -51,8 +51,7 @@ public class Info : MonoBehaviour
                 selectedTower    = null;
                 nameText.text    = "No Building Selected.";
                 discText.text    = " ";
-                towerlevel       = null;
-                towerInfoUI.Hide(); // FIX: was missing — panel stayed open on deselect
+                towerInfoUI.Hide();
             }
         }
 
@@ -79,17 +78,15 @@ public class Info : MonoBehaviour
 
     public void DisplayInfo(Building building)
     {
-        Debug.Log($"DisplayInfo called for: {building.name}");
+        Debug.Log($"DisplayInfo called | tower={selectedTower} | name={selectedTower?.TowerName}");
         selectedBuilding = building;
         selectedTower    = building.GetComponent<TowerData>();
-        Debug.Log($"selectedTower: {selectedTower}");
 
-        nameText.text = selectedBuilding.objName;
+        nameText.text = selectedTower.TowerName;
+        discText.text = selectedTower.TowerName;
 
-        if (selectedTower != null)
-        {
-            discText.text =
-                $"{selectedBuilding.objDisc}\n" +
+
+        statsText.text =
                 $"Damage: {selectedTower.Damage}\n" +
                 $"Armor Pen: {selectedTower.ArmorPen}\n" +
                 $"Fire Rate: {selectedTower.FireRate}\n" +
@@ -98,12 +95,8 @@ public class Info : MonoBehaviour
                 $"Reload Speed: {selectedTower.ReloadSpeed}\n" +
                 $"Hidden Detection: {selectedTower.HiddenDetect}";
 
-            towerInfoUI.ShowTower(selectedTower);
-        }
-        else
-        {
-            discText.text = selectedBuilding.objDisc;
-            towerInfoUI.Hide();
-        }
+        towerInfoUI.ShowTower(selectedTower);
+
+        
     }
 }

@@ -8,7 +8,7 @@ public class TowerClass : ScriptableObject
     public string towerName;
 
     [TextArea(2, 4)]
-    public string description;
+    public string towerDisc;
 
     [Header("Visuals")]
     public Sprite icon;

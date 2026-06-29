@@ -30,43 +30,42 @@ public class TowerInfoUI : MonoBehaviour
     {
         _canvas = GetComponentInParent<Canvas>();
 
-        if (panelRoot != null)
-            panelRoot.SetActive(false);
+        panelRoot.SetActive(false);
 
-        if (tooltipPanel != null)
-            tooltipPanel.SetActive(false);
+        tooltipPanel.SetActive(false);
+        foreach (var graphic in tooltipPanel.GetComponentsInChildren<Graphic>(true))
+            graphic.raycastTarget = false;
     }
 
     private void Update()
     {
-        if (tooltipPanel != null && tooltipPanel.activeSelf)
+        if (tooltipPanel.activeSelf)
             PositionTooltipAtMouse();
     }
 
-public void ShowTower(Tower tower)
-{
-    if (tower == null) { Hide(); return; }
+    public void ShowTower(Tower tower)
+    {
+        if (tower == null) { Hide(); return; }
 
-    if (towerNameText != null)        towerNameText.text        = tower.TowerName;
-    if (towerDescriptionText != null) towerDescriptionText.text = tower.Description;
+        towerNameText.text        = tower.TowerName;
+        towerDescriptionText.text = tower.TowerDisc;
 
-    // Activate the panel FIRST so the hierarchy (including tagIconContainer) is active
-    if (panelRoot != null)
+        // Activate the panel FIRST so the hierarchy (including tagIconContainer) is active
         panelRoot.SetActive(true);
 
-    // THEN spawn tag icons, so their Awake() runs correctly
-    RebuildTagIcons(tower.Tags);
-}
+        // THEN spawn tag icons, so their Awake() runs correctly
+        RebuildTagIcons(tower.Tags);
+    }
 
     public void Hide()
     {
-        if (panelRoot != null) panelRoot.SetActive(false);
+        panelRoot.SetActive(false);
         HideTooltip();
     }
 
     public void ShowTooltip(TowerTag tag)
     {
-        if (tooltipPanel == null || tag == null) return;
+        if (tag == null) return;
 
         tooltipNameText.text        = tag.tagName;
         tooltipDescriptionText.text = tag.description;
@@ -78,8 +77,7 @@ public void ShowTower(Tower tower)
 
     public void HideTooltip()
     {
-        if (tooltipPanel != null)
-            tooltipPanel.SetActive(false);
+        tooltipPanel.SetActive(false);
     }
 
     private void RebuildTagIcons(IReadOnlyList<TowerTag> tags)
@@ -87,8 +85,6 @@ public void ShowTower(Tower tower)
         foreach (GameObject icon in _spawnedIcons)
             Destroy(icon);
         _spawnedIcons.Clear();
-
-        if (tagIconPrefab == null || tagIconContainer == null) return;
 
         foreach (TowerTag tag in tags)
         {
@@ -98,8 +94,7 @@ public void ShowTower(Tower tower)
             iconGO.name = $"TagIcon_{tag.tagName}";
 
             TagIconUI iconUI = iconGO.GetComponent<TagIconUI>();
-            if (iconUI != null)
-                iconUI.Initialize(tag, this);
+            iconUI.Initialize(tag, this);
 
             _spawnedIcons.Add(iconGO);
         }
@@ -107,20 +102,16 @@ public void ShowTower(Tower tower)
 
     private void PositionTooltipAtMouse()
     {
-            if (_canvas == null || tooltipPanel == null) return;
+        RectTransform tooltipRect = tooltipPanel.GetComponent<RectTransform>();
+        RectTransform parentRect  = tooltipRect.parent as RectTransform;
 
-    RectTransform tooltipRect = tooltipPanel.GetComponent<RectTransform>();
-    RectTransform parentRect  = tooltipRect.parent as RectTransform;
-
-    Vector2 localPoint;
-    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        parentRect,   // convert into the tooltip's actual parent, not the canvas
-        Input.mousePosition,
-        _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _canvas.worldCamera,
-        out localPoint
-    );
-
-
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            parentRect,
+            Input.mousePosition,
+            _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _canvas.worldCamera,
+            out localPoint
+        );
 
         tooltipRect.localPosition = localPoint + tooltipOffset;
 

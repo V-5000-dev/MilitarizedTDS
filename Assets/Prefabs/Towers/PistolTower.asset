@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
   m_Name: PistolTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: 
-  description: 
+  towerName: Pistol Tower
+  description: Cheap early game tower. Average damage and slow fire rate.
   icon: {fileID: 0}
-  damage: 50
-  fireRate: 1
+  damage: 35
+  fireRate: 0.5
   range: 3
   cost: 100
   magSize: 10
