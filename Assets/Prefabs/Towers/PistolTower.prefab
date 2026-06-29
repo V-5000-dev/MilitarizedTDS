@@ -767,16 +767,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6293833388243711892}
+      addedObject: {fileID: 5270977322671127319}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -1897942994292172377}
+      addedObject: {fileID: 4914756796132145868}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -3391057295740341270}
+      addedObject: {fileID: -3816769313879622468}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 106285335942444969}
+      addedObject: {fileID: 2802409281857861087}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7946851531887669518}
   m_SourcePrefab: {fileID: 100100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
 --- !u!4 &724705099396977863 stripped
 Transform:
@@ -788,7 +791,78 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
   m_PrefabInstance: {fileID: 724705099397369415}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6293833388243711892
+--- !u!114 &5270977322671127319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea279b8f42a634f4db282e62fc18c6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerClass: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
+  towerName: TowerName
+  description: 
+  icon: {fileID: 0}
+  damage: 50
+  fireRate: 1
+  range: 3
+  cost: 100
+  magSize: 10
+  reloadSpeed: 1
+  armorPen: 0
+  hiddenDetect: 0
+--- !u!114 &4914756796132145868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e384dba657074c2aa5baf1ef1ac6f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  info: {fileID: 0}
+  price: 100
+  objName: Test
+  objDisc: Test
+  placed: 0
+--- !u!114 &-3816769313879622468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76dd2949454144c0caaf98e9ed19a1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotate
+  target: {fileID: 0}
+  enemyTag: Enemy
+  turretBase: {fileID: 724705099396977863}
+--- !u!114 &2802409281857861087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724705099397400807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
+  towerRotate: {fileID: -3816769313879622468}
+  bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
+  barrelPoint: {fileID: 1306771618176262040}
+--- !u!114 &-7946851531887669518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -815,62 +889,7 @@ MonoBehaviour:
       z: 0
       w: 0
   ID: 0
-  buildingLevel: 1
+  buildingLevel: 0
   baseCost: 0
   yRotation: 0
   connectedGridID: 0
---- !u!114 &-1897942994292172377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724705099397400807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e384dba657074c2aa5baf1ef1ac6f0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Building
-  info: {fileID: 6293833388243711892}
-  price: 100
-  objName: Pistol Tower
-  objDisc: Pistol Tower
-  placed: 0
---- !u!114 &-3391057295740341270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724705099397400807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76dd2949454144c0caaf98e9ed19a1a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerRotate
-  target: {fileID: 0}
-  range: 3
-  enemyTag: Enemy
-  turretBase: {fileID: 724705099396977863}
-  rotationSpeed: 10
---- !u!114 &106285335942444969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724705099397400807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
-  towerRotate: {fileID: -3391057295740341270}
-  damage: 0
-  fireRate: 1
-  magSize: 0
-  reloadSpeed: 0
-  armorPen: 0
-  hiddenDetect: 0
-  bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
-  barrelPoint: {fileID: 1306771618176262040}

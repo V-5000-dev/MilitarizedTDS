@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 2490200174305193020}
   - component: {fileID: 8856264270028798994}
   - component: {fileID: 714339860423374620}
+  - component: {fileID: 4734255713345512878}
   m_Layer: 0
   m_Name: EnemyNormalArmor1
   m_TagString: Enemy
@@ -374,11 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c65bb75974c43dcab7f017644c4020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarManager
+  enemyManager: {fileID: 0}
   defaultHealth: 100
   health: 0
-  armorLevel: 1
-  speed: 10
-  spawnCost: 0
   chipSpeed: 1.5
   frontHPBar: {fileID: 154511418717392049}
   backHPBar: {fileID: 297410854974983526}
@@ -401,6 +400,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   speed: 1
+--- !u!114 &4734255713345512878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556213738375639225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571c63befb564d8b96f522a79376910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
+  defaultHealth: 10
+  health: 0
+  armorLevel: 0
+  speed: 0
+  spawnCost: 2
+  materials: []
+  enemyMesh: {fileID: 0}
 --- !u!1 &4136417077222184504
 GameObject:
   m_ObjectHideFlags: 0

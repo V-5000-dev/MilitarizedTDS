@@ -2,49 +2,41 @@ using UnityEngine;
 
 public class TowerShoot : MonoBehaviour
 {
-    public TowerRotate towerRotate;
-    public float damage ;
-    public float fireRate;
-    public string fireType;
-    public float range;
-    public int magSize;
-    public float reloadSpeed;
-    public int armorPen = 0;
-    public bool hiddenDetect = false;
-    
-    private float fireCountdown = 0f;
-    
-    public GameObject bulletPrefab;
-    public Transform barrelPoint;
+    [SerializeField] private TowerRotate towerRotate;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform barrelPoint;
 
-    void Start()
+    private Tower _tower;
+    private float fireCountdown = 0f;
+
+    private void Awake()
     {
-        range = towerRotate.range;
-        towerRotate = GetComponent<TowerRotate>();
+        _tower = GetComponent<Tower>();
+        if (towerRotate == null)
+            towerRotate = GetComponent<TowerRotate>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (towerRotate.target == null)
+        if (towerRotate.Target == null)
             return;
 
         if (fireCountdown <= 0)
         {
             Shoot();
-            fireCountdown = 1f / fireRate;
+            fireCountdown = 1f / _tower.FireRate;
         }
         fireCountdown -= Time.deltaTime;
     }
 
-    void Shoot()
+    private void Shoot()
     {
-        Debug.Log("Shoot");
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelPoint.position, barrelPoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, barrelPoint.position, barrelPoint.rotation);
         if (bullet == null)
             return;
 
         BulletController bulletScript = bullet.GetComponent<BulletController>();
-        bulletScript.damage = damage;
-        bulletScript.SeekTarget(towerRotate.target);
+        bulletScript.damage = _tower.Damage;
+        bulletScript.SeekTarget(towerRotate.Target);
     }
 }

@@ -2,35 +2,42 @@ using UnityEngine;
 
 public class TowerRotate : MonoBehaviour
 {
-    public Transform target;
-    public float range = 3;
-    public string enemyTag = "Enemy";
-    public Transform turretBase;
-    public float rotationSpeed = 10f;
+    [SerializeField] private Transform target;
+    [SerializeField] private string enemyTag = "Enemy";
+    [SerializeField] private Transform turretBase;
 
-    void Start()
+    private Tower _tower;
+
+    public Transform Target => target;
+
+    private void Awake()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        _tower = GetComponent<Tower>();
     }
 
-    bool targetInRange(GameObject enemy)
+    private void Start()
+    {
+        InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
+    }
+
+    private bool TargetInRange(GameObject enemy)
     {
         float distance = Vector3.Distance(enemy.transform.position, transform.position);
-        return distance <= range;
+        return distance <= _tower.Range;
     }
 
-    void Update()
+    private void Update()
     {
         if (target == null)
             return;
 
         Vector3 dir = target.position - transform.position;
         Quaternion rot = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(turretBase.rotation, rot, Time.deltaTime * rotationSpeed).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(turretBase.rotation, rot, Time.deltaTime * Tower.rotationSpeed).eulerAngles;
         turretBase.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    void UpdateTarget()
+    private void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         GameObject nearestEnemy = null;
@@ -46,21 +53,24 @@ public class TowerRotate : MonoBehaviour
             }
         }
 
-        if (target != null && target.gameObject != null && targetInRange(target.gameObject))
+        if (target != null && target.gameObject != null && TargetInRange(target.gameObject))
         {
             if (nearestEnemy == null || nearestEnemy.transform == target)
                 return;
         }
 
-        if (nearestEnemy != null && targetInRange(nearestEnemy))
+        if (nearestEnemy != null && TargetInRange(nearestEnemy))
             target = nearestEnemy.transform;
         else
             target = null;
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
+        if (_tower == null) _tower = GetComponent<Tower>();
+        if (_tower == null) return;
+
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(range * 2, 0.1f, range * 2));
+        Gizmos.DrawWireCube(transform.position, new Vector3(_tower.Range * 2, 0.1f, _tower.Range * 2));
     }
 }

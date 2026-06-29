@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
-[System.Serializable]
+
 public class Info : MonoBehaviour
 {
     public Button btnDestory;
@@ -12,68 +11,96 @@ public class Info : MonoBehaviour
     public TextMeshProUGUI discText;
     public Image[] levelImages;
     public Image towerlevel;
+    public TowerInfoUI towerInfoUI;
+
     private BuildBuilding build;
     private Building selectedBuilding;
-    private TowerShoot selectedTower;
-    
-   
-    // Start is called before the first frame update
+    private Tower selectedTower;
+
+    // Track last selection so we only redraw when it changes
+    private Building _lastDisplayedBuilding;
+
     void Awake()
     {
-       
         build = FindObjectOfType<BuildBuilding>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if ((build.currentSelectedGridElement != null && build.currentSelectedGridElement.connectedBuilding != null) || build.currentSelectedBuilding != null)
-        {         
-        //    selectedBuilding = build.currentSelectedGridElement.connectedBuilding;
-         //   nameText.text = selectedBuilding.objName;
-         //   discText.text = selectedBuilding.objDisc;
-            DisplayInfo();
-        }
-        else
+        // Resolve what is currently selected
+        Building newSelection = null;
+
+        if (build.currentSelectedGridElement != null && build.currentSelectedGridElement.connectedBuilding != null)
+            newSelection = build.currentSelectedGridElement.connectedBuilding;
+        else if (build.currentSelectedBuilding != null)
+            newSelection = build.currentSelectedBuilding.GetComponent<Building>();
+
+        // Only update the UI when the selection actually changes
+        if (newSelection != _lastDisplayedBuilding)
         {
-            
-            nameText.text = "No Building Selected.";
-            selectedBuilding = null;
-            discText.text = " ";
-            towerlevel = null;
-           
-          
+            _lastDisplayedBuilding = newSelection;
+
+            if (newSelection != null)
+            {
+                DisplayInfo(newSelection);
+            }
+            else
+            {
+                selectedBuilding = null;
+                selectedTower    = null;
+                nameText.text    = "No Building Selected.";
+                discText.text    = " ";
+                towerlevel       = null;
+                towerInfoUI.Hide(); // FIX: was missing — panel stayed open on deselect
+            }
         }
-        if (selectedBuilding)
-            btnDestory.interactable = selectedBuilding;
-        else
-            btnDestory.interactable = false;
-    
+
+        btnDestory.interactable = selectedBuilding != null;
     }
+
     public void OnBtnDestory()
     {
-        if (selectedBuilding)
-            build.currentSelectedGridElement.occupied = false;
+        if (selectedBuilding == null) return;
+
+        build.currentSelectedGridElement.occupied = false;
         RefundResources();
         build.buildings.builtObjects.Remove(selectedBuilding.gameObject);
         Destroy(selectedBuilding.gameObject);
-        
+
+        // Reset so the UI clears after destruction
+        _lastDisplayedBuilding = null;
     }
+
     public void RefundResources()
     {
-        
+        // TODO: implement refund logic
     }
-    public void DisplayInfo()
-    {
 
-        selectedBuilding = build.currentSelectedGridElement.connectedBuilding;
-        selectedTower = selectedBuilding.gameObject.GetComponent<TowerShoot>();
-        if (selectedBuilding == null)
-            selectedBuilding = build.currentSelectedBuilding.GetComponent<Building>();
+    public void DisplayInfo(Building building)
+    {
+        selectedBuilding = building;
+        selectedTower    = building.GetComponent<Tower>();
+
         nameText.text = selectedBuilding.objName;
-        discText.text = $"{selectedBuilding.objDisc} \n Damage: {selectedTower.damage} \n Armor Pen: {selectedTower.armorPen} \n Fire Rate: {selectedTower.fireRate} \n Range: {selectedTower.range} \n Mag Size: {selectedTower.magSize} \n Reload Speed {selectedTower.reloadSpeed} \n Hidden Detection: {selectedTower.hiddenDetect}"
-        ;
-        
+
+        if (selectedTower != null)
+        {
+            discText.text =
+                $"{selectedBuilding.objDisc}\n" +
+                $"Damage: {selectedTower.Damage}\n" +
+                $"Armor Pen: {selectedTower.ArmorPen}\n" +
+                $"Fire Rate: {selectedTower.FireRate}\n" +
+                $"Range: {selectedTower.Range}\n" +
+                $"Mag Size: {selectedTower.MagSize}\n" +
+                $"Reload Speed: {selectedTower.ReloadSpeed}\n" +
+                $"Hidden Detection: {selectedTower.HiddenDetect}";
+
+            towerInfoUI.ShowTower(selectedTower);
+        }
+        else
+        {
+            discText.text = selectedBuilding.objDisc;
+            towerInfoUI.Hide();
+        }
     }
 }

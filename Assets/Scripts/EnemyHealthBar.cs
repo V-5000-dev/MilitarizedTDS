@@ -5,10 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class EnemyHealthBar : EnemyManager
+public class EnemyHealthBar : MonoBehaviour
 {
- 
+    public EnemyManager enemyManager;
+    public int defaultHealth;
+
+    public float health;
     private float lerpTimer;
+    private float damage;
     [Header("Health Bar")]
     public float chipSpeed = 3f;
     public Image frontHPBar;
@@ -59,7 +63,7 @@ public class EnemyHealthBar : EnemyManager
 
         if (health < 1)
         {
-            KillEnemy(false);
+            enemyManager.KillEnemy(false);
 
         }
         UpdateHealthUI();

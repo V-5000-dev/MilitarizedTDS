@@ -1,11 +1,12 @@
 using UnityEditor.SpeedTree.Importer;
 using UnityEngine;
 
-public class EnemyMovement : EnemyManager
+public class EnemyMovement : MonoBehaviour
 {
     private Transform targetWaypoint;
     private int indexWaypoint;
-
+    public float speed;
+    
     void Start()
     {
         targetWaypoint = WaypointsScript.waypoints[0];
