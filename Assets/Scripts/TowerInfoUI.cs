@@ -43,20 +43,20 @@ public class TowerInfoUI : MonoBehaviour
             PositionTooltipAtMouse();
     }
 
-    public void ShowTower(Tower tower)
-    {
-        Debug.Log($"ShowTower called. tower={tower}, panelRoot={panelRoot}");
-        if (tower == null) { Hide(); return; }
+public void ShowTower(Tower tower)
+{
+    if (tower == null) { Hide(); return; }
 
-        // FIX: tower.name is the GameObject name — use tower.TowerName instead
-        if (towerNameText != null)        towerNameText.text        = tower.TowerName;
-        if (towerDescriptionText != null) towerDescriptionText.text = tower.Description;
+    if (towerNameText != null)        towerNameText.text        = tower.TowerName;
+    if (towerDescriptionText != null) towerDescriptionText.text = tower.Description;
 
-        RebuildTagIcons(tower.Tags);
+    // Activate the panel FIRST so the hierarchy (including tagIconContainer) is active
+    if (panelRoot != null)
+        panelRoot.SetActive(true);
 
-        if (panelRoot != null)
-            panelRoot.SetActive(true);
-    }
+    // THEN spawn tag icons, so their Awake() runs correctly
+    RebuildTagIcons(tower.Tags);
+}
 
     public void Hide()
     {
@@ -107,17 +107,20 @@ public class TowerInfoUI : MonoBehaviour
 
     private void PositionTooltipAtMouse()
     {
-        if (_canvas == null || tooltipPanel == null) return;
+            if (_canvas == null || tooltipPanel == null) return;
 
-        RectTransform tooltipRect = tooltipPanel.GetComponent<RectTransform>();
-        Vector2 localPoint;
+    RectTransform tooltipRect = tooltipPanel.GetComponent<RectTransform>();
+    RectTransform parentRect  = tooltipRect.parent as RectTransform;
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            _canvas.transform as RectTransform,
-            Input.mousePosition,
-            _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _canvas.worldCamera,
-            out localPoint
-        );
+    Vector2 localPoint;
+    RectTransformUtility.ScreenPointToLocalPointInRectangle(
+        parentRect,   // convert into the tooltip's actual parent, not the canvas
+        Input.mousePosition,
+        _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _canvas.worldCamera,
+        out localPoint
+    );
+
+
 
         tooltipRect.localPosition = localPoint + tooltipOffset;
 
