@@ -806,7 +806,7 @@ MonoBehaviour:
   towerClass: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
   towerName: TowerName
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 50
   fireRate: 1
   range: 3

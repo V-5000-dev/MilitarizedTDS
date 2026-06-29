@@ -14,7 +14,6 @@ public class BuyButton : MonoBehaviour
     public Color defaultColor;
 
     private Button btn;
-    private Resources resources;
 
     public bool isInteractable = false;
 
@@ -27,10 +26,10 @@ public class BuyButton : MonoBehaviour
 
         foreach (GameObject g0 in buildings.buildabables)
         {
-            Building b = g0.GetComponent<Building>();
-            if (b.info.ID == connectedBuildingID)
+            BuildingInfo info = g0.GetComponent<BuildingInfo>();
+            if (info != null && info.ID == connectedBuildingID)
             {
-                connectedBuilding = b;
+                connectedBuilding = g0.GetComponent<Building>();
                 break;
             }
 

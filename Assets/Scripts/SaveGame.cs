@@ -14,7 +14,6 @@ public class SavedProfile
 public class SaveGame : MonoBehaviour
 {
     public SavedProfile profile;
-    private Resources resources;
     private Buildings buildings;
     private BuildBuilding build;
     

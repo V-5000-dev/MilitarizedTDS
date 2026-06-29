@@ -38,6 +38,7 @@ public class Info : MonoBehaviour
         // Only update the UI when the selection actually changes
         if (newSelection != _lastDisplayedBuilding)
         {
+            Debug.Log($"Selection changed: {newSelection}");
             _lastDisplayedBuilding = newSelection;
 
             if (newSelection != null)
@@ -78,8 +79,10 @@ public class Info : MonoBehaviour
 
     public void DisplayInfo(Building building)
     {
+        Debug.Log($"DisplayInfo called for: {building.name}");
         selectedBuilding = building;
-        selectedTower    = building.GetComponent<Tower>();
+        selectedTower    = building.GetComponent<TowerData>();
+        Debug.Log($"selectedTower: {selectedTower}");
 
         nameText.text = selectedBuilding.objName;
 

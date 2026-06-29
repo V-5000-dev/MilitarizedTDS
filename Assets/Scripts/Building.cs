@@ -14,7 +14,11 @@ public class Building : MonoBehaviour
 
     public float requiredDistanceFromBuilding { get; internal set; }
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        if (info == null)
+            info = GetComponent<BuildingInfo>();
+    }
 
     // Update is called once per frame
     void Update()

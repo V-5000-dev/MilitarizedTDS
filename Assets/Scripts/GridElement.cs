@@ -41,7 +41,6 @@ public class GridElement : MonoBehaviour
     void OnMouseEnter()
     {
         meshRenderer.material.color = Color.white;
-        Debug.Log("Mouse Enter");
     }
     void OnMouseExit()
     {

@@ -109,7 +109,7 @@ public class BuildBuilding : MonoBehaviour
         Vector3 spawnPos = new Vector3(5, 0, 0);
         currentSelectedBuilding = Instantiate(prefab, spawnPos, Quaternion.identity);
 
-     //   info.DisplayInfo(currentSelectedBuilding.bui);
+       info.DisplayInfo(currentSelectedBuilding.GetComponent<Building>());
         buildingAlreadySelected = true;
     }
 
@@ -237,9 +237,9 @@ public class BuildBuilding : MonoBehaviour
     {
         foreach (GameObject go in buildings.buildabables)
         {
-            Building b = go.GetComponent<Building>();
-            if (b != null && b.info.ID == id)
-                return b.gameObject;
+            BuildingInfo info = go.GetComponent<BuildingInfo>();
+            if (info != null && info.ID == id)
+                return go;
         }
         return null;
     }

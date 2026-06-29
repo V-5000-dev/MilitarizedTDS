@@ -45,6 +45,7 @@ public class TowerInfoUI : MonoBehaviour
 
     public void ShowTower(Tower tower)
     {
+        Debug.Log($"ShowTower called. tower={tower}, panelRoot={panelRoot}");
         if (tower == null) { Hide(); return; }
 
         // FIX: tower.name is the GameObject name — use tower.TowerName instead
