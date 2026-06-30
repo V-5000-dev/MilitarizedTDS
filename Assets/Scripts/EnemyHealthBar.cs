@@ -77,6 +77,7 @@ public class EnemyHealthBar : MonoBehaviour
         float HPFraction = health / defaultHealth;
         if (FillB > HPFraction)
         {
+            
             damageText.gameObject.SetActive(true);
             frontHPBar.fillAmount = HPFraction;
             backHPBar.color = Color.red;
@@ -102,6 +103,7 @@ public class EnemyHealthBar : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        damageText.text = "-" + damage;
         lerpTimer = 0f;
         timeSinceDamage = 0f;
         durationTimer = 0; 

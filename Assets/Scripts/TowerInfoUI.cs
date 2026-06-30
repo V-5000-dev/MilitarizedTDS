@@ -17,6 +17,9 @@ public class TowerInfoUI : MonoBehaviour
     public GameObject tagIconPrefab;
     public Transform tagIconContainer;
 
+    [Header("Upgrade Tag Icons")]
+    public Transform upgradeTagIconContainer;
+
     [Header("Tooltip")]
     public GameObject tooltipPanel;
     public TextMeshProUGUI tooltipNameText;
@@ -24,6 +27,7 @@ public class TowerInfoUI : MonoBehaviour
     public Vector2 tooltipOffset = new Vector2(10f, 10f);
 
     private readonly List<GameObject> _spawnedIcons = new List<GameObject>();
+    private readonly List<GameObject> _spawnedUpgradeIcons = new List<GameObject>();
     private Canvas _canvas;
 
     private void Awake()
@@ -47,14 +51,26 @@ public class TowerInfoUI : MonoBehaviour
     {
         if (tower == null) { Hide(); return; }
 
-        towerNameText.text        = tower.TowerName;
-        towerDescriptionText.text = tower.TowerDisc;
+ //       towerNameText.text        = tower.TowerName;
+    //    towerDescriptionText.text = tower.TowerDisc;
+
 
         // Activate the panel FIRST so the hierarchy (including tagIconContainer) is active
         panelRoot.SetActive(true);
 
         // THEN spawn tag icons, so their Awake() runs correctly
-        RebuildTagIcons(tower.Tags);
+        RebuildTagIcons(tower.Tags, tagIconContainer, _spawnedIcons);
+    }
+
+    public void ShowUpgradeTags(Tower tower)
+    {
+        if (tower == null)
+        {
+            RebuildTagIcons(System.Array.Empty<TowerTag>(), upgradeTagIconContainer, _spawnedUpgradeIcons);
+            return;
+        }
+
+        RebuildTagIcons(tower.NextTier.tags, upgradeTagIconContainer, _spawnedUpgradeIcons);
     }
 
     public void Hide()
@@ -80,23 +96,23 @@ public class TowerInfoUI : MonoBehaviour
         tooltipPanel.SetActive(false);
     }
 
-    private void RebuildTagIcons(IReadOnlyList<TowerTag> tags)
+    private void RebuildTagIcons(IReadOnlyList<TowerTag> tags, Transform container, List<GameObject> spawnedIcons)
     {
-        foreach (GameObject icon in _spawnedIcons)
+        foreach (GameObject icon in spawnedIcons)
             Destroy(icon);
-        _spawnedIcons.Clear();
+        spawnedIcons.Clear();
 
         foreach (TowerTag tag in tags)
         {
             if (tag == null) continue;
 
-            GameObject iconGO = Instantiate(tagIconPrefab, tagIconContainer);
+            GameObject iconGO = Instantiate(tagIconPrefab, container);
             iconGO.name = $"TagIcon_{tag.tagName}";
 
             TagIconUI iconUI = iconGO.GetComponent<TagIconUI>();
             iconUI.Initialize(tag, this);
 
-            _spawnedIcons.Add(iconGO);
+            spawnedIcons.Add(iconGO);
         }
     }
 
@@ -113,7 +129,14 @@ public class TowerInfoUI : MonoBehaviour
             out localPoint
         );
 
-        tooltipRect.localPosition = localPoint + tooltipOffset;
+        // localPosition marks the rect's pivot, not its bottom-left corner.
+        // Offset by the pivot so the tooltip's bottom-left corner sits at the mouse + offset,
+        // making the tooltip expand up and to the right of the cursor regardless of pivot setting.
+        Vector2 pivotOffset = new Vector2(
+            tooltipRect.rect.width  * tooltipRect.pivot.x,
+            tooltipRect.rect.height * tooltipRect.pivot.y
+        );
+        tooltipRect.localPosition = localPoint + tooltipOffset + pivotOffset;
 
         RectTransform canvasRect = _canvas.transform as RectTransform;
         Vector3[] corners       = new Vector3[4];

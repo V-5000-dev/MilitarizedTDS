@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c65bb75974c43dcab7f017644c4020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarManager
-  enemyManager: {fileID: 0}
+  enemyManager: {fileID: 4734255713345512878}
   defaultHealth: 100
   health: 0
   chipSpeed: 1.5
@@ -417,8 +417,12 @@ MonoBehaviour:
   armorLevel: 0
   speed: 0
   spawnCost: 2
-  materials: []
-  enemyMesh: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: 3b1749178eb794719bef705083590959, type: 2}
+  - {fileID: 2100000, guid: 665962bcfeee34cf1ad853f6938d11dd, type: 2}
+  - {fileID: 2100000, guid: a9d30c86b99fc4314bce1e3c835e8068, type: 2}
+  - {fileID: 2100000, guid: a47162f1a6c2144b5a153e9c06589a19, type: 2}
+  enemyMesh: {fileID: 8627941904892769099}
 --- !u!1 &4136417077222184504
 GameObject:
   m_ObjectHideFlags: 0

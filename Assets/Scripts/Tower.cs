@@ -1,13 +1,17 @@
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public abstract class Tower : MonoBehaviour
 {
     [SerializeField] private TowerClass towerClass;
+    private TowerClass nextTier;
+
+    private int upgradeCost;
 
     private string towerName;
     private string towerDisc;
-    private Sprite icon;
+    private Sprite towerIcon;
     private float damage;
     private float fireRate;
     private float range;
@@ -21,9 +25,13 @@ public abstract class Tower : MonoBehaviour
     public const float projectileSpeed = 10f;
 
     public TowerClass TowerClassData => towerClass;
+    public TowerClass NextTier => nextTier;
+
     public string TowerName => towerName;
     public string TowerDisc => towerDisc;
-    public Sprite Icon => icon;
+
+    private int UpgradeCost => upgradeCost;
+    public Sprite TowerIcon => towerIcon;
     public float Damage => damage;
     public float FireRate => fireRate;
     public float Range => range;
@@ -45,6 +53,9 @@ public abstract class Tower : MonoBehaviour
     public void ApplyClass(TowerClass newClass)
     {
         towerName = newClass.towerName;
+        towerIcon = newClass.towerIcon;
+        nextTier = newClass.nextTier;
+        upgradeCost = newClass.upgradeCost;
         towerDisc = newClass.towerDisc;
         towerClass = newClass;
         damage = newClass.damage;
@@ -55,5 +66,9 @@ public abstract class Tower : MonoBehaviour
         reloadSpeed = newClass.reloadSpeed;
         armorPen = newClass.armorPen;
         hiddenDetect = newClass.hiddenDetect;
+
+        OnClassApplied();
     }
+
+    protected virtual void OnClassApplied() { }
 }

@@ -11,7 +11,7 @@ public class TowerClass : ScriptableObject
     public string towerDisc;
 
     [Header("Visuals")]
-    public Sprite icon;
+    public Sprite towerIcon;
 
     [Header("Stats")]
     public float damage;
@@ -24,6 +24,12 @@ public class TowerClass : ScriptableObject
     public bool hiddenDetect = false;
 
     [Header("Display Tags")]
-    [Tooltip("The tags shown on the tower's info screen (e.g. Semi-Automatic, Armor Pen II, Explosive).")]
     public List<TowerTag> tags = new List<TowerTag>();
+    [Header("Upgrade")]
+    public TowerClass nextTier;
+    [Tooltip("Cost to upgrade into nextTier.")]
+    public int upgradeCost;
+
+    public bool HasUpgrade => nextTier != null;
+   
 }

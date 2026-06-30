@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildBuilding : MonoBehaviour
 {
@@ -48,6 +49,18 @@ public class BuildBuilding : MonoBehaviour
     // -------------------------------------------------------------------------
     private void HandleHover()
     {
+        // Don't let clicks on UI (buttons, panels, etc.) hit the world underneath
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            if (currentHoveredGridElement != null)
+            {
+                currentHoveredGridElement.GetComponent<MeshRenderer>().material.color =
+                    currentHoveredGridElement.colorDefault;
+                currentHoveredGridElement = null;
+            }
+            return;
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (!Physics.Raycast(ray, out rayHit))

@@ -7,12 +7,19 @@ using TMPro;
 public class Info : MonoBehaviour
 {
     public Button btnDestory;
+    public Button btnUpgrade;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI discText;
     public TextMeshProUGUI statsText;
     public Image[] levelImages;
     public Image towerlevel;
     public TowerInfoUI towerInfoUI;
+    public GameObject upgradePanel;
+    public GameObject infoPanel;
+    public TextMeshProUGUI upgradeTitle;
+    public TextMeshProUGUI upgradeText;
+    public Button upgradeConfirm;
+
 
     private BuildBuilding build;
     private Building selectedBuilding;
@@ -48,9 +55,9 @@ public class Info : MonoBehaviour
             else
             {
                 selectedBuilding = null;
-                selectedTower    = null;
-                nameText.text    = "No Building Selected.";
-                discText.text    = " ";
+                selectedTower = null;
+                nameText.text = "No Building Selected.";
+                discText.text = " ";
                 towerInfoUI.Hide();
             }
         }
@@ -63,29 +70,80 @@ public class Info : MonoBehaviour
         if (selectedBuilding == null) return;
 
         build.currentSelectedGridElement.occupied = false;
-        RefundResources();
         build.buildings.builtObjects.Remove(selectedBuilding.gameObject);
         Destroy(selectedBuilding.gameObject);
 
         // Reset so the UI clears after destruction
         _lastDisplayedBuilding = null;
     }
-
-    public void RefundResources()
+    public void OnBtnUpgrade()
     {
-        // TODO: implement refund logic
+        if (selectedBuilding == null) return;
+
+        upgradePanel.SetActive(true);
+        infoPanel.SetActive(false);
+        selectedTower = selectedBuilding.GetComponent<TowerData>();
+        if (selectedTower.NextTier == null) return;
+
+        TowerClass nextTier = selectedTower.NextTier;
+
+        upgradePanel.SetActive(true);
+        upgradeTitle.text = nextTier.towerName;
+
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        AppendStatChange(sb, "Damage", selectedTower.Damage, nextTier.damage);
+        AppendStatChange(sb, "Armor Pen", selectedTower.ArmorPen, nextTier.armorPen);
+        AppendStatChange(sb, "Fire Rate", selectedTower.FireRate, nextTier.fireRate);
+        AppendStatChange(sb, "Range", selectedTower.Range, nextTier.range);
+        AppendStatChange(sb, "Mag Size", selectedTower.MagSize, nextTier.magSize);
+        AppendStatChange(sb, "Reload Speed", selectedTower.ReloadSpeed, nextTier.reloadSpeed);
+        AppendStatChange(sb, "Hidden Detection", selectedTower.HiddenDetect, nextTier.hiddenDetect);
+
+        upgradeText.text = sb.ToString();
+
+        towerInfoUI.ShowUpgradeTags(selectedTower);
     }
+    public void OnBtnConfirm()
+    {
+        selectedTower.ApplyClass(selectedTower.NextTier);
+        upgradePanel.SetActive(true);
+        infoPanel.SetActive(false);
+    }
+    public void OnBtnReturn()
+    {
+        upgradePanel.SetActive(false);
+        infoPanel.SetActive(true);
+    }
+
+
+    private void AppendStatChange(System.Text.StringBuilder sb, string label, float oldValue, float newValue)
+    {
+        if (Mathf.Approximately(oldValue, newValue)) return;
+        sb.AppendLine($"{label}: {oldValue} -> {newValue}");
+    }
+
+    private void AppendStatChange(System.Text.StringBuilder sb, string label, int oldValue, int newValue)
+    {
+        if (oldValue == newValue) return;
+        sb.AppendLine($"{label}: {oldValue} -> {newValue}");
+    }
+
+    private void AppendStatChange(System.Text.StringBuilder sb, string label, bool oldValue, bool newValue)
+    {
+        if (oldValue == newValue) return;
+        sb.AppendLine($"{label}: {oldValue} -> {newValue}");
+    }
+
+
 
     public void DisplayInfo(Building building)
     {
         Debug.Log($"DisplayInfo called | tower={selectedTower} | name={selectedTower?.TowerName}");
         selectedBuilding = building;
-        selectedTower    = building.GetComponent<TowerData>();
+        selectedTower = building.GetComponent<TowerData>();
 
         nameText.text = selectedTower.TowerName;
-        discText.text = selectedTower.TowerName;
-
-
+        discText.text = selectedTower.TowerDisc;
         statsText.text =
                 $"Damage: {selectedTower.Damage}\n" +
                 $"Armor Pen: {selectedTower.ArmorPen}\n" +
@@ -97,6 +155,6 @@ public class Info : MonoBehaviour
 
         towerInfoUI.ShowTower(selectedTower);
 
-        
+
     }
 }
