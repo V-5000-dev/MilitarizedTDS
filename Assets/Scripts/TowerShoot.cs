@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
-public class TowerShoot : MonoBehaviour
+public class TowerShoot : TowerData
 {
     [SerializeField] private TowerRotate towerRotate;
     [SerializeField] private GameObject bulletPrefab;
@@ -8,8 +9,9 @@ public class TowerShoot : MonoBehaviour
 
     private Tower _tower;
     private float fireCountdown = 0f;
+    private int roundsFired = 0;
 
-    private void Awake()
+    new private void Awake()
     {
         _tower = GetComponent<Tower>();
         if (towerRotate == null)
@@ -21,10 +23,16 @@ public class TowerShoot : MonoBehaviour
         if (towerRotate.Target == null)
             return;
 
-        if (fireCountdown <= 0)
+        if (fireCountdown <= 0 && roundsFired < MagSize)
         {
             Shoot();
+            roundsFired++;
             fireCountdown = 1f / _tower.FireRate;
+
+        }
+        if (roundsFired >= MagSize)
+        {
+            Reload();
         }
         fireCountdown -= Time.deltaTime;
     }
@@ -38,5 +46,11 @@ public class TowerShoot : MonoBehaviour
         BulletController bulletScript = bullet.GetComponent<BulletController>();
         bulletScript.damage = _tower.Damage;
         bulletScript.SeekTarget(towerRotate.Target);
+    }
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(ReloadSpeed);
+        roundsFired = 0;
+    
     }
 }

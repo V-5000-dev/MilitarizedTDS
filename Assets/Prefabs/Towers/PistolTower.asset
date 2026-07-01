@@ -17,7 +17,7 @@ MonoBehaviour:
   towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 35
   fireRate: 2
-  range: 2
+  range: 1
   cost: 100
   magSize: 10
   reloadSpeed: 1
@@ -25,5 +25,6 @@ MonoBehaviour:
   hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}
   nextTier: {fileID: 11400000, guid: 713d9c7efbca24c688f73204c97c2eb4, type: 2}
   upgradeCost: 25
