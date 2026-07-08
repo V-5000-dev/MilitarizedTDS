@@ -45,6 +45,8 @@ public class TowerShoot : TowerData
 
         BulletController bulletScript = bullet.GetComponent<BulletController>();
         bulletScript.damage = _tower.Damage;
+        bulletScript.critChance = _tower.CritChance;
+        bulletScript.critDamage = _tower.CritDamage;
         bulletScript.SeekTarget(towerRotate.Target);
     }
     IEnumerator Reload()

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class EnemyHealthBar : MonoBehaviour
 {
     public EnemyManager enemyManager;
+    public EnemyMovement enemyMovement;
     public int defaultHealth;
 
     public float health;
@@ -100,13 +101,24 @@ public class EnemyHealthBar : MonoBehaviour
 
         
     }
-    public void TakeDamage(float damage)
+    private float finalDamage;
+    public void TakeDamage(float damage, float armorPen)
     {
-        health -= damage;
+
+        if (enemyManager.armorLevel == armorPen)
+        {
+            finalDamage = damage;
+            enemyMovement.Stagger();
+        }
+            
+
+
+        
+        health -= finalDamage;
         damageText.text = "-" + damage;
         lerpTimer = 0f;
         timeSinceDamage = 0f;
-        durationTimer = 0; 
+        durationTimer = 0;
 
     }
     public void Restorehealth(float healAmount)

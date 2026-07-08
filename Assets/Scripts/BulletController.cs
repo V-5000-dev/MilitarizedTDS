@@ -6,6 +6,10 @@ public class BulletController : MonoBehaviour
     public GameObject impactEffect;
     public float speed = 70f;
     public float damage;
+    public float critChance;
+    public float critDamage;
+    public float armorPen;
+
     void Update()
     {
         if (target == null)
@@ -31,8 +35,8 @@ public class BulletController : MonoBehaviour
     {
         Destroy(gameObject);
         GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation);
-        target.GetComponent<EnemyHealthBar>().TakeDamage(damage);
+        float finalDamage = Random.Range(0f, 100f) < critChance ? critDamage : damage;
+        target.GetComponent<EnemyHealthBar>().TakeDamage(finalDamage, armorPen);
         Destroy(effect, 2f);
-
     }
 }

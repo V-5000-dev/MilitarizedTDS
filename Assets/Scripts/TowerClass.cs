@@ -21,6 +21,12 @@ public class TowerClass : ScriptableObject
     public int magSize;
     public float reloadSpeed;
     public int armorPen = 0;
+    public float splashRange;
+    public float spashDamage;
+    public float critChance;
+    public float critDamage;
+
+    
     public bool hiddenDetect = false;
 
     [Header("Display Tags")]

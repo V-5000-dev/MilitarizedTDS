@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: PistolTower
+  m_Name: PistolTower V
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Pistol Tower
-  towerDisc: 'Cheap early game tower. Has an average fire rate and low damage. '
+  towerName: Pistol Tower - Dual Wield
+  towerDisc: Allows this tower to fire 2 pistols at once, doubling it's fire rate
+    and mag size, but increasing reload speed.
   towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 35
-  fireRate: 2
-  range: 3
+  fireRate: 6
+  range: 4
   cost: 100
-  magSize: 12
-  reloadSpeed: 1
+  magSize: 48
+  reloadSpeed: 1.5
   armorPen: 0
   splashRange: 0
   spashDamage: 0
   critChance: 0
   critDamage: 0
-  hiddenDetect: 0
+  hiddenDetect: 1
   tags:
+  - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
-  - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}
-  nextTier: {fileID: 11400000, guid: 713d9c7efbca24c688f73204c97c2eb4, type: 2}
-  upgradeCost: 20
+  nextTier: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
+  upgradeCost: 0

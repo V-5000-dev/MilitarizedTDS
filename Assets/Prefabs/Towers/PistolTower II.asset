@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: PistolTower
+  m_Name: PistolTower II
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Pistol Tower
-  towerDisc: 'Cheap early game tower. Has an average fire rate and low damage. '
+  towerName: Pistol Tower - Trigger Action
+  towerDisc: Trigger action grip allows the tower to fire faster.
   towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 35
-  fireRate: 2
+  fireRate: 3
   range: 3
   cost: 100
   magSize: 12
-  reloadSpeed: 1
+  reloadSpeed: 0.5
   armorPen: 0
   splashRange: 0
   spashDamage: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   critDamage: 0
   hiddenDetect: 0
   tags:
+  - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
-  - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}
-  nextTier: {fileID: 11400000, guid: 713d9c7efbca24c688f73204c97c2eb4, type: 2}
-  upgradeCost: 20
+  nextTier: {fileID: 11400000, guid: 084797f29b43d4c888790d2301695eb9, type: 2}
+  upgradeCost: 40

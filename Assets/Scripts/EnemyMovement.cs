@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.SpeedTree.Importer;
 using UnityEngine;
 
@@ -6,11 +7,11 @@ public class EnemyMovement : MonoBehaviour
     private Transform targetWaypoint;
     private int indexWaypoint;
     public float speed;
-    
+
     void Start()
     {
         targetWaypoint = WaypointsScript.waypoints[0];
-        
+
         {
 
         }
@@ -32,12 +33,18 @@ public class EnemyMovement : MonoBehaviour
             EndWaypoint();
             return;
         }
-           
+
         indexWaypoint++;
         targetWaypoint = WaypointsScript.waypoints[indexWaypoint];
     }
     void EndWaypoint()
     {
         Destroy(gameObject);
+    }
+    public IEnumerator Stagger()
+    {
+        speed = speed / 2;
+        yield return new WaitForSeconds(1f);
+        speed = speed * 2;
     }
 }
