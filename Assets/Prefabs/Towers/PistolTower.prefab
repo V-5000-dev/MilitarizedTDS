@@ -849,9 +849,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
+  towerClass: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
+  towerImage: {fileID: 0}
   towerRotate: {fileID: -3816769313879622468}
   bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
   barrelPoint: {fileID: 1306771618176262040}
+  shootSound: {fileID: 8300000, guid: 282bf40e1ae1040e0b547cd587546bae, type: 3}
+  reloadSound: {fileID: 8300000, guid: a51e847f68f6847f6985fcd748d90806, type: 3}
+  maxSoundDistance: 30
+  roundsFired: 0
+  isReloading: 0
 --- !u!114 &-7946851531887669518
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class TowerClass : ScriptableObject
     public float spashDamage;
     public float critChance;
     public float critDamage;
+    public float critSplashDamage;
+    public float critSplashRange;
 
     
     public bool hiddenDetect = false;

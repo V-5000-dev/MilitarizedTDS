@@ -108,12 +108,8 @@ public class EnemyHealthBar : MonoBehaviour
         if (enemyManager.armorLevel == armorPen)
         {
             finalDamage = damage;
-            enemyMovement.Stagger();
-        }
-            
-
-
-        
+            enemyMovement.StartCoroutine(enemyMovement.Stagger());
+        }          
         health -= finalDamage;
         damageText.text = "-" + damage;
         lerpTimer = 0f;

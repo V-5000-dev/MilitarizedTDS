@@ -20,12 +20,14 @@ MonoBehaviour:
   range: 3
   cost: 100
   magSize: 12
-  reloadSpeed: 1
+  reloadSpeed: 2
   armorPen: 0
   splashRange: 0
   spashDamage: 0
   critChance: 0
   critDamage: 0
+  critSplashDamage: 0
+  critRangeDamage: 0
   hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}

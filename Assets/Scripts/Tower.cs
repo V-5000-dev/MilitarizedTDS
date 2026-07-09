@@ -22,6 +22,8 @@ public abstract class Tower : MonoBehaviour
     private float spashDamage;
     private float critChance;
     private float critDamage;
+    private float critSplashDamage;
+    private float critSplashRange;
     private int armorPen;
     private bool hiddenDetect;
 
@@ -46,7 +48,9 @@ public abstract class Tower : MonoBehaviour
     public float SplashDamage => spashDamage;
     public float CritChance => critChance;
     public float CritDamage => critDamage;
-    
+    public float CritSplashDamage => critSplashDamage;
+    public float CritSplashRange => critSplashRange;
+
     public int ArmorPen => armorPen;
     public bool HiddenDetect => hiddenDetect;
 
@@ -78,6 +82,8 @@ public abstract class Tower : MonoBehaviour
         spashDamage = newClass.spashDamage;
         critChance = newClass.critChance;
         critDamage = newClass.critDamage;
+        critSplashDamage = newClass.critSplashDamage;
+        critRangeDamage = newClass.critSplashRange;
         hiddenDetect = newClass.hiddenDetect;
 
         OnClassApplied();

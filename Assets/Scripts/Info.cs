@@ -97,7 +97,12 @@ public class Info : MonoBehaviour
         AppendStatChange(sb, "Range", selectedTower.Range, nextTier.range);
         AppendStatChange(sb, "Mag Size", selectedTower.MagSize, nextTier.magSize);
         AppendStatChange(sb, "Reload Speed", selectedTower.ReloadSpeed, nextTier.reloadSpeed);
-        AppendStatChange(sb, "Hidden Detection", selectedTower.HiddenDetect, nextTier.hiddenDetect);
+        AppendStatChange(sb, "Splash Damage", selectedTower.SplashDamage, nextTier.splashRange);
+        AppendStatChange(sb, "Splash Range", selectedTower.SplashRange, nextTier.splashRange);
+        AppendStatChange(sb, "Critical Chance", selectedTower.CritChance, nextTier.critChance);
+        AppendStatChange(sb, "Critical Damage", selectedTower.CritDamage, nextTier.critDamage);
+        AppendStatChange(sb, "Critical Splash Damage", selectedTower.CritSplashDamage, nextTier.critSplashDamage);
+        AppendStatChange(sb, "Critical Splash Range", selectedTower.CritSplashRange, nextTier.critSplashRange);
 
         upgradeText.text = sb.ToString();
 
@@ -106,8 +111,8 @@ public class Info : MonoBehaviour
     public void OnBtnConfirm()
     {
         selectedTower.ApplyClass(selectedTower.NextTier);
-        upgradePanel.SetActive(true);
-        infoPanel.SetActive(false);
+        upgradePanel.SetActive(false);
+        infoPanel.SetActive(true);
     }
     public void OnBtnReturn()
     {
@@ -151,7 +156,9 @@ public class Info : MonoBehaviour
                 $"Range: {selectedTower.Range}\n" +
                 $"Mag Size: {selectedTower.MagSize}\n" +
                 $"Reload Speed: {selectedTower.ReloadSpeed}\n" +
-                $"Hidden Detection: {selectedTower.HiddenDetect}";
+                
+                        
+
 
         towerInfoUI.ShowTower(selectedTower);
 

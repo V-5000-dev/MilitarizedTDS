@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarManager
   enemyManager: {fileID: -7105239542385207893}
+  enemyMovement: {fileID: 7117416543399415168}
   defaultHealth: 100
   health: 0
   chipSpeed: 1.5

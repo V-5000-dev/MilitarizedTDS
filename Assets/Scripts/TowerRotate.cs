@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TowerRotate : MonoBehaviour
@@ -5,10 +6,13 @@ public class TowerRotate : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private string enemyTag = "Enemy";
     [SerializeField] private Transform turretBase;
+    private float rangeMultiplier = 0.45f;
 
     private Tower _tower;
 
     public Transform Target => target;
+
+    private float EffectiveRange => _tower.Range * rangeMultiplier;
 
     private void Awake()
     {
@@ -23,7 +27,7 @@ public class TowerRotate : MonoBehaviour
     private bool TargetInRange(GameObject enemy)
     {
         float distance = Vector3.Distance(enemy.transform.position, transform.position);
-        return distance <= _tower.Range;
+        return distance <= EffectiveRange;
     }
 
     private void Update()
@@ -71,6 +75,6 @@ public class TowerRotate : MonoBehaviour
         if (_tower == null) return;
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(_tower.Range * 2, 0.1f, _tower.Range * 2));
+        Gizmos.DrawWireCube(transform.position, new Vector3(EffectiveRange * 2, 0.1f, EffectiveRange * 2));
     }
 }

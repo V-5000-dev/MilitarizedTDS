@@ -8,6 +8,6 @@ public class TowerData : Tower
 
     protected override void OnClassApplied()
     {
-        towerImage.sprite = TowerIcon;
+//        towerImage.sprite = TowerIcon;
     }
 }
