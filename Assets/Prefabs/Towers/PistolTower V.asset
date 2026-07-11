@@ -28,10 +28,10 @@ MonoBehaviour:
   critChance: 0
   critDamage: 0
   critSplashDamage: 0
-  critRangeDamage: 0
+  critSplashRange: 0
   hiddenDetect: 1
   tags:
   - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
-  nextTier: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
+  nextTier: {fileID: 0}
   upgradeCost: 0

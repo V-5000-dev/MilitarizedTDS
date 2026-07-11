@@ -9,6 +9,7 @@ public class TowerClass : ScriptableObject
 
     [TextArea(2, 4)]
     public string towerDisc;
+    public string upgradeDisc;
 
     [Header("Visuals")]
     public Sprite towerIcon;

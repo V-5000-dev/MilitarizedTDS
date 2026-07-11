@@ -13,6 +13,9 @@ public class TowerInfoUI : MonoBehaviour
     public TextMeshProUGUI towerNameText;
     public TextMeshProUGUI towerDescriptionText;
 
+    [Header("Tower Icon")]
+    public Image towerIconImage;
+
     [Header("Tag Icons")]
     public GameObject tagIconPrefab;
     public Transform tagIconContainer;
@@ -54,6 +57,15 @@ public class TowerInfoUI : MonoBehaviour
  //       towerNameText.text        = tower.TowerName;
     //    towerDescriptionText.text = tower.TowerDisc;
 
+
+        var srcImage = tower.GetComponentInChildren<Image>();
+        Sprite icon = srcImage != null ? srcImage.sprite : tower.TowerIcon;
+        Debug.Log($"[TowerIcon] towerIconImage={towerIconImage}, srcImage={srcImage}, icon={icon}");
+        if (towerIconImage != null)
+        {
+            towerIconImage.sprite  = icon;
+            towerIconImage.enabled = icon != null;
+        }
 
         // Activate the panel FIRST so the hierarchy (including tagIconContainer) is active
         panelRoot.SetActive(true);

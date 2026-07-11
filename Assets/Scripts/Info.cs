@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
@@ -17,13 +18,14 @@ public class Info : MonoBehaviour
     public GameObject upgradePanel;
     public GameObject infoPanel;
     public TextMeshProUGUI upgradeTitle;
+    public TextMeshProUGUI upgradeDisc;
     public TextMeshProUGUI upgradeText;
     public Button upgradeConfirm;
 
 
     private BuildBuilding build;
     private Building selectedBuilding;
-    private Tower selectedTower;
+    public Tower selectedTower;
 
     // Track last selection so we only redraw when it changes
     private Building _lastDisplayedBuilding;
@@ -35,8 +37,11 @@ public class Info : MonoBehaviour
 
     void Update()
     {
+     //   if (selectedTower.NextTier == null)
+       //     btnUpgrade.enabled = false;
+            
         // Resolve what is currently selected
-        Building newSelection = null;
+            Building newSelection = null;
 
         if (build.currentSelectedGridElement != null && build.currentSelectedGridElement.connectedBuilding != null)
             newSelection = build.currentSelectedGridElement.connectedBuilding;
@@ -89,6 +94,7 @@ public class Info : MonoBehaviour
 
         upgradePanel.SetActive(true);
         upgradeTitle.text = nextTier.towerName;
+        upgradeDisc.text = nextTier.upgradeDisc;
 
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
         AppendStatChange(sb, "Damage", selectedTower.Damage, nextTier.damage);
@@ -110,7 +116,9 @@ public class Info : MonoBehaviour
     }
     public void OnBtnConfirm()
     {
+        if (selectedTower == null || selectedTower.NextTier == null) return;
         selectedTower.ApplyClass(selectedTower.NextTier);
+        _lastDisplayedBuilding = null;
         upgradePanel.SetActive(false);
         infoPanel.SetActive(true);
     }
@@ -155,10 +163,7 @@ public class Info : MonoBehaviour
                 $"Fire Rate: {selectedTower.FireRate}\n" +
                 $"Range: {selectedTower.Range}\n" +
                 $"Mag Size: {selectedTower.MagSize}\n" +
-                $"Reload Speed: {selectedTower.ReloadSpeed}\n" +
-                
-                        
-
+                $"Reload Speed: {selectedTower.ReloadSpeed}\n";
 
         towerInfoUI.ShowTower(selectedTower);
 

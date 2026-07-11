@@ -11,6 +11,7 @@ public abstract class Tower : MonoBehaviour
 
     private string towerName;
     private string towerDisc;
+    private string upgradeDisc;
     private Sprite towerIcon;
     private float damage;
     private float fireRate;
@@ -35,6 +36,7 @@ public abstract class Tower : MonoBehaviour
 
     public string TowerName => towerName;
     public string TowerDisc => towerDisc;
+    public string UpgradeDisc => upgradeDisc;
 
     private int UpgradeCost => upgradeCost;
     public Sprite TowerIcon => towerIcon;
@@ -70,6 +72,7 @@ public abstract class Tower : MonoBehaviour
         nextTier = newClass.nextTier;
         upgradeCost = newClass.upgradeCost;
         towerDisc = newClass.towerDisc;
+        upgradeDisc = newClass.upgradeDisc;
         towerClass = newClass;
         damage = newClass.damage;
         fireRate = newClass.fireRate;
@@ -83,8 +86,7 @@ public abstract class Tower : MonoBehaviour
         critChance = newClass.critChance;
         critDamage = newClass.critDamage;
         critSplashDamage = newClass.critSplashDamage;
-        critRangeDamage = newClass.critSplashRange;
-        hiddenDetect = newClass.hiddenDetect;
+        critSplashRange = newClass.critSplashRange;
 
         OnClassApplied();
     }

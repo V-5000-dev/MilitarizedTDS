@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
   towerName: Pistol Tower
   towerDisc: 'Cheap early game tower. Has an average fire rate and low damage. '
+  upgradeDisc: 
   towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 35
   fireRate: 2
@@ -27,7 +28,7 @@ MonoBehaviour:
   critChance: 0
   critDamage: 0
   critSplashDamage: 0
-  critRangeDamage: 0
+  critSplashRange: 0
   hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
