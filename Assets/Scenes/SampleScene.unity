@@ -469,7 +469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -26.158306}
+  m_AnchoredPosition: {x: 0, y: -19.747948}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &61254873
@@ -492,7 +492,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pistol Tower
+  m_text: 'Pistol Tower - $100
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -519,8 +521,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -558,7 +560,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 4.1459885, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1128,7 +1130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 8.788368}
+  m_AnchoredPosition: {x: 0, y: 20.368347}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121144519
@@ -2251,7 +2253,7 @@ GameObject:
   - component: {fileID: 241466243}
   - component: {fileID: 241466246}
   m_Layer: 5
-  m_Name: TowerTemp
+  m_Name: PistolTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2275,8 +2277,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.02047, y: 216.20534}
-  m_SizeDelta: {x: 207.8503, y: 93.3744}
+  m_AnchoredPosition: {x: 10, y: 198.93875}
+  m_SizeDelta: {x: 208.3673, y: 104.1273}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241466243
 MonoBehaviour:
@@ -2347,14 +2349,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7482667652216324306, guid: 992bf6a7b835d4d00b814d035b3a5b94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9203,7 +9205,7 @@ MonoBehaviour:
   - {fileID: 2470375201304016234, guid: 8b9b27074bdc9480fb19a12a81b191ea, type: 3}
   - {fileID: 822041929702958148, guid: 5af4ab01e0a0842d4a3994b026397fdf, type: 3}
   allowedEnemies: 000000000100000002000000
-  spawnDelay: 2
+  spawnDelay: 0.5
   spawnPoint: {fileID: 1616723642}
 --- !u!1 &1262358725
 GameObject:
@@ -13804,8 +13806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -165.57022, y: -359.80612}
-  m_SizeDelta: {x: 331.1406, y: 719.61}
+  m_AnchoredPosition: {x: -146.33923, y: -359.80554}
+  m_SizeDelta: {x: 292.6785, y: 719.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893937804
 MonoBehaviour:

@@ -27,6 +27,8 @@ public class EnemyHealthBar : MonoBehaviour
     private float timeSinceDamage = 0f;
     public Camera cam;
 
+    private float rangeMultiplier = 0.45f;
+
     public Color armorHealthBarColor;
 
 
@@ -59,7 +61,7 @@ public class EnemyHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         health = Mathf.Clamp(health, 0, defaultHealth);
 
         if (health < 1)
@@ -78,7 +80,7 @@ public class EnemyHealthBar : MonoBehaviour
         float HPFraction = health / defaultHealth;
         if (FillB > HPFraction)
         {
-            
+
             damageText.gameObject.SetActive(true);
             frontHPBar.fillAmount = HPFraction;
             backHPBar.color = Color.red;
@@ -91,7 +93,7 @@ public class EnemyHealthBar : MonoBehaviour
                 backHPBar.color = armorHealthBarColor;
                 damageText.gameObject.SetActive(false);
             }
-                
+
 
         }
         else
@@ -99,17 +101,44 @@ public class EnemyHealthBar : MonoBehaviour
             lerpTimer = 0f;
         }
 
-        
+
     }
     private float finalDamage;
-    public void TakeDamage(float damage, float armorPen)
+    public void TakeDamage(float damage, int armorPen, float splashDamage, float splashRange)
     {
 
         if (enemyManager.armorLevel == armorPen)
         {
             finalDamage = damage;
             enemyMovement.StartCoroutine(enemyMovement.Stagger());
-        }          
+        }
+        else
+        {
+            int armorPenned = Mathf.Max(0, enemyManager.armorLevel - armorPen);
+            float dmgMulti = 1f - (0.25f * armorPenned);
+            dmgMulti = Mathf.Clamp(dmgMulti, 0f, 1f);
+            finalDamage = damage * dmgMulti;
+        }
+        splashRange *= rangeMultiplier;
+        if (splashDamage > 0f && splashRange > 0f)
+        {
+            Vector2 size = new Vector2(splashRange * 2, splashRange * 2);
+            Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, size, 0f);
+
+            foreach (Collider2D hit in hits)
+            {
+                EnemyHealthBar enemy = hit.GetComponent<EnemyHealthBar>();
+                if (enemy != null && enemy != this)
+                {
+                    enemy.health -= splashDamage;
+                    enemy.damageText.text = "-" + splashDamage;
+                    enemy.lerpTimer = 0f;
+                    enemy.timeSinceDamage = 0f;
+                    enemy.durationTimer = 0;
+                }
+            }
+        }
+
         health -= finalDamage;
         damageText.text = "-" + damage;
         lerpTimer = 0f;

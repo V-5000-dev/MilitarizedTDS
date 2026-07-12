@@ -4,11 +4,16 @@ public class BulletController : MonoBehaviour
 {
     public Transform target;
     public GameObject impactEffect;
-    public float speed = 70f;
+    public float speed = 0f;
     public float damage;
     public float critChance;
     public float critDamage;
-    public float armorPen;
+    public int armorPen;
+    public int splashRange;
+    public float splashDamage;
+    public float critSplashDamage;
+    public float critSplashRange;
+    public bool isCrit;
 
     void Update()
     {
@@ -33,10 +38,17 @@ public class BulletController : MonoBehaviour
     }
     public void HitTarget()
     {
+        float finalDamage = damage;
         Destroy(gameObject);
         GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation);
-        float finalDamage = Random.Range(0f, 100f) < critChance ? critDamage : damage;
-        target.GetComponent<EnemyHealthBar>().TakeDamage(finalDamage, armorPen);
+        isCrit = Random.Range(0f, 100f) < critChance;
+        if (isCrit)
+        {
+            finalDamage = critDamage;
+            splashDamage = critSplashDamage;
+
+        }
+        target.GetComponent<EnemyHealthBar>().TakeDamage(finalDamage, armorPen, splashDamage, splashRange);
         Destroy(effect, 2f);
     }
 }

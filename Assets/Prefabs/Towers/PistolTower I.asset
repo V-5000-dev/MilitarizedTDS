@@ -23,12 +23,16 @@ MonoBehaviour:
   magSize: 12
   reloadSpeed: 0.5
   armorPen: 0
+  overTimeDmg: 0
+  overTimeDuration: 0
   splashRange: 0
   spashDamage: 0
   critChance: 0
   critDamage: 0
   critSplashDamage: 0
   critSplashRange: 0
+  critOverTimeDmg: 0
+  critOverTimeDuration: 0
   hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
