@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public abstract class Tower : MonoBehaviour
@@ -19,12 +20,16 @@ public abstract class Tower : MonoBehaviour
     private int cost;
     private int magSize;
     private float reloadSpeed;
+    private float overTimeDmg;
+    private float overTimeDuration;
     private float spashRange;
     private float spashDamage;
     private float critChance;
     private float critDamage;
     private float critSplashDamage;
     private float critSplashRange;
+    private float critOverTimeDmg;
+    private float critOverTimeDuration;
     private int armorPen;
     private bool hiddenDetect;
 
@@ -45,6 +50,9 @@ public abstract class Tower : MonoBehaviour
     public float Range => range;
     public int Cost => cost;
     public int MagSize => magSize;
+
+    public float OverTimeDmg => overTimeDmg;
+    public float OverTimeDuration => overTimeDuration;
     public float ReloadSpeed => reloadSpeed;
     public float SplashRange => spashRange;
     public float SplashDamage => spashDamage;
@@ -52,6 +60,8 @@ public abstract class Tower : MonoBehaviour
     public float CritDamage => critDamage;
     public float CritSplashDamage => critSplashDamage;
     public float CritSplashRange => critSplashRange;
+    public float CritOverTimeDmg => critOverTimeDmg;
+    public float CritOverTimeDuration => critOverTimeDuration;
 
     public int ArmorPen => armorPen;
     public bool HiddenDetect => hiddenDetect;
@@ -81,12 +91,16 @@ public abstract class Tower : MonoBehaviour
         magSize = newClass.magSize;
         reloadSpeed = newClass.reloadSpeed;
         armorPen = newClass.armorPen;
+        overTimeDmg = newClass.overTimeDmg;
+        overTimeDuration = newClass.overTimeDuration;
         spashRange = newClass.splashRange;
         spashDamage = newClass.spashDamage;
         critChance = newClass.critChance;
         critDamage = newClass.critDamage;
         critSplashDamage = newClass.critSplashDamage;
         critSplashRange = newClass.critSplashRange;
+        critOverTimeDmg = newClass.critOverTimeDuration;
+        critOverTimeDuration = newClass.critOverTimeDuration;
 
         OnClassApplied();
     }

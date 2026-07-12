@@ -22,12 +22,16 @@ public class TowerClass : ScriptableObject
     public int magSize;
     public float reloadSpeed;
     public int armorPen = 0;
+    public float overTimeDmg;
+    public float overTimeDuration;
     public float splashRange;
     public float spashDamage;
     public float critChance;
     public float critDamage;
     public float critSplashDamage;
     public float critSplashRange;
+    public float critOverTimeDmg;
+    public float critOverTimeDuration;
 
     
     public bool hiddenDetect = false;

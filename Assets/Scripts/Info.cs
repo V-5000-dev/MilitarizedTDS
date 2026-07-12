@@ -103,12 +103,16 @@ public class Info : MonoBehaviour
         AppendStatChange(sb, "Range", selectedTower.Range, nextTier.range);
         AppendStatChange(sb, "Mag Size", selectedTower.MagSize, nextTier.magSize);
         AppendStatChange(sb, "Reload Speed", selectedTower.ReloadSpeed, nextTier.reloadSpeed);
+        AppendStatChange(sb, "Dmg Over Time", selectedTower.OverTimeDmg, nextTier.overTimeDmg);
+        AppendStatChange(sb, "Dmg Over T Duration", selectedTower.OverTimeDuration, nextTier.overTimeDuration);
         AppendStatChange(sb, "Splash Damage", selectedTower.SplashDamage, nextTier.splashRange);
         AppendStatChange(sb, "Splash Range", selectedTower.SplashRange, nextTier.splashRange);
         AppendStatChange(sb, "Critical Chance", selectedTower.CritChance, nextTier.critChance);
         AppendStatChange(sb, "Critical Damage", selectedTower.CritDamage, nextTier.critDamage);
         AppendStatChange(sb, "Critical Splash Damage", selectedTower.CritSplashDamage, nextTier.critSplashDamage);
         AppendStatChange(sb, "Critical Splash Range", selectedTower.CritSplashRange, nextTier.critSplashRange);
+        AppendStatChange(sb, "Critical Dmg Over T", selectedTower.CritOverTimeDmg, nextTier.critOverTimeDmg);
+        AppendStatChange(sb, "Critical Dmg Over T Duration", selectedTower.CritOverTimeDuration, nextTier.critOverTimeDuration);
 
         upgradeText.text = sb.ToString();
 
