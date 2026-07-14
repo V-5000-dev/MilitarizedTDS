@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: PistolTower I
+  m_Name: Revolver Tower - Armor Piercing Rounds
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Pistol Tower - Rapid Reload
-  towerDisc: 'Cheap early game tower. Has an average fire rate and low damage. '
-  upgradeDisc: 'Quicker reload halfs the tower''s reload speed. '
-  towerIcon: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
-  damage: 35
+  towerName: Revolver Tower - Armor Piercing Rounds
+  towerDisc: Armor piercing rounds allow this tower to deal full damage to armor
+    I enemies.
+  upgradeDisc: 
+  towerIcon: {fileID: 0}
+  damage: 50
   fireRate: 2
-  range: 3
-  cost: 100
-  magSize: 12
-  reloadSpeed: 0.5
+  range: 4
+  cost: 50
+  magSize: 6
+  reloadSpeed: 0.2
   armorPen: 0
   overTimeDmg: 0
   overTimeDuration: 0
@@ -34,8 +35,6 @@ MonoBehaviour:
   critOverTimeDmg: 0
   critOverTimeDuration: 0
   hiddenDetect: 0
-  tags:
-  - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
-  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
-  nextTier: {fileID: 11400000, guid: ac7bea4c76d3d4e0c9d62f379a358ffd, type: 2}
-  upgradeCost: 40
+  tags: []
+  nextTier: {fileID: 0}
+  upgradeCost: 0

@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletController
   target: {fileID: 0}
   impactEffect: {fileID: 8169132820229909339, guid: 21bfcfd7aca0d4444971a3c1d1b683b3, type: 3}
-  speed: 0
+  speed: 70
   damage: 0
   critChance: 0
   critDamage: 0

@@ -10,28 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: PistolTower V
+  m_Name: Revolver Tower - Critical Hit
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Pistol Tower - Dual Wield
-  towerDisc: Allows this tower to fire 2 pistols at once, doubling it's fire rate
-    and mag size, but increasing reload speed.
-  towerIcon: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
-  damage: 35
-  fireRate: 6
+  towerName: Revolver Tower - Critical Hit
+  towerDisc: This tower will have one round (on average) loaded with a heavier round
+    dealing double damage.
+  upgradeDisc: 
+  towerIcon: {fileID: 0}
+  damage: 50
+  fireRate: 2
   range: 4
-  cost: 100
-  magSize: 48
-  reloadSpeed: 1.5
+  cost: 50
+  magSize: 6
+  reloadSpeed: 0.2
   armorPen: 0
+  overTimeDmg: 0
+  overTimeDuration: 0
   splashRange: 0
   spashDamage: 0
-  critChance: 0
-  critDamage: 0
+  critChance: 16.67
+  critDamage: 100
   critSplashDamage: 0
   critSplashRange: 0
-  hiddenDetect: 1
-  tags:
-  - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
-  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  critOverTimeDmg: 0
+  critOverTimeDuration: 0
+  hiddenDetect: 0
+  tags: []
   nextTier: {fileID: 0}
   upgradeCost: 0

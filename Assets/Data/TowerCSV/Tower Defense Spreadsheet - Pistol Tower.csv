@@ -1,0 +1,8 @@
+Tower Level,Tower Name,$,Tower Disc,Tower Tags,,Damage,RPS,RPM,DPS,Range,Mag size,Reload speed,,Splash Range,Splash DMG,,Time,DMG over Time,,Crit DMG,Crit %,,Crit Time,Crit DMG over Time,Crit Splash R,Crit Splash DMG
+,,,,,,,,,,,,,,,,,,,,,,,,,0x0,
+Base,Pistol Tower,100,"Cheap, starter tower. Has an average fire rate and low damage. ","Semi-Auto, Armor Pen 0",,35,2,120,70,3x3,12,1,,0x0,0,,0,0,,0,0%,,0,0,0x0,0
+Upgrade 1,Pistol Tower - Rapid Reload,20,Quicker reload halfs the tower's reload speed.,"Semi-Auto, Armor Pen 0",,35,2,120,70,3x3,12,0.5,,0x0,0,,0,0,,0,0%,,0,0,0x0,0
+Upgrade 2,Pistol Tower - Trigger Action,40,Trigger action grip allows the tower to fire faster.,"Semi-Auto, Armor Pen 0",,35,3,180,105,3x3,12,0.5,,0x0,0,,0,0,,0,0%,,0,0,0x0,0
+Upgrade 3,Pistol Tower - Extended Mag,40,An extended magazine allows the tower to fire longer without reload.,"Semi-Auto, Armor Pen 0",,35,3,180,105,3x3,24,0.5,,0x0,0,,0,0,,0,0%,,0,0,0x0,0
+Upgrade 4,Pistol Tower - Eagle Eye,40,Allows this tower to spot enemies from further away.,"Semi-Auto, Armor Pen 0",,35,3,180,105,4x4,24,0.5,,0x0,0,,0,0,,0,0%,,0,0,0x0,0
+Upgrade 5,Pistol Tower - Dual Wield,80,"Allows this tower to fire 2 pistols at once, doubling it's fire rate and mag size, but increasing reload speed.","Semi-Auto, Armor Pen 0",,35,6,360,210,4x4,48,1,,0x0,0,,0,0,,0,0%,,0,0,0x0,0

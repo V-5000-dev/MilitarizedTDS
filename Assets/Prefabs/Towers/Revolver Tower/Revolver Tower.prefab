@@ -694,7 +694,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_Name
-      value: PistolTower
+      value: Revolver Tower
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_RootOrder
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea279b8f42a634f4db282e62fc18c6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
-  towerClass: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
+  towerClass: {fileID: 11400000, guid: c698ffc16af3c41dfbf1b6e036b6f1d6, type: 2}
   towerImage: {fileID: 4183306130264809513}
 --- !u!114 &4914756796132145868
 MonoBehaviour:
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
-  towerClass: {fileID: 11400000, guid: 9a2fa175930c54732afcf30c4fd1faab, type: 2}
+  towerClass: {fileID: 11400000, guid: 883a8b4fbfd7c4e50928e329d5f22c1b, type: 2}
   towerImage: {fileID: 0}
   towerRotate: {fileID: -3816769313879622468}
   bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}

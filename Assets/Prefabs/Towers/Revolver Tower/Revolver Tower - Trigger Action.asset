@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
+  m_Name: Revolver Tower - Trigger Action
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClass
+  towerName: Revolver Tower - Trigger Action
+  towerDisc: Trigger action grip allows the tower to fire faster.
+  upgradeDisc: 
+  towerIcon: {fileID: 0}
+  damage: 50
+  fireRate: 3
+  range: 4
+  cost: 50
+  magSize: 6
+  reloadSpeed: 0.2
+  armorPen: 0
+  overTimeDmg: 0
+  overTimeDuration: 0
+  splashRange: 0
+  spashDamage: 0
+  critChance: 16.67
+  critDamage: 100
+  critSplashDamage: 0
+  critSplashRange: 0
+  critOverTimeDmg: 0
+  critOverTimeDuration: 0
+  hiddenDetect: 0
+  tags: []
+  nextTier: {fileID: 0}
+  upgradeCost: 0

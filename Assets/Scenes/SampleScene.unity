@@ -9205,7 +9205,7 @@ MonoBehaviour:
   - {fileID: 2470375201304016234, guid: 8b9b27074bdc9480fb19a12a81b191ea, type: 3}
   - {fileID: 822041929702958148, guid: 5af4ab01e0a0842d4a3994b026397fdf, type: 3}
   allowedEnemies: 000000000100000002000000
-  spawnDelay: 0.5
+  spawnDelay: 2
   spawnPoint: {fileID: 1616723642}
 --- !u!1 &1262358725
 GameObject:
