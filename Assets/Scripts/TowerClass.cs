@@ -21,6 +21,7 @@ public class TowerClass : ScriptableObject
     public int cost;
     public int magSize;
     public float reloadSpeed;
+    public bool roundsReload;
     public int armorPen = 0;
     public float overTimeDmg;
     public float overTimeDuration;

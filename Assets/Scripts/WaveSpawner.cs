@@ -1,54 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+
+[System.Serializable]
+public class WaveEnemies
+{
+    public int[] values;
+}
 
 public class WaveSpawner : MonoBehaviour
 {
     public Transform[] enemyPrefabs;
-    public int[] allowedEnemies;
+    public int wave;
+    public int[] waveBudget;
+    public int[] enemyCosts;
+    public WaveEnemies[] waveEnemiesArray;
     public float spawnDelay;
     public Transform spawnPoint;
 
-    public List<Transform> GenerateWave(int minEnemies, int maxEnemies, int[] allowedEnemiesID, float waveBudget)
+    public List<Transform> GenerateWave(int[] allowedEnemiesID, float waveBudget)
     {
-        // Build allowed list from indices
-        Transform[] allowedEnemies = new Transform[allowedEnemiesID.Length];
+        float[] weights = new float[allowedEnemiesID.Length];
+        float totalWeight = 0f;
         for (int i = 0; i < allowedEnemiesID.Length; i++)
-            allowedEnemies[i] = enemyPrefabs[allowedEnemiesID[i]];
+        {
+            weights[i] = 1f / enemyCosts[allowedEnemiesID[i]];
+            totalWeight += weights[i];
+        }
 
-        int waveTotal = Random.Range(minEnemies, maxEnemies + 1);
+        int minCost = allowedEnemiesID.Min(id => enemyCosts[id]);
         List<Transform> spawnList = new List<Transform>();
+        float remainingBudget = waveBudget;
 
-        float[] InverseCosts = new float[allowedEnemies.Length];
-        float totalInverse = 0;
-
-        foreach (Transform enemy in allowedEnemies)
+        while (remainingBudget >= minCost)
         {
-            float inverseCost = 100 - enemy.GetComponent<EnemyManager>().spawnCost;
-            InverseCosts[System.Array.IndexOf(allowedEnemies, enemy)] = inverseCost;
-            totalInverse += inverseCost;
+            float roll = Random.Range(0f, totalWeight);
+            float cumulative = 0f;
+            for (int i = 0; i < allowedEnemiesID.Length; i++)
+            {
+                cumulative += weights[i];
+                if (roll <= cumulative)
+                {
+                    int id = allowedEnemiesID[i];
+                    if (enemyCosts[id] <= remainingBudget)
+                    {
+                        spawnList.Add(enemyPrefabs[id]);
+                        remainingBudget -= enemyCosts[id];
+                    }
+                    break;
+                }
+            }
         }
 
-        float[] spawnPercentages = new float[allowedEnemies.Length];
-        for (int i = 0; i < allowedEnemies.Length; i++)
-            spawnPercentages[i] = InverseCosts[i] / totalInverse;
-
-        for (int i = 0; i < allowedEnemies.Length; i++)
-        {
-            int count = Mathf.RoundToInt(spawnPercentages[i] * waveTotal);
-            for (int j = 0; j < count; j++)
-                spawnList.Add(allowedEnemies[i]);
-        }
-        for (int i = spawnList.Count - 1; i > 0; i--)
-        {
-            int j = Random.Range(0, i + 1);
-            Transform t = spawnList[i];
-            spawnList[i] = spawnList[j];
-            spawnList[j] = t;
-        }
         return spawnList;
-
-
     }
 
     public IEnumerator SpawnWave(List<Transform> spawnList)
@@ -62,7 +68,12 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
-        List<Transform> wave = GenerateWave(10, 20, allowedEnemies, 100);
-        StartCoroutine(SpawnWave(wave));
+        wave = 0;
+    }
+    public void onNextWaveButton()
+    {
+        List<Transform> spawnedWave = GenerateWave(waveEnemiesArray[wave].values, waveBudget[wave]);
+        StartCoroutine(SpawnWave(spawnedWave));
+        wave++;
     }
 }

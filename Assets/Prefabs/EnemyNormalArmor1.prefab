@@ -415,7 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
   defaultHealth: 10
   health: 0
-  armorLevel: 0
+  armorLevel: 1
   speed: 0
   spawnCost: 2
   materials:

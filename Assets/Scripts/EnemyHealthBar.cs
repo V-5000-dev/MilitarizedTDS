@@ -104,10 +104,10 @@ public class EnemyHealthBar : MonoBehaviour
 
     }
     private float finalDamage;
-    public void TakeDamage(float damage, int armorPen, float splashDamage, float splashRange)
+    public void TakeDamage(float damage, int armorPen, float splashDamage, float splashRange, float dmgoverT, float dmgoverTDuration)
     {
 
-        if (enemyManager.armorLevel == armorPen)
+        if (armorPen >= enemyManager.armorLevel)
         {
             finalDamage = damage;
             enemyMovement.StartCoroutine(enemyMovement.Stagger());
@@ -122,10 +122,9 @@ public class EnemyHealthBar : MonoBehaviour
         splashRange *= rangeMultiplier;
         if (splashDamage > 0f && splashRange > 0f)
         {
-            Vector2 size = new Vector2(splashRange * 2, splashRange * 2);
-            Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, size, 0f);
+            Collider[] hits = Physics.OverlapSphere(transform.position, splashRange);
 
-            foreach (Collider2D hit in hits)
+            foreach (Collider hit in hits)
             {
                 EnemyHealthBar enemy = hit.GetComponent<EnemyHealthBar>();
                 if (enemy != null && enemy != this)
@@ -140,11 +139,35 @@ public class EnemyHealthBar : MonoBehaviour
         }
 
         health -= finalDamage;
-        damageText.text = "-" + damage;
+        damageText.text = "-" + finalDamage;
         lerpTimer = 0f;
         timeSinceDamage = 0f;
         durationTimer = 0;
 
+        if (dmgoverT > 0f && dmgoverTDuration > 0f)
+        {
+            if (dotCoroutine != null)
+                StopCoroutine(dotCoroutine);
+            dotCoroutine = StartCoroutine(DamageOverTime(dmgoverT, dmgoverTDuration));
+        }
+    }
+
+    private Coroutine dotCoroutine;
+
+    private IEnumerator DamageOverTime(float dmgPerSecond, float dotDuration)
+    {
+        float elapsed = 0f;
+        while (elapsed < dotDuration)
+        {
+            yield return new WaitForSeconds(1f);
+            elapsed += 1f;
+            health -= dmgPerSecond;
+            damageText.text = "-" + dmgPerSecond;
+            lerpTimer = 0f;
+            timeSinceDamage = 0f;
+            durationTimer = 0;
+        }
+        dotCoroutine = null;
     }
     public void Restorehealth(float healAmount)
     {

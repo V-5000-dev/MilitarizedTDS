@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f436fa94f2acc4cb4b378fa83fe5e843, type: 3}
   m_Name: RoundsReload
   m_EditorClassIdentifier: Assembly-CSharp::TowerTag
-  tagName: Semi Automatic
-  description: Slow but conistent fire rate.
-  icon: {fileID: 21300000, guid: 5ca3696c0eedd42988c4d5cff760b41b, type: 3}
+  tagName: Rounds Reload
+  description: Reloads one bullet at a time.
+  icon: {fileID: 21300000, guid: 362ae7220775047348461713513e0553, type: 3}

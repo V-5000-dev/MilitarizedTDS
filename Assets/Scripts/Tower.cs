@@ -31,7 +31,7 @@ public abstract class Tower : MonoBehaviour
     private float critOverTimeDmg;
     private float critOverTimeDuration;
     private int armorPen;
-    private bool hiddenDetect;
+    private bool roundsReload;
 
     public const float rotationSpeed = 10f;
     public const float projectileSpeed = 10f;
@@ -64,7 +64,7 @@ public abstract class Tower : MonoBehaviour
     public float CritOverTimeDuration => critOverTimeDuration;
 
     public int ArmorPen => armorPen;
-    public bool HiddenDetect => hiddenDetect;
+    public bool RoundsReload => roundsReload;
 
     public IReadOnlyList<TowerTag> Tags =>
         towerClass != null ? towerClass.tags : System.Array.Empty<TowerTag>();
@@ -90,6 +90,7 @@ public abstract class Tower : MonoBehaviour
         cost = newClass.cost;
         magSize = newClass.magSize;
         reloadSpeed = newClass.reloadSpeed;
+        roundsReload = newClass.roundsReload;
         armorPen = newClass.armorPen;
         overTimeDmg = newClass.overTimeDmg;
         overTimeDuration = newClass.overTimeDuration;
@@ -99,7 +100,7 @@ public abstract class Tower : MonoBehaviour
         critDamage = newClass.critDamage;
         critSplashDamage = newClass.critSplashDamage;
         critSplashRange = newClass.critSplashRange;
-        critOverTimeDmg = newClass.critOverTimeDuration;
+        critOverTimeDmg = newClass.critOverTimeDmg;
         critOverTimeDuration = newClass.critOverTimeDuration;
 
         OnClassApplied();

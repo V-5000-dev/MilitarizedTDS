@@ -16,13 +16,14 @@ MonoBehaviour:
   towerDisc: This tower will have one round (on average) loaded with a heavier round
     dealing double damage.
   upgradeDisc: 
-  towerIcon: {fileID: 0}
+  towerIcon: {fileID: 21300000, guid: c7a775f4ff1a64822bc50747032d8160, type: 3}
   damage: 50
   fireRate: 2
   range: 4
   cost: 50
   magSize: 6
-  reloadSpeed: 0.2
+  reloadSpeed: 0.5
+  roundsReload: 1
   armorPen: 0
   overTimeDmg: 0
   overTimeDuration: 0
@@ -35,6 +36,9 @@ MonoBehaviour:
   critOverTimeDmg: 0
   critOverTimeDuration: 0
   hiddenDetect: 0
-  tags: []
-  nextTier: {fileID: 0}
+  tags:
+  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: e2c57b0b7a75d4713acf426427cd265f, type: 2}
+  - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
+  nextTier: {fileID: 11400000, guid: 5bea492e93b3e4eeea5eee8c3005c1b2, type: 2}
   upgradeCost: 0
