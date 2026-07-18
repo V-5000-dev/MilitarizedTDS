@@ -22,7 +22,7 @@ MonoBehaviour:
   range: 3
   cost: 125
   magSize: 6
-  reloadSpeed: 0.5
+  reloadSpeed: 1
   roundsReload: 1
   armorPen: 0
   overTimeDmg: 0

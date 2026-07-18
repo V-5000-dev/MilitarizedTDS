@@ -1,8 +1,0 @@
-Tower Level,Tower Name,$,Tower Disc,Tower Tags,,Damage,RPS,RPM,DPS,Range,Mag size,Reload speed,,Splash Range,Splash DMG,,Time,DMG over Time,,Crit DMG,Crit %,,Crit Time,Crit DMG over Time,Crit Splash R,Crit Splash DMG
-,,,,,,,,,,,,,,,,,,,,,,,,,0x0,
-Base,Buckshot Shotgun Tower,150,"Early game tower that does average damage and splash damage, but with a low fire rate.","Semi-Auto, Armor Pen 0, Rounds Reload",,100,1,60,100,3,8,0.2,,1,25,,0,0,,0,0,,0,0,0,0
-Upgrade 1,Buckshot Shotgun Tower - Increased Buckshot,25,Higher spread buckshot rounds deal more splash damage.,"Semi-Auto, Armor Pen 0, Rounds Reload",,100,1,60,100,3,8,0.2,,1,50,,0,0,,0,0,,0,0,0,0
-Upgrade 2,Buckshot Shotgun Tower - Trigger Action,50,Trigger action grip allows the tower to fire faster.,"Semi-Auto, Armor Pen 0, Rounds Reload",,100,1.5,90,150,3,8,0.2,,1,50,,0,0,,0,0,,0,0,0,0
-Upgrade 3,Buckshot Shotgun Tower - Extended Barrel,50,Extending the barrel allows 2 more rounds to be loaded.,"Semi-Auto, Armor Pen 0, Rounds Reload",,100,1.5,90,150,3,10,0.2,,1,50,,0,0,,0,0,,0,0,0,0
-Upgrade 4,Buckshot Shotgun Tower - Critical Hit,50,This tower will have one round (on average) loaded with a heavier round dealing double damage. ,"Semi-Auto, Armor Pen 0, Rounds Reload",,100,1.5,90,150,3,10,0.2,,1,50,,0,0,,150,10,,0,0,3,50
-Upgrade 5,Buckshot Shotgun Tower - Triple Critical,75,"This tower will have 3 rounds (on average) loaded with a heavier round dealing double damage, tripling the critical chance.","Semi-Auto, Armor Pen 0, Rounds Reload",,100,1.5,90,150,3,10,0.2,,1,50,,0,0,,150,30,,0,0,3,50

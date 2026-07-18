@@ -1,0 +1,8 @@
+Tower Level,Tower Name,$,Tower Disc,Tower Tags,,Damage,AP,RPS,RPM,DPS,Range,Mag size,Reload speed,,Splash Range,Splash DMG,,Time,DMG over Time,,Crit DMG,Crit %,,Crit Time,Crit DMG over Time,Crit Splash R,Crit Splash DMG
+,,,,,,,,,,,,,,,,,,,,,,,,,,0x0,
+Base,Revolver Tower,125,Slightly more expensive starter tower. Average fire rate and damage. Reloads one round at a time.,"Semi-Auto, Armor Pen 0, Rounds Reload",,50,0,1.5,120,100,3,6,1,,0x0,0,,0,0,,0,0,,0,0,0,0
+Upgrade 1,Revolver Tower - Eagle Eye,25,Allows this tower to spot enemies from further away.,"Semi-Auto, Armor Pen 0, Rounds Reload",,50,0,1.5,120,100,4,6,1,,0x0,0,,0,0,,0,0,,0,0,0,0
+Upgrade 2,Revolver Tower - Armor Piercing Rounds,50,Armor piercing rounds allow this tower to deal full damage to armor I enemies.,"Semi-Auto, Armor Pen 1, Rounds Reload",,50,1,1.5,120,100,4,6,1,,0x0,0,,0,0,,0,0,,0,0,0,0
+Upgrade 3,Revolver Tower - Critical Hit,50,This tower will have one round (on average) loaded with a heavier round dealing double damage. ,"Semi-Auto, Armor Pen 1, Rounds Reload",,50,1,1.5,120,100,4,6,1,,0x0,0,,0,0,,100,16.67,,0,0,0,0
+Upgrade 4,Revolver Tower - Trigger Action,50,Trigger action grip allows the tower to fire faster.,"Semi-Auto, Armor Pen 1, Rounds Reload",,50,1,3,180,150,4,6,1,,0x0,0,,0,0,,100,16.67,,0,0,0,0
+Upgrade 5,Revolver Tower - Mag Dump,75,This tower will now unload all 6 rounds at once in quick succession.,"Semi-Auto, Armor Pen 1",,50,1,6,360,300,4,6,,,0x0,0,,0,0,,100,16.67,,0,0,0,0

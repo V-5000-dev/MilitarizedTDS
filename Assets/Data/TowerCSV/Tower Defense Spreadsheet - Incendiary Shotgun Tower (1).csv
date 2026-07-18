@@ -1,8 +1,0 @@
-Tower Level,Tower Name,$,Tower Disc,Tower Tags,,Damage,RPS,RPM,DPS,Range,Mag size,Reload speed,,Splash Range,Splash DMG,,Time,DMG over Time,,Crit DMG,Crit %,,Crit Time,Crit DMG over Time,Crit Splash R,Crit Splash DMG
-,,,,,,,,,,,,,,,,,,,,,,,,,0x0,
-Base,Incendiary Shotgun Tower,200,Mid game tower. Shotgun shells do strong damage and countine to deal damage for 5 seconds after the shot.,"Armor Pen 0, Semi-Auto, Rounds Reload, Incendiary",,75,1,60,75,3,6,0.50,,0,0,,5,10,,0,0,,0,0,0,0
-Upgrade 1,Incendiary Shotgun Tower - Rapid Reload,25,Quicker reload halfs the tower's reload speed.,"Armor Pen 0, Semi-Auto, Rounds Reload, Incendiary",,75,1,60,75,3,6,0.25,,0,0,,5,10,,0,0,,0,0,0,0
-Upgrade 2,Incendiary Shotgun Tower - Extended Barrel,25,Extending the barrel allows 2 more rounds to be loaded.,"Armor Pen 0, Semi-Auto, Rounds Reload, Incendiary",,75,1,60,75,3,8,0.25,,0,0,,5,10,,0,0,,0,0,0,0
-Upgrade 3,Incendiary Shotgun Tower - Trigger Action,50,Trigger action grip allows the tower to fire faster.,"Armor Pen 0, Semi-Auto, Rounds Reload, Incendiary",,75,2,120,150,3,8,0.25,,0,0,,5,10,,0,0,,0,0,0,0
-Upgrade 4,Incendiary Shotgun Tower - Increased Flame,50,Shotgun shells are packed with increased flammable material.,"Armor Pen 0, Semi-Auto, Rounds Reload, Incendiary",,75,1,120,150,3,8,0.25,,0,0,,5,20,,0,0,,0,0,0,0
-Upgrade 5,Incendiary Shotgun Tower - Critical Shot,75,This tower will have one round (on average) loaded with a round dealing splash flame damage.,"Armor Pen 0, Semi-Auto, Rounds Reload, Incendiary",,75,1,120,150,3,8,0.25,,0,0,,5,20,,0,12.5,,5,50,1,50

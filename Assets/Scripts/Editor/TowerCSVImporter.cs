@@ -88,6 +88,7 @@ public static class TowerCSVImporter
     {
         tc.towerDisc    = Get(cols, idx, "Tower Disc", tc.towerDisc);
         tc.damage       = GetFloat(cols, idx, "Damage",       tc.damage);
+        tc.armorPen       = GetInt(cols, idx, "AP",       tc.armorPen);
         tc.fireRate     = GetFloat(cols, idx, "RPS",          tc.fireRate);
         tc.range        = GetFloat(cols, idx, "Range",        tc.range);
         tc.cost         = GetInt  (cols, idx, "$",            tc.cost);

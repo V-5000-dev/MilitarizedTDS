@@ -17,11 +17,11 @@ MonoBehaviour:
   upgradeDisc: 
   towerIcon: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
   damage: 50
-  fireRate: 2
+  fireRate: 1.5
   range: 4
   cost: 25
   magSize: 6
-  reloadSpeed: 0.5
+  reloadSpeed: 1
   roundsReload: 1
   armorPen: 0
   overTimeDmg: 0
