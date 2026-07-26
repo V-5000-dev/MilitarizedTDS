@@ -17,8 +17,11 @@ public class TowerClass : ScriptableObject
     [Header("Stats")]
     public float damage;
     public float fireRate;
+    public float minRange;
     public float range;
+    public float accuracy;
     public int cost;
+    public int rankUnlock;
     public int magSize;
     public float reloadSpeed;
     public bool roundsReload;

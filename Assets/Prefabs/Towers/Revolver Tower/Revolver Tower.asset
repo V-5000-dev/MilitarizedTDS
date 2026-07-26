@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Revolver Tower
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
   towerName: Revolver Tower
-  towerDisc: Slightly more expensive starter tower. Average fire rate and damage.
-    Reloads one round at a time.
+  towerDisc: Starter tower. Higher caliber revolver rounds deal good damage, but
+    has a slow fire rate and small mag.
   upgradeDisc: 
   towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 50
   fireRate: 1.5
-  range: 3
+  minRange: 1
+  range: 1
+  accuracy: 100
   cost: 125
+  rankUnlock: 0
   magSize: 6
   reloadSpeed: 1
-  roundsReload: 1
+  roundsReload: 0
   armorPen: 0
   overTimeDmg: 0
   overTimeDuration: 0
@@ -36,9 +39,6 @@ MonoBehaviour:
   critOverTimeDmg: 0
   critOverTimeDuration: 0
   hiddenDetect: 0
-  tags:
-  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
-  - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}
-  - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
-  nextTier: {fileID: 11400000, guid: 1b2fb687156f24959a2a771d2b14cb5c, type: 2}
-  upgradeCost: 0
+  tags: []
+  nextTier: {fileID: 11400000, guid: 0e9f3074ca0814f8192c7c2c755f366c, type: 2}
+  upgradeCost: 25

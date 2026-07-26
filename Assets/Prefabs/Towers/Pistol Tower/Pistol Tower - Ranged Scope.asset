@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: Pistol Tower - Trigger Action
+  m_Name: Pistol Tower - Ranged Scope
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Pistol Tower - Trigger Action
-  towerDisc: Trigger action grip allows the tower to fire faster.
+  towerName: Pistol Tower - Ranged Scope
+  towerDisc: Ranged scope allows the tower to hit enemies from further away.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 36838cbe8f563427c84193c8e714e857, type: 3}
+  towerIcon: {fileID: 21300000, guid: c7a775f4ff1a64822bc50747032d8160, type: 3}
   damage: 35
   fireRate: 3
   minRange: 1
-  range: 1
+  range: 2
   accuracy: 100
   cost: 40
   rankUnlock: 0
-  magSize: 12
+  magSize: 24
   reloadSpeed: 0.5
   roundsReload: 0
   armorPen: 0
@@ -39,5 +39,5 @@ MonoBehaviour:
   critOverTimeDuration: 0
   hiddenDetect: 0
   tags: []
-  nextTier: {fileID: 11400000, guid: e7e2b111175244d6d849e5494feb34fe, type: 2}
-  upgradeCost: 40
+  nextTier: {fileID: 11400000, guid: 626ef7fc83a994d41a7f117ec9b089cf, type: 2}
+  upgradeCost: 80

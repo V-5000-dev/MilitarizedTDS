@@ -45,6 +45,9 @@ public static class TowerCSVImporter
             for (int i = 0; i < headers.Length; i++)
                 colIndex[headers[i].Trim()] = i;
 
+            // Collect ordered chain for this CSV: (sortKey, TowerClass)
+            var chain = new List<(int sortKey, TowerClass tc)>();
+
             // Process data rows
             for (int row = 1; row < lines.Length; row++)
             {
@@ -73,6 +76,36 @@ public static class TowerCSVImporter
 
                 ApplyRow(tc, cols, colIndex);
                 EditorUtility.SetDirty(tc);
+
+                int sortKey = ParseTowerLevel(Get(cols, colIndex, "Tower Level"));
+                chain.Add((sortKey, tc));
+            }
+
+            // Sort chain by level order and wire up nextTier + towerIcon
+            chain.Sort((a, b) => a.sortKey.CompareTo(b.sortKey));
+            for (int i = 0; i < chain.Count; i++)
+            {
+                TowerClass tc = chain[i].tc;
+
+                // Assign rank sprite (TowerLevel0 = Base, TowerLevel1 = Upgrade 1, …)
+                string spritePath = $"Assets/TowerRanks/TowerLevel{i}.png";
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+                if (sprite != null)
+                    tc.towerIcon = sprite;
+
+                // Link to next tier and set upgrade cost
+                if (i + 1 < chain.Count)
+                {
+                    TowerClass next = chain[i + 1].tc;
+                    tc.nextTier = next;
+                    tc.upgradeCost = next.cost;
+                }
+                else
+                {
+                    tc.nextTier = null;
+                }
+
+                EditorUtility.SetDirty(tc);
             }
         }
 
@@ -86,24 +119,40 @@ public static class TowerCSVImporter
 
     private static void ApplyRow(TowerClass tc, string[] cols, Dictionary<string, int> idx)
     {
-        tc.towerDisc    = Get(cols, idx, "Tower Disc", tc.towerDisc);
-        tc.damage       = GetFloat(cols, idx, "Damage",       tc.damage);
-        tc.armorPen       = GetInt(cols, idx, "AP",       tc.armorPen);
-        tc.fireRate     = GetFloat(cols, idx, "RPS",          tc.fireRate);
-        tc.range        = GetFloat(cols, idx, "Range",        tc.range);
-        tc.cost         = GetInt  (cols, idx, "$",            tc.cost);
-        tc.magSize      = GetInt  (cols, idx, "Mag size",     tc.magSize);
-        tc.reloadSpeed  = GetFloat(cols, idx, "Reload speed", tc.reloadSpeed);
-        tc.splashRange  = GetFloat(cols, idx, "Splash Range", tc.splashRange);
-        tc.spashDamage  = GetFloat(cols, idx, "Splash DMG",   tc.spashDamage);
-        tc.overTimeDmg  = GetFloat(cols, idx, "DMG over Time",   tc.overTimeDmg);
-        tc.overTimeDuration     = GetFloat(cols, idx, "Time",               tc.overTimeDuration);
-        tc.critDamage           = GetFloat(cols, idx, "Crit DMG",        tc.critDamage);
-        tc.critChance           = GetFloat(cols, idx, "Crit %",          tc.critChance);
-        tc.critOverTimeDmg      = GetFloat(cols, idx, "Crit DMG over Time", tc.critOverTimeDmg);
-        tc.critOverTimeDuration = GetFloat(cols, idx, "Crit Time",          tc.critOverTimeDuration);
-        tc.critSplashRange      = GetFloat(cols, idx, "Crit Splash R",   tc.critSplashRange);
-        tc.critSplashDamage     = GetFloat(cols, idx, "Crit Splash DMG", tc.critSplashDamage);
+        tc.towerDisc            = Get      (cols, idx, "Tower Disc",         tc.towerDisc);
+        tc.damage               = GetFloat (cols, idx, "Damage",             tc.damage);
+        tc.armorPen             = GetInt   (cols, idx, "AP",                 tc.armorPen);
+        tc.fireRate             = GetFloat (cols, idx, "RPS",                tc.fireRate);
+        tc.minRange             = GetFloat (cols, idx, "Min Range",          tc.minRange);
+        tc.range                = GetFloat (cols, idx, "Range",              tc.range);
+        tc.accuracy             = GetFloat (cols, idx, "Acc %",              tc.accuracy);
+        tc.cost                 = GetInt   (cols, idx, "$",                  tc.cost);
+        tc.rankUnlock           = GetInt   (cols, idx, "Rank Unlock",        tc.rankUnlock);
+        tc.magSize              = GetInt   (cols, idx, "Mag size",           tc.magSize);
+        tc.reloadSpeed          = GetFloat (cols, idx, "Reload speed",       tc.reloadSpeed);
+        tc.splashRange          = GetFloat (cols, idx, "Splash Range",       tc.splashRange);
+        tc.spashDamage          = GetFloat (cols, idx, "Splash DMG",         tc.spashDamage);
+        tc.overTimeDmg          = GetFloat (cols, idx, "DMG over Time",      tc.overTimeDmg);
+        tc.overTimeDuration     = GetFloat (cols, idx, "Time",               tc.overTimeDuration);
+        tc.critDamage           = GetFloat (cols, idx, "Crit DMG",           tc.critDamage);
+        tc.critChance           = GetFloat (cols, idx, "Crit %",             tc.critChance);
+        tc.critOverTimeDmg      = GetFloat (cols, idx, "Crit DMG over Time", tc.critOverTimeDmg);
+        tc.critOverTimeDuration = GetFloat (cols, idx, "Crit Time",          tc.critOverTimeDuration);
+        tc.critSplashRange      = GetFloat (cols, idx, "Crit Splash R",      tc.critSplashRange);
+        tc.critSplashDamage     = GetFloat (cols, idx, "Crit Splash DMG",    tc.critSplashDamage);
+    }
+
+    // "Base" → 0, "Upgrade 1" → 1, "Upgrade 2" → 2, etc.
+    private static int ParseTowerLevel(string level)
+    {
+        if (string.IsNullOrWhiteSpace(level)) return 0;
+        level = level.Trim();
+        if (level.Equals("Base", StringComparison.OrdinalIgnoreCase)) return 0;
+        // "Upgrade N"
+        var parts = level.Split(' ');
+        if (parts.Length >= 2 && int.TryParse(parts[^1], out int n))
+            return n;
+        return 0;
     }
 
     // ── helpers ──────────────────────────────────────────────────────────────

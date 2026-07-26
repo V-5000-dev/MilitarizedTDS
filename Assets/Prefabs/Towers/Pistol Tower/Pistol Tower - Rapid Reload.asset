@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: Pistol Tower - Rapid Reload
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
   towerName: Pistol Tower - Rapid Reload
-  towerDisc: Quicker reload halfs the tower's reload speed.
+  towerDisc: A quicker reload speed allows the tower to return to firing faster.
   upgradeDisc: 
   towerIcon: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
   damage: 35
   fireRate: 2
-  range: 3
+  minRange: 1
+  range: 1
+  accuracy: 100
   cost: 20
+  rankUnlock: 0
   magSize: 12
-  reloadSpeed: 0.5
+  reloadSpeed: 2
   roundsReload: 0
   armorPen: 0
   overTimeDmg: 0
@@ -36,5 +39,5 @@ MonoBehaviour:
   critOverTimeDuration: 0
   hiddenDetect: 0
   tags: []
-  nextTier: {fileID: 11400000, guid: 334dd0602201f49309c9bb43e875695b, type: 2}
-  upgradeCost: 0
+  nextTier: {fileID: 11400000, guid: 5dfeb6e12e4c74c7f9f9b7c2d75fa14f, type: 2}
+  upgradeCost: 40
