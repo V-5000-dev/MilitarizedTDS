@@ -38,6 +38,8 @@ MonoBehaviour:
   critOverTimeDmg: 0
   critOverTimeDuration: 0
   hiddenDetect: 0
-  tags: []
+  tags:
+  - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
+  - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}
   nextTier: {fileID: 0}
   upgradeCost: 0

@@ -39,6 +39,8 @@ MonoBehaviour:
   critOverTimeDmg: 0
   critOverTimeDuration: 0
   hiddenDetect: 0
-  tags: []
+  tags:
+  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}
   nextTier: {fileID: 11400000, guid: 6233dfcc5906944ca9101351ee53f2e0, type: 2}
   upgradeCost: 25

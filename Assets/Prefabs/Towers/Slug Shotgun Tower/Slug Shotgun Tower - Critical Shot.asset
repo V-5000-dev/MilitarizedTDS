@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
+  m_Name: Slug Shotgun Tower - Critical Shot
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClass
+  towerName: Slug Shotgun Tower - Critical Shot
+  towerDisc: This tower will have one round (on average) loaded with a heavier round
+    dealing double damage.
+  upgradeDisc: 
+  towerIcon: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
+  damage: 100
+  fireRate: 1.25
+  minRange: 1
+  range: 1
+  accuracy: 100
+  cost: 100
+  rankUnlock: 0
+  magSize: 6
+  reloadSpeed: 0.5
+  roundsReload: 0
+  armorPen: 2
+  overTimeDmg: 0
+  overTimeDuration: 0
+  splashRange: 0
+  spashDamage: 0
+  critChance: 12.5
+  critDamage: 200
+  critSplashDamage: 0
+  critSplashRange: 0
+  critOverTimeDmg: 0
+  critOverTimeDuration: 0
+  hiddenDetect: 0
+  tags:
+  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 8446373baad414712a8dcc36b79696fe, type: 2}
+  - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
+  nextTier: {fileID: 0}
+  upgradeCost: 0

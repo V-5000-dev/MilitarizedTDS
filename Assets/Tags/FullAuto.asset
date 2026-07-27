@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: FullAuto
   m_EditorClassIdentifier: Assembly-CSharp::TowerTag
   tagName: Fully Automatic
-  description: 'Test
-
-'
+  description: Fast fire rate, but lower accuracy and more frequent reloads.
   icon: {fileID: 21300000, guid: 909df44cc390e442580c67f9bc510804, type: 3}
