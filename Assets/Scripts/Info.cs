@@ -41,17 +41,17 @@ public class Info : MonoBehaviour
        //     btnUpgrade.enabled = false;
             
         // Resolve what is currently selected
-            Building newSelection = null;
+            Tower newSelection = null;
 
         if (build.currentSelectedGridElement != null && build.currentSelectedGridElement.connectedBuilding != null)
-            newSelection = build.currentSelectedGridElement.connectedBuilding;
+            newSelection = build.currentSelectedGridElement.connectedBuilding.GetComponent<Tower>();
         else if (build.currentSelectedBuilding != null)
-            newSelection = build.currentSelectedBuilding.GetComponent<Building>();
+            newSelection = build.currentSelectedBuilding.GetComponent<Tower>();
 
         // Only update the UI when the selection actually changes
         if (newSelection != _lastDisplayedBuilding)
         {
-            _lastDisplayedBuilding = newSelection;
+            _lastDisplayedBuilding = newSelection.GetComponent<Building>();
 
             if (newSelection != null)
             {
@@ -153,11 +153,11 @@ public class Info : MonoBehaviour
 
 
 
-    public void DisplayInfo(Building building)
+    public void DisplayInfo(Tower tower)
     {
         Debug.Log($"DisplayInfo called | tower={selectedTower} | name={selectedTower?.TowerName}");
-        selectedBuilding = building;
-        selectedTower = building.GetComponent<TowerData>();
+        selectedBuilding = tower.GetComponent<Building>();
+        selectedTower = tower;
 
         nameText.text = selectedTower.TowerName;
         discText.text = selectedTower.TowerDisc;

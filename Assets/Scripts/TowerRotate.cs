@@ -6,7 +6,7 @@ public class TowerRotate : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private string enemyTag = "Enemy";
     [SerializeField] private Transform turretBase;
-    private float rangeMultiplier = 0.45f;
+    private float rangeMultiplier = 0.45f * 3;
 
     private Tower _tower;
 
@@ -36,9 +36,13 @@ public class TowerRotate : MonoBehaviour
             return;
 
         Vector3 dir = target.position - transform.position;
-        Quaternion rot = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(turretBase.rotation, rot, Time.deltaTime * Tower.rotationSpeed).eulerAngles;
-        turretBase.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        dir.y = 0f;
+        if (dir.sqrMagnitude < 0.001f)
+            return;
+
+        Quaternion targetRot = Quaternion.LookRotation(dir);
+        turretBase.rotation = Quaternion.RotateTowards(
+            turretBase.rotation, targetRot, Tower.rotationSpeed * Time.deltaTime * 60f);
     }
 
     private void UpdateTarget()

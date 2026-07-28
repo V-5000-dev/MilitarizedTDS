@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9cd7c5684344f03a5ace500d2454fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
-  towerClass: {fileID: 11400000, guid: 883a8b4fbfd7c4e50928e329d5f22c1b, type: 2}
+  towerClass: {fileID: 11400000, guid: 798498ef3b55340f3ac3a11f6059e91d, type: 2}
   towerImage: {fileID: 0}
   towerRotate: {fileID: -3816769313879622468}
   bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}

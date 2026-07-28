@@ -14,6 +14,7 @@ public class TowerShoot : TowerData
     private AudioSource _audioSource;
     private Camera _mainCamera;
     private float fireCountdown = 0f;
+    private Coroutine _reloadCoroutine;
     public int roundsFired = 0;
     public bool isReloading = false;
 
@@ -29,9 +30,12 @@ public class TowerShoot : TowerData
     }
     private void OnEnable()
     {
-    isReloading = false;
-    roundsFired = 0;
-    fireCountdown = 0f;
+        if (_reloadCoroutine != null)
+            StopCoroutine(_reloadCoroutine);
+        _reloadCoroutine = null;
+        isReloading = false;
+        roundsFired = 0;
+        fireCountdown = 0f;
     }   
     
 
@@ -44,10 +48,10 @@ public class TowerShoot : TowerData
 
     private void Update()
     {
-        if (roundsFired >= MagSize && !isReloading)
+        if (MagSize > 0 && roundsFired >= MagSize && !isReloading)
         {
             isReloading = true;
-            StartCoroutine(Reload());
+            _reloadCoroutine = StartCoroutine(Reload());
         }
 
         if (towerRotate.Target == null)
@@ -87,18 +91,18 @@ public class TowerShoot : TowerData
         if (shootSound != null)
             _audioSource.PlayOneShot(shootSound, GetVolumeByDistance());
     }
-    IEnumerator Reload()
+    IEnumerator Reload(bool playSound = true)
     {
         isReloading = true;
-        if (reloadSound != null)
+        if (playSound && reloadSound != null)
             _audioSource.PlayOneShot(reloadSound, GetVolumeByDistance());
         yield return new WaitForSeconds(ReloadSpeed);
         if (RoundsReload)
         {
             roundsFired -= 1;
-            if (roundsFired > 0 && towerRotate.Target == null)
+            if (roundsFired > 0)
             {
-                StartCoroutine(Reload());
+                _reloadCoroutine = StartCoroutine(Reload(false));
                 yield break;
             }
         }
@@ -108,5 +112,6 @@ public class TowerShoot : TowerData
         }
 
         isReloading = false;
+        _reloadCoroutine = null;
     }
 }
