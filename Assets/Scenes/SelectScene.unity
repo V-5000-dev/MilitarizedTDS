@@ -857,10 +857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 780}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -877,7 +877,7 @@ Canvas:
   m_GameObject: {fileID: 1377930420}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1050,6 +1050,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1377930424}
     m_Modifications:
+    - target: {fileID: 6768369024887204011, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768369024887204011, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1745079313}
+    - target: {fileID: 6768369024887204011, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768369024887204011, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EquipButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7450461105174538312, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
       propertyPath: m_Name
       value: PistolTower
@@ -1159,7 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9a634175694170b6a152805c06d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EquipButton
-  towerClass: {fileID: 0}
+  towerClass: {fileID: 5270977322671127319, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
   infoBar: {fileID: 250774720}
   equipManager: {fileID: 366191818}
 --- !u!1001 &1795873218

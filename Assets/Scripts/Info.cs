@@ -28,7 +28,8 @@ public class Info : MonoBehaviour
     public Tower selectedTower;
 
     // Track last selection so we only redraw when it changes
-    private Building _lastDisplayedBuilding;
+    private TowerData _lastDisplayedTower;
+    private bool _inPreviewMode;
 
     void Awake()
     {
@@ -37,21 +38,32 @@ public class Info : MonoBehaviour
 
     void Update()
     {
-     //   if (selectedTower.NextTier == null)
-       //     btnUpgrade.enabled = false;
-            
-        // Resolve what is currently selected
-            Tower newSelection = null;
-
-        if (build.currentSelectedGridElement != null && build.currentSelectedGridElement.connectedBuilding != null)
-            newSelection = build.currentSelectedGridElement.connectedBuilding.GetComponent<Tower>();
-        else if (build.currentSelectedBuilding != null)
-            newSelection = build.currentSelectedBuilding.GetComponent<Tower>();
-
-        // Only update the UI when the selection actually changes
-        if (newSelection != _lastDisplayedBuilding)
+        if (build == null)
         {
-            _lastDisplayedBuilding = newSelection.GetComponent<Building>();
+            btnDestory.interactable = false;
+            return;
+        }
+
+        TowerData newSelection = null;
+        if (build.currentSelectedGridElement != null && build.currentSelectedGridElement.connectedBuilding != null)
+            newSelection = build.currentSelectedGridElement.connectedBuilding.GetComponent<TowerData>();
+        else if (build.currentSelectedBuilding != null)
+            newSelection = build.currentSelectedBuilding.GetComponent<TowerData>();
+
+        // A real in-world selection overrides preview mode
+        if (newSelection != null)
+            _inPreviewMode = false;
+
+        // Don't let the polling loop clear a preview set by ShowPreview()
+        if (_inPreviewMode)
+        {
+            btnDestory.interactable = false;
+            return;
+        }
+
+        if (newSelection != _lastDisplayedTower)
+        {
+            _lastDisplayedTower = newSelection;
 
             if (newSelection != null)
             {
@@ -79,7 +91,7 @@ public class Info : MonoBehaviour
         Destroy(selectedBuilding.gameObject);
 
         // Reset so the UI clears after destruction
-        _lastDisplayedBuilding = null;
+        _lastDisplayedTower = null;
     }
     public void OnBtnUpgrade()
     {
@@ -122,7 +134,7 @@ public class Info : MonoBehaviour
     {
         if (selectedTower == null || selectedTower.NextTier == null) return;
         selectedTower.ApplyClass(selectedTower.NextTier);
-        _lastDisplayedBuilding = null;
+        _lastDisplayedTower = null;
         upgradePanel.SetActive(false);
         infoPanel.SetActive(true);
     }
@@ -153,9 +165,16 @@ public class Info : MonoBehaviour
 
 
 
-    public void DisplayInfo(Tower tower)
+    public void ShowPreview(TowerData tower)
     {
-        Debug.Log($"DisplayInfo called | tower={selectedTower} | name={selectedTower?.TowerName}");
+        _inPreviewMode = true;
+        _lastDisplayedTower = tower;
+        DisplayInfo(tower);
+    }
+
+    public void DisplayInfo(TowerData tower)
+    {
+        Debug.Log($"DisplayInfo called | tower={tower} | name={tower?.TowerName}");
         selectedBuilding = tower.GetComponent<Building>();
         selectedTower = tower;
 

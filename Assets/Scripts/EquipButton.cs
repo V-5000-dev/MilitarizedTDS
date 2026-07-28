@@ -2,22 +2,20 @@ using UnityEngine;
 
 public class EquipButton : MonoBehaviour
 {
-    public Tower tower;
+    public TowerData towerClass;
     public GameObject infoBar;
     private Info infoScript;
     public TowerEquipManager equipManager;
     public void OnButtonPressed()
     {
         infoScript = infoBar.GetComponent<Info>();
-        infoScript.selectedTower = tower;
-        infoScript.DisplayInfo(tower);
-
+        infoScript.ShowPreview(towerClass);
     }
     public void OnEquipPressed()
     {
         infoScript = infoBar.GetComponent<Info>();
-        infoScript.selectedTower = tower;
-        equipManager.AddTower(tower);
+        infoScript.selectedTower = towerClass;
+        equipManager.AddTower(towerClass);
 
     }
 
