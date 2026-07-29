@@ -167,6 +167,10 @@ public class Info : MonoBehaviour
 
     public void ShowPreview(TowerData tower)
     {
+        // Prefab assets skip Awake(), so ApplyClass() may never have run
+        if (string.IsNullOrEmpty(tower.TowerName) && tower.TowerClassData != null)
+            tower.ApplyClass(tower.TowerClassData);
+
         _inPreviewMode = true;
         _lastDisplayedTower = tower;
         DisplayInfo(tower);
