@@ -10,27 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: Artillery Tower - Additonal Reload Crew
+  m_Name: RPG Tower - Heavier Payload
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Artillery Tower - Additonal Reload Crew
-  towerDisc: Even more personell can load a shell faster.
+  towerName: RPG Tower - Heavier Payload
+  towerDisc: Heavier rockets deal more damage over a larger area, but reduce the
+    range and prevent the tower from firing within 2 tiles.
   upgradeDisc: 
   towerIcon: {fileID: 21300000, guid: c7a775f4ff1a64822bc50747032d8160, type: 3}
-  damage: 40
+  damage: 50
   fireRate: 1
-  minRange: 4
-  range: 8
+  minRange: 3
+  range: 6
   accuracy: 100
   cost: 100
   rankUnlock: 0
   magSize: 1
-  reloadSpeed: 6
+  reloadSpeed: 2
   roundsReload: 0
   armorPen: 3
   overTimeDmg: 0
   overTimeDuration: 0
-  splashRange: 1
-  spashDamage: 500
+  splashRange: 2
+  spashDamage: 350
   critChance: 0
   critDamage: 0
   critSplashDamage: 0
@@ -38,6 +39,11 @@ MonoBehaviour:
   critOverTimeDmg: 0
   critOverTimeDuration: 0
   hiddenDetect: 0
-  tags: []
-  nextTier: {fileID: 11400000, guid: 33a0969eee8754f50a4b315d4128160d, type: 2}
-  upgradeCost: 400
+  tags:
+  - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}
+  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
+  - {fileID: 11400000, guid: e29b1f750f19545c5aacea77e90a7574, type: 2}
+  - {fileID: 11400000, guid: c092e5f8742ab43039131d6ec29362e3, type: 2}
+  nextTier: {fileID: 11400000, guid: dcbe2d8a8883943909afaf83d75b527c, type: 2}
+  upgradeCost: 150

@@ -10,28 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
-  m_Name: Heavy Sniper Tower
+  m_Name: Artillery Tower  - Better Aerodynamics
   m_EditorClassIdentifier: Assembly-CSharp::TowerClass
-  towerName: Heavy Sniper Tower
-  towerDisc: Late game tower. Even longer range and heavier damage outweigh it's
-    slow fire rate an high cost.
+  towerName: Artillery Tower  - Better Aerodynamics
+  towerDisc: Aerodynamic shells can reach targets further away
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
-  damage: 150
+  towerIcon: {fileID: 21300000, guid: 36838cbe8f563427c84193c8e714e857, type: 3}
+  damage: 40
   fireRate: 1
-  minRange: 2
-  range: 5
+  minRange: 4
+  range: 11
   accuracy: 100
-  cost: 500
+  cost: 50
   rankUnlock: 0
-  magSize: 8
-  reloadSpeed: 4
+  magSize: 1
+  reloadSpeed: 7
   roundsReload: 0
-  armorPen: 2
+  armorPen: 3
   overTimeDmg: 0
   overTimeDuration: 0
-  splashRange: 0
-  spashDamage: 0
+  splashRange: 1
+  spashDamage: 500
   critChance: 0
   critDamage: 0
   critSplashDamage: 0
@@ -40,8 +39,10 @@ MonoBehaviour:
   critOverTimeDuration: 0
   hiddenDetect: 0
   tags:
-  - {fileID: 11400000, guid: 8446373baad414712a8dcc36b79696fe, type: 2}
+  - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
+  - {fileID: 11400000, guid: e29b1f750f19545c5aacea77e90a7574, type: 2}
   - {fileID: 11400000, guid: c092e5f8742ab43039131d6ec29362e3, type: 2}
-  nextTier: {fileID: 11400000, guid: 00ef92e43161b4b9ab76f1130cfaa991, type: 2}
-  upgradeCost: 50
+  nextTier: {fileID: 11400000, guid: 43918f0e8c2d144ee8d54939c77291d5, type: 2}
+  upgradeCost: 100

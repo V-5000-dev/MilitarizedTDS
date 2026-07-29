@@ -40,8 +40,8 @@ MonoBehaviour:
   critOverTimeDuration: 0
   hiddenDetect: 0
   tags:
-  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: 8446373baad414712a8dcc36b79696fe, type: 2}
+  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: c092e5f8742ab43039131d6ec29362e3, type: 2}
-  nextTier: {fileID: 11400000, guid: cd0b9deabea7b46749652d465cd0b677, type: 2}
+  nextTier: {fileID: 11400000, guid: 808c549098ccc4572b68feba64f1d06b, type: 2}
   upgradeCost: 50
