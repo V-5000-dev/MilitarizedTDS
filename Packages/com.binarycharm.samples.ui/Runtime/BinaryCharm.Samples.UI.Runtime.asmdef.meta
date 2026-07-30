@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c5cf03249eb0cb343828ca8565ce2d7e
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.samples.ui/Runtime/BinaryCharm.Samples.UI.Runtime.asmdef
+  uploadId: 702132

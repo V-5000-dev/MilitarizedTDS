@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6774455afc413404eb38c929406826d5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Runtime/Scripts/ITextColorButton.cs
+  uploadId: 702132

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b9e486d5454da7740875b523581e0e5b
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.common/Editor/BinaryCharm.Common.Editor.asmdef
+  uploadId: 702132

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
+  m_Name: Artillery Tower
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClass
+  towerName: Artillery Tower
+  towerDisc: Late game tower. Has an very large splash damage, as well as a slow
+    reload. Cannot fire within 3 tiles.
+  upgradeDisc: 
+  towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
+  damage: 40
+  fireRate: 1
+  minRange: 4
+  range: 8
+  accuracy: 100
+  cost: 600
+  rankUnlock: 0
+  magSize: 1
+  reloadSpeed: 8
+  roundsReload: 0
+  armorPen: 3
+  overTimeDmg: 0
+  overTimeDuration: 0
+  splashRange: 1
+  spashDamage: 500
+  critChance: 0
+  critDamage: 0
+  critSplashDamage: 0
+  critSplashRange: 0
+  critOverTimeDmg: 0
+  critOverTimeDuration: 0
+  hiddenDetect: 0
+  tags:
+  - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}
+  - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
+  - {fileID: 11400000, guid: e29b1f750f19545c5aacea77e90a7574, type: 2}
+  - {fileID: 11400000, guid: c092e5f8742ab43039131d6ec29362e3, type: 2}
+  nextTier: {fileID: 11400000, guid: 8883f034c8abb40538b7f91a78ce3339, type: 2}
+  upgradeCost: 50

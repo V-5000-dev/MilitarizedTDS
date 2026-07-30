@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c709fe124b3162448bbd5ca8f22b20ce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.samples.ui/Runtime/Scripts/LogoBhv.cs
+  uploadId: 702132

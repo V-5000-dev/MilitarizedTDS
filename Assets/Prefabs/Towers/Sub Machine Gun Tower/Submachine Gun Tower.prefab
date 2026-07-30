@@ -694,7 +694,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_Name
-      value: Marksman Revolver Tower
+      value: Submachine Gun Tower
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab23981809ccb4eb233443c33f4e68, type: 3}
       propertyPath: m_RootOrder
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea279b8f42a634f4db282e62fc18c6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
-  towerClass: {fileID: 11400000, guid: 272d218c3e1124a6f89f0298ebfd7bb0, type: 2}
+  towerClass: {fileID: 11400000, guid: 4b0455000af9e445da686bc5eb318fda, type: 2}
   towerImage: {fileID: 4183306130264809513}
 --- !u!114 &4914756796132145868
 MonoBehaviour:

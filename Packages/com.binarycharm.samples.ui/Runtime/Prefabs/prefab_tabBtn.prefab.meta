@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 50d0e9c9cf0b901408a97f366d6011e8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.samples.ui/Runtime/Prefabs/prefab_tabBtn.prefab
+  uploadId: 702132

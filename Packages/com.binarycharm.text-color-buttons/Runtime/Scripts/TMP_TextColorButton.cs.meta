@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c8eda0468dd41f64282633f5fa12e667
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Runtime/Scripts/TMP_TextColorButton.cs
+  uploadId: 702132

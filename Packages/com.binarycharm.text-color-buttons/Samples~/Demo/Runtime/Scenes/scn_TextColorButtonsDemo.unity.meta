@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b01d3da5cef62f6419b76c52afd60b47
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Samples~/Demo/Runtime/Scenes/scn_TextColorButtonsDemo.unity
+  uploadId: 702132

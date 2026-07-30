@@ -3248,6 +3248,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736f347948c614cff9bf3a0c6051ae93, type: 3}
+--- !u!1001 &959221673371775002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3695964004749147220, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_Name
+      value: Rocket Launcher Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.38011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.69788
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3826854
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9238787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695964004749172852, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294e9d6035b4643daae602d88bac5ad5, type: 3}
 --- !u!1001 &1428055171992606614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3362,6 +3419,120 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
+--- !u!1001 &3709611316524472050
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 443949098663607000, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_Name
+      value: Assault Rifle Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.1478834
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.212963
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3826854
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9238787
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+--- !u!1001 &5522291412518648288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.4813457
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.8795204
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3826854
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9238787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176013289293, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352258176012802925, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+      propertyPath: m_Name
+      value: Machine Gun Tower Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
 --- !u!1001 &8994461141359831900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3462,9 +3633,12 @@ SceneRoots:
   - {fileID: 886339391}
   - {fileID: 726369443}
   - {fileID: 1531656540608794226}
+  - {fileID: 3709611316524472050}
+  - {fileID: 5522291412518648288}
   - {fileID: 337345192864794861}
   - {fileID: 8994461141359831900}
   - {fileID: 741579432}
+  - {fileID: 959221673371775002}
   - {fileID: 1428055171992606614}
   - {fileID: 763525217}
   - {fileID: 1739185326}

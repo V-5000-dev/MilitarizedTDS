@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c176ce500a431f240bdad70b23df4067
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/CHANGELOG.md
+  uploadId: 702132

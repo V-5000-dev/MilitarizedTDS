@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fc0a6f78fc26abe41838a2f94ceb60ca
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.ui/package.json
+  uploadId: 702132

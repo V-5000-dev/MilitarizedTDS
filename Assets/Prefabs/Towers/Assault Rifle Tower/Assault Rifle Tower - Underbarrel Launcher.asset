@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016c2a272c25841baa06b5656ef06114, type: 3}
+  m_Name: Assault Rifle Tower - Underbarrel Launcher
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClass
+  towerName: Assault Rifle Tower - Underbarrel Launcher
+  towerDisc: Equips the rifle with an underbarrel grenade launcher. Has a 20% chance
+    of firing, dealing splash damage.
+  upgradeDisc: 
+  towerIcon: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
+  damage: 30
+  fireRate: 6
+  minRange: 1
+  range: 3
+  accuracy: 90
+  cost: 75
+  rankUnlock: 0
+  magSize: 30
+  reloadSpeed: 2
+  roundsReload: 0
+  armorPen: 1
+  overTimeDmg: 0
+  overTimeDuration: 0
+  splashRange: 0
+  spashDamage: 0
+  critChance: 20
+  critDamage: 0
+  critSplashDamage: 100
+  critSplashRange: 1
+  critOverTimeDmg: 0
+  critOverTimeDuration: 0
+  hiddenDetect: 0
+  tags:
+  - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
+  - {fileID: 11400000, guid: e2c57b0b7a75d4713acf426427cd265f, type: 2}
+  - {fileID: 11400000, guid: e29b1f750f19545c5aacea77e90a7574, type: 2}
+  nextTier: {fileID: 0}
+  upgradeCost: 0

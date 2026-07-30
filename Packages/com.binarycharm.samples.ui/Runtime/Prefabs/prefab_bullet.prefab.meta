@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 25a8aa58d4a7a6946b8a252d67863213
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.samples.ui/Runtime/Prefabs/prefab_bullet.prefab
+  uploadId: 702132

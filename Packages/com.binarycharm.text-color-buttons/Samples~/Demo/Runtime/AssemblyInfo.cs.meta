@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6fec8990480f3d04cb73b51142174f2f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Samples~/Demo/Runtime/AssemblyInfo.cs
+  uploadId: 702132

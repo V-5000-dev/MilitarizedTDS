@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e689d8fbd038d743a86208638eba17c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.samples.ui/Runtime/Prefabs/prefab_varDisplay.prefab
+  uploadId: 702132

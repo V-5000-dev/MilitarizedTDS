@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 076118c6763dff3429e9b383d1c119da
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Samples~/Demo/Runtime/Prefabs/DemoBlackRoundButton.prefab
+  uploadId: 702132

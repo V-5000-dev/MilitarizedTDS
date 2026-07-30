@@ -1,4 +1,10 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="BinaryCharm.Common.Runtime.csproj" />
+  <Project Path="BinaryCharm.Samples.UI.Runtime.csproj" />
+  <Project Path="BinaryCharm.UI.TextColorButtons.Editor.csproj" />
+  <Project Path="BinaryCharm.TextColorButtons.Runtime.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="BinaryCharm.Common.Editor.csproj" />
+  <Project Path="BinaryCharm.UI.Runtime.csproj" />
 </Solution>

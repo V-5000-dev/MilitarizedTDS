@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a20ea41449bdfbc4ba0d5d0647f7971a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Samples~/Demo/Runtime/Prefabs/DemoFadingColorButton.prefab
+  uploadId: 702132

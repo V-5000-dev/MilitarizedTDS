@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: cf253e19c6e4eb544b6c9e027845dbce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201886
+  packageName: Text Color Buttons
+  packageVersion: 1.1.1
+  assetPath: Packages/com.binarycharm.text-color-buttons/Runtime/Scripts/Impl/ITweenValue.cs
+  uploadId: 702132
