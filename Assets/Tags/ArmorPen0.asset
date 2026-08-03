@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 'Does 75% damage to Armor I, 50% to Armor II and 25% to Armor III.
 
 '
-  icon: {fileID: 21300000, guid: c2adb112500ff4a0c97707a979539c70, type: 3}
+  icon: {fileID: 21300000, guid: e8ef54a2947c14d4b8ebc388365c9960, type: 3}

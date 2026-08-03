@@ -11,12 +11,5 @@ public class EquipButton : MonoBehaviour
         infoScript = infoBar.GetComponent<Info>();
         infoScript.ShowPreview(towerClass);
     }
-    public void OnEquipPressed()
-    {
-        infoScript = infoBar.GetComponent<Info>();
-        infoScript.selectedTower = towerClass;
-        equipManager.AddTower(towerClass);
-
-    }
 
 }

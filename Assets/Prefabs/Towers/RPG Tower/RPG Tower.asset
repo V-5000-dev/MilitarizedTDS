@@ -40,8 +40,8 @@ MonoBehaviour:
   critOverTimeDuration: 0
   hiddenDetect: 0
   tags:
-  - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
+  - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}
   - {fileID: 11400000, guid: 4fe37a4df781f43e4915204bf245637c, type: 2}
   - {fileID: 11400000, guid: e29b1f750f19545c5aacea77e90a7574, type: 2}
   - {fileID: 11400000, guid: c092e5f8742ab43039131d6ec29362e3, type: 2}

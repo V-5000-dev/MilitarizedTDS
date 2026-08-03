@@ -40,7 +40,7 @@ public class Info : MonoBehaviour
     {
         if (build == null)
         {
-            btnDestory.interactable = false;
+//            btnDestory.interactable = false;
             return;
         }
 
@@ -167,30 +167,43 @@ public class Info : MonoBehaviour
 
     public void ShowPreview(TowerData tower)
     {
-        // Prefab assets skip Awake(), so ApplyClass() may never have run
-        if (string.IsNullOrEmpty(tower.TowerName) && tower.TowerClassData != null)
-            tower.ApplyClass(tower.TowerClassData);
-
         _inPreviewMode = true;
         _lastDisplayedTower = tower;
-        DisplayInfo(tower);
+        selectedTower = tower;
+
+        TowerClass baseClass = tower.TowerClassData;
+        if (baseClass == null) return;
+
+        nameText.text = baseClass.towerName;
+        discText.text = baseClass.towerDisc;
+        statsText.text =
+            $"Damage: {baseClass.damage}\n" +
+            $"Armor Pen: {baseClass.armorPen}\n" +
+            $"Fire Rate: {baseClass.fireRate}\n" +
+            $"Range: {baseClass.range}\n" +
+            $"Mag Size: {baseClass.magSize}\n" +
+            $"Reload Speed: {baseClass.reloadSpeed}\n";
+
+        towerInfoUI.ShowTower(tower);
     }
 
     public void DisplayInfo(TowerData tower)
     {
-        Debug.Log($"DisplayInfo called | tower={tower} | name={tower?.TowerName}");
         selectedBuilding = tower.GetComponent<Building>();
         selectedTower = tower;
 
-        nameText.text = selectedTower.TowerName;
-        discText.text = selectedTower.TowerDisc;
+        TowerClass data = tower.TowerClassData;
+        if (data == null) return;
+
+        nameText.text = data.towerName;
+        discText.text = data.towerDisc;
         statsText.text =
-                $"Damage: {selectedTower.Damage}\n" +
-                $"Armor Pen: {selectedTower.ArmorPen}\n" +
-                $"Fire Rate: {selectedTower.FireRate}\n" +
-                $"Range: {selectedTower.Range}\n" +
-                $"Mag Size: {selectedTower.MagSize}\n" +
-                $"Reload Speed: {selectedTower.ReloadSpeed}\n";
+                $"Damage: {data.damage}\n" +
+                $"Armor Pen: {data.armorPen}\n" +
+                $"Fire Rate: {data.fireRate}\n" +
+                $"Range: {data.range}\n" +
+                $"Mag Size: {data.magSize}\n" +
+                $"Reload Speed: {data.reloadSpeed}\n";
 
         towerInfoUI.ShowTower(selectedTower);
 

@@ -12,6 +12,7 @@ public class BuyButton : MonoBehaviour
     public Building connectedBuilding;
     public TextMeshProUGUI text;
     public Color defaultColor;
+    public MoneyController moneyController;
 
     private Button btn;
 
@@ -23,6 +24,7 @@ public class BuyButton : MonoBehaviour
     {
         btn = GetComponent<Button>();
         Buildings buildings = FindObjectOfType<Buildings>();
+        if (buildings == null) return;
 
         foreach (GameObject g0 in buildings.buildabables)
         {
