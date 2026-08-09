@@ -91,7 +91,6 @@ public static class TowerCSVImporter
                 string spritePath = $"Assets/TowerRanks/TowerLevel{i}.png";
                 var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
                 if (sprite != null)
-                    tc.towerIcon = sprite;
 
                 // Link to next tier and set upgrade cost
                 if (i + 1 < chain.Count)

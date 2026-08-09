@@ -1620,6 +1620,7 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 571779490}
   defaultColor: {r: 0, g: 1, b: 0.101960786, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 0
 --- !u!114 &222391435
 MonoBehaviour:
@@ -2795,6 +2796,7 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 222498339}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 1
 --- !u!114 &419700976
 MonoBehaviour:
@@ -3041,6 +3043,7 @@ GameObject:
   - component: {fileID: 488756266}
   - component: {fileID: 488756265}
   - component: {fileID: 488756264}
+  - component: {fileID: 488756268}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -3134,6 +3137,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &488756268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488756263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78fbc9ce9a0c418da1aebc5d73fdb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreManager
+  slotTransform:
+  - {fileID: 241466242}
+  - {fileID: 607183894}
+  - {fileID: 948535980}
+  - {fileID: 1735967272}
+  - {fileID: 2055693844}
 --- !u!1 &521170496
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,6 +5169,7 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 538293305}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 0
 --- !u!114 &964707544
 MonoBehaviour:
@@ -5883,6 +5905,7 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 91033593}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 1
 --- !u!114 &1047545190
 MonoBehaviour:
@@ -11243,6 +11266,7 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 2018658107}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 0
 --- !u!114 &1967263521
 MonoBehaviour:
@@ -11657,6 +11681,7 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 1333587389}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 1
 --- !u!114 &2026649627
 MonoBehaviour:
@@ -20840,7 +20865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445131272453654580, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Name
-      value: BuckshotShotgunTower
+      value: Slot3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445131272453654580, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7051011399533651454, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -29778,7 +29807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2635110416309763334, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Name
-      value: RevolverTower
+      value: Slot2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635110416309763334, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5014060474485859652, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -33986,7 +34019,11 @@ PrefabInstance:
       objectReference: {fileID: 1250292330}
     - target: {fileID: 7450461105174538312, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
       propertyPath: m_Name
-      value: PistolTower
+      value: Slot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450461105174538312, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9126833867437893431, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
       propertyPath: m_Pivot.x
@@ -39868,7 +39905,11 @@ PrefabInstance:
       objectReference: {fileID: 1250292330}
     - target: {fileID: 6749934628992729569, guid: 78359d00db8b44bcd9a9378518d64526, type: 3}
       propertyPath: m_Name
-      value: Incendiary Shotgun Tower
+      value: slot5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749934628992729569, guid: 78359d00db8b44bcd9a9378518d64526, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7038925317396922332, guid: 78359d00db8b44bcd9a9378518d64526, type: 3}
       propertyPath: m_Pivot.x
@@ -44635,7 +44676,11 @@ PrefabInstance:
       objectReference: {fileID: 1250292330}
     - target: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_Name
-      value: SlugShotgunTower
+      value: Slot4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895451278704060459, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_Pivot.x

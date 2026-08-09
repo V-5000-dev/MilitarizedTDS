@@ -13,7 +13,7 @@ public abstract class Tower : MonoBehaviour
     private string towerName;
     private string towerDisc;
     private string upgradeDisc;
-    private Sprite towerIcon;
+    private GameObject buttonPrefab;
     private float damage;
     private float fireRate;
     private float range;
@@ -44,7 +44,7 @@ public abstract class Tower : MonoBehaviour
     public string UpgradeDisc => upgradeDisc;
 
     private int UpgradeCost => upgradeCost;
-    public Sprite TowerIcon => towerIcon;
+    public GameObject ButtonPrefab => buttonPrefab;
     public float Damage => damage;
     public float FireRate => fireRate;
     public float Range => range;
@@ -78,7 +78,7 @@ public abstract class Tower : MonoBehaviour
     public void ApplyClass(TowerClass newClass)
     {
         towerName = newClass.towerName;
-        towerIcon = newClass.towerIcon;
+        buttonPrefab = newClass.buttonPrefab;
         nextTier = newClass.nextTier;
         upgradeCost = newClass.upgradeCost;
         towerDisc = newClass.towerDisc;

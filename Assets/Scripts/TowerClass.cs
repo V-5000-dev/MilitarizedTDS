@@ -12,7 +12,7 @@ public class TowerClass : ScriptableObject
     public string upgradeDisc;
 
     [Header("Visuals")]
-    public Sprite towerIcon;
+    public GameObject buttonPrefab;
 
     [Header("Stats")]
     public float damage;
