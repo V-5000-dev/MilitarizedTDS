@@ -17,6 +17,7 @@ public class StoreManager : MonoBehaviour
             TowerClass towerData = equipped[i];
             Debug.Log($"Instatate {towerData.buttonPrefab}");
             Instantiate(towerData.buttonPrefab, slotTransform[i]);
+            
         }
     }
 
