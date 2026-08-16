@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8895451278704060459, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 265.1287
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895451278704060459, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -107,28 +107,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7927507101043503974}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
---- !u!1 &4833319746699211082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
-  m_PrefabInstance: {fileID: 7697700344222526969}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7927507101043503974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833319746699211082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c9a634175694170b6a152805c06d7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EquipButton
-  towerClass: {fileID: 6501788210150526437, guid: 389d74166ccc242fe9a2f8058c081ca3, type: 3}
-  infoBar: {fileID: 0}
-  equipManager: {fileID: 0}

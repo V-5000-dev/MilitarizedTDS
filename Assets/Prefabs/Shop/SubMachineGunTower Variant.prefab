@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.26415092
       objectReference: {fileID: 0}
+    - target: {fileID: 2065570083682179423, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1540647685029005341, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
+    - target: {fileID: 2065570083682179423, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_Name
       value: SubMachineGunTower Variant
@@ -162,11 +170,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8895451278704060459, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 265.1287
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895451278704060459, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895451278704060459, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -183,28 +191,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6090653189610581423}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
---- !u!1 &5984880737394653046 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
-  m_PrefabInstance: {fileID: 8849096406428183493}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6090653189610581423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5984880737394653046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c9a634175694170b6a152805c06d7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EquipButton
-  towerClass: {fileID: 5270977322671127319, guid: 73edf3ddef749488598c4f03b09e2f8a, type: 3}
-  infoBar: {fileID: 0}
-  equipManager: {fileID: 0}

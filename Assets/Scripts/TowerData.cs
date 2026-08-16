@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class TowerData : Tower
 {
-    public Image towerImage;
+    public GameObject towerButton;
 
 }

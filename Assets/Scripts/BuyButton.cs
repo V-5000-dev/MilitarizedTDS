@@ -13,6 +13,9 @@ public class BuyButton : MonoBehaviour
     public TextMeshProUGUI text;
     public Color defaultColor;
     public MoneyController moneyController;
+    private BuildBuilding buildBuilding;
+    public int id;
+
 
     private Button btn;
 
@@ -22,6 +25,7 @@ public class BuyButton : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        buildBuilding = FindFirstObjectByType<BuildBuilding>();
         btn = GetComponent<Button>();
         Buildings buildings = FindObjectOfType<Buildings>();
         if (buildings == null) return;
@@ -41,16 +45,20 @@ public class BuyButton : MonoBehaviour
         // Update is called once per frame
         
     }
+    void Start()
+    {
+        btn.onClick.AddListener(() => buildBuilding.OnButtonCreateBuilding(connectedBuildingID));
+    }
     public void Update()
     {
 
-       /* if(resources.wood >= connectedBuilding.price.price_wood && resources.stone >= connectedBuilding.price.price_stone)
-        {
-            isInteractable = true;
+        /* if(resources.wood >= connectedBuilding.price.price_wood && resources.stone >= connectedBuilding.price.price_stone)
+         {
+             isInteractable = true;
 
-        }
-        btn.interactable = isInteractable;
-     */   
+         }
+         btn.interactable = isInteractable;
+      */
 
 
 

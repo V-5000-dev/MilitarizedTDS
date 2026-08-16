@@ -252,7 +252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -268.66672}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 208.3673, y: 104.1273}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9136009515676127566
@@ -365,4 +365,5 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 7078479457441191277}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  moneyController: {fileID: 0}
   isInteractable: 0
