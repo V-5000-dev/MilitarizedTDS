@@ -44,9 +44,6 @@ public class BuildBuilding : MonoBehaviour
         PlaceBuilding();
     }
 
-    // -------------------------------------------------------------------------
-    // Hover / selection
-    // -------------------------------------------------------------------------
     private void HandleHover()
     {
         // Don't let clicks on UI (buttons, panels, etc.) hit the world underneath
@@ -104,9 +101,6 @@ public class BuildBuilding : MonoBehaviour
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Spawning
-    // -------------------------------------------------------------------------
     public void OnButtonCreateBuilding(int id)
     {
         if (buildingAlreadySelected)
@@ -126,15 +120,11 @@ public class BuildBuilding : MonoBehaviour
         buildingAlreadySelected = true;
     }
 
-    // -------------------------------------------------------------------------
-    // Moving (follows cursor before placement)
-    // -------------------------------------------------------------------------
     public void MoveBuilding()
     {
         if (currentSelectedBuilding == null)
             return;
 
-        // Ignore raycasts so the building doesn't block its own grid detection
         currentSelectedBuilding.layer = 2;
 
         if (currentHoveredGridElement == null)
@@ -168,9 +158,6 @@ public class BuildBuilding : MonoBehaviour
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Placing
-    // -------------------------------------------------------------------------
     public void PlaceBuilding()
     {
         if (currentSelectedBuilding == null)
@@ -208,9 +195,6 @@ public class BuildBuilding : MonoBehaviour
         buildingAlreadySelected = false;
     }
 
-    // -------------------------------------------------------------------------
-    // Rebuilding from save data
-    // -------------------------------------------------------------------------
     public void RebuildBuilding(int buildingID, int gridID, float buildingLevel, float rotY)
     {
         GameObject prefab = FindBuildingPrefabByID(buildingID);
@@ -240,12 +224,6 @@ public class BuildBuilding : MonoBehaviour
         myElement.occupied = true;
         myElement.connectedBuilding = loadedBuilding;
     }
-
-    // -------------------------------------------------------------------------
-    // Helpers
-    // -------------------------------------------------------------------------
-
-    /// <summary>Finds the first building prefab whose ID matches.</summary>
     private GameObject FindBuildingPrefabByID(int id)
     {
         foreach (GameObject go in buildings.buildabables)
