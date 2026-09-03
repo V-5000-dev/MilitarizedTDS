@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.13329992
       objectReference: {fileID: 0}
+    - target: {fileID: 192428543588366336, guid: 7ef7248823f894b2581cd55cc17ede53, type: 3}
+      propertyPath: ID
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1806527762191835701, guid: 7ef7248823f894b2581cd55cc17ede53, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5416311
@@ -143,6 +147,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Artillery Tower Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2959620171746907867, guid: 7ef7248823f894b2581cd55cc17ede53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
+    - target: {fileID: 3889017138443109165, guid: 7ef7248823f894b2581cd55cc17ede53, type: 3}
+      propertyPath: towerClass
+      value: 
+      objectReference: {fileID: 11400000, guid: c030f3b6c187f437e816f7ffadcf716a, type: 2}
     - target: {fileID: 6501788210150526437, guid: 7ef7248823f894b2581cd55cc17ede53, type: 3}
       propertyPath: towerClass
       value: 

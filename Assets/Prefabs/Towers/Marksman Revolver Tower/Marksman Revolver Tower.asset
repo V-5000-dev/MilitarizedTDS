@@ -16,7 +16,7 @@ MonoBehaviour:
   towerDisc: Early game tower. Weaker DPS then the standard revolver, but has longer
     range and recieves 25% of an enemies health as money on a crit hit.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
+  buttonPrefab: {fileID: 6390898995230813042, guid: a30e931a1eeef4ccb8eed508da1cf193, type: 3}
   damage: 75
   fireRate: 1.25
   minRange: 1

@@ -804,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerClass: {fileID: 11400000, guid: b1a6b9fe9b6414729a7a978b0399d140, type: 2}
-  towerImage: {fileID: 4183306130264809513}
+  towerButton: {fileID: 0}
 --- !u!114 &4914756796132145868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
   towerClass: {fileID: 11400000, guid: 798498ef3b55340f3ac3a11f6059e91d, type: 2}
-  towerImage: {fileID: 0}
+  towerButton: {fileID: 0}
   towerRotate: {fileID: -3816769313879622468}
   bulletPrefab: {fileID: 8284968877961795452, guid: 8a8c235ab0b4745be9c87781e4cef89a, type: 3}
   barrelPoint: {fileID: 1306771618176262040}
@@ -885,7 +885,7 @@ MonoBehaviour:
       y: 0
       z: 0
       w: 0
-  ID: 0
+  ID: 3
   buildingLevel: 0
   baseCost: 0
   yRotation: 0

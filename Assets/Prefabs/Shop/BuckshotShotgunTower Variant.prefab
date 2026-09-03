@@ -10,23 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 449764140132254837, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449764140132254837, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
+      propertyPath: connectedBuildingID
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1333233411256379986, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 1333233411256379986, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1333233411256379986, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1333233411256379986, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1418924903098534927, guid: 3ac1344b6483346bd8b409bd4c009672, type: 3}
       propertyPath: m_Pivot.x

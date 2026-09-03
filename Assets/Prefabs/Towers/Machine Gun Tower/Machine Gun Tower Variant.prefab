@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2130359348904131789, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: ID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081511406775355360, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: towerButton
+      value: 
+      objectReference: {fileID: 7730005906367827571, guid: 2911a4bcd39434f6fa92684bf9bb8485, type: 3}
     - target: {fileID: 4972492795378813224, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
       propertyPath: towerClass
       value: 

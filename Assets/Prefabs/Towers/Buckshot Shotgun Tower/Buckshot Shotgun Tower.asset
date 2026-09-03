@@ -16,7 +16,7 @@ MonoBehaviour:
   towerDisc: Early game tower. Buckshot rounds both deal strong damage and splash
     damage to enemies within range.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
+  buttonPrefab: {fileID: 4694316180250535830, guid: 960c4dc2747224cde81ce92fe8284107, type: 3}
   damage: 100
   fireRate: 1
   minRange: 1

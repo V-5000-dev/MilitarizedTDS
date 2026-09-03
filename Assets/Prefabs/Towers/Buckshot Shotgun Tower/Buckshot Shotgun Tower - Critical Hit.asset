@@ -16,7 +16,7 @@ MonoBehaviour:
   towerDisc: This tower will have one round (on average) loaded with a heavier round
     dealing double damage.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: c7a775f4ff1a64822bc50747032d8160, type: 3}
+  buttonPrefab: {fileID: 4694316180250535830, guid: 960c4dc2747224cde81ce92fe8284107, type: 3}
   damage: 100
   fireRate: 1.5
   minRange: 1

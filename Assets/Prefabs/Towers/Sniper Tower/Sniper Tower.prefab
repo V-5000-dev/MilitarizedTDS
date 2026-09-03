@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.2151
       objectReference: {fileID: 0}
+    - target: {fileID: 5047769346188136368, guid: 736f347948c614cff9bf3a0c6051ae93, type: 3}
+      propertyPath: ID
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6752286353947904421, guid: 736f347948c614cff9bf3a0c6051ae93, type: 3}
       propertyPath: m_Name
       value: Sniper Tower

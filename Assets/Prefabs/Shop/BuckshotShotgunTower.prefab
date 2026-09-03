@@ -366,4 +366,5 @@ MonoBehaviour:
   text: {fileID: 5437993291629410478}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   moneyController: {fileID: 0}
+  id: 7
   isInteractable: 0

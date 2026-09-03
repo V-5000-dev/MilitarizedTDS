@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 818666024260386649, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 818666024260386649, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818666024260386649, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818666024260386649, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3008649872487881907, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_Name
       value: HeavySniper Variant
@@ -19,6 +35,14 @@ PrefabInstance:
     - target: {fileID: 3963881834196744589, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_text
       value: Heavy Sniper Tower - $500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132182695938718246, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: id
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132182695938718246, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: connectedBuildingID
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8452899370155444723, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: m_Sprite

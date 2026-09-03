@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 443949098663607000, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
       propertyPath: m_Name
-      value: Machine Gun Tower Variant 1
+      value: Heavy Machine Gun Tower
       objectReference: {fileID: 0}
     - target: {fileID: 443949098663765752, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2130359348904131789, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: ID
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081511406775355360, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+      propertyPath: towerButton
+      value: 
+      objectReference: {fileID: 192340317165675971, guid: 2915799aaa780482aa4283125a387849, type: 3}
     - target: {fileID: 4972492795378813224, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
       propertyPath: towerClass
       value: 

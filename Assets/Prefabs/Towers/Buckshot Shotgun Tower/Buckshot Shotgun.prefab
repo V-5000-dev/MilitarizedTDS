@@ -88,7 +88,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7946851531887669518, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
       propertyPath: ID
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 724705099396977863, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
       propertyPath: m_LocalPosition.x
@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: reloadSound
       value: 
       objectReference: {fileID: 8300000, guid: 010bd6fff4e614da1a1945a9502116e4, type: 3}
+    - target: {fileID: 4183306130264809513, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
     - target: {fileID: 5270977322671127319, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
       propertyPath: towerClass
       value: 

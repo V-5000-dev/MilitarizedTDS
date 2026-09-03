@@ -16,7 +16,7 @@ MonoBehaviour:
   towerDisc: Mid game tower. Has a large splash damage, but slow reload. Cannot fire
     within 1 tile.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
+  buttonPrefab: {fileID: 5787169592403323582, guid: bf410c4142dfa4a8a9b825e65ceb4ef7, type: 3}
   damage: 25
   fireRate: 1
   minRange: 2

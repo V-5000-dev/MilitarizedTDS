@@ -10,19 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 743364709936932053, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 743364709936932053, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 743364709936932053, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 743364709936932053, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540647685029005341, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540647685029005341, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
+      propertyPath: connectedBuildingID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1544546580574329325, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Pivot.x
@@ -121,6 +129,10 @@ PrefabInstance:
       value: 'Marksman Revolover Tower - $150
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014060474485859652, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 5014060474485859652, guid: b47660cc5987449ad8ead03d85e75ba6, type: 3}
       propertyPath: m_Colors.m_NormalColor.b

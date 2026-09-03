@@ -16,7 +16,7 @@ MonoBehaviour:
   towerDisc: Early game tower. Slug rounds deal both strong damage and level I armor
     pen
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
+  buttonPrefab: {fileID: 7480736799009727930, guid: 14e59e29080b7469fb4742a4ce746c6d, type: 3}
   damage: 100
   fireRate: 0.75
   minRange: 1

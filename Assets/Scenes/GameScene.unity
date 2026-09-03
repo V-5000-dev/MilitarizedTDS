@@ -1621,6 +1621,7 @@ MonoBehaviour:
   text: {fileID: 571779490}
   defaultColor: {r: 0, g: 1, b: 0.101960786, a: 0}
   moneyController: {fileID: 0}
+  id: 0
   isInteractable: 0
 --- !u!114 &222391435
 MonoBehaviour:
@@ -2797,6 +2798,7 @@ MonoBehaviour:
   text: {fileID: 222498339}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
   moneyController: {fileID: 0}
+  id: 0
   isInteractable: 1
 --- !u!114 &419700976
 MonoBehaviour:
@@ -5171,6 +5173,7 @@ MonoBehaviour:
   text: {fileID: 538293305}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
   moneyController: {fileID: 0}
+  id: 0
   isInteractable: 0
 --- !u!114 &964707544
 MonoBehaviour:
@@ -5907,6 +5910,7 @@ MonoBehaviour:
   text: {fileID: 91033593}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
   moneyController: {fileID: 0}
+  id: 0
   isInteractable: 1
 --- !u!114 &1047545190
 MonoBehaviour:
@@ -7561,9 +7565,22 @@ MonoBehaviour:
   buildabables:
   - {fileID: 724705099397400807, guid: 90b1032d807144f15ad9d825d86e7903, type: 3}
   - {fileID: 724705099397400807, guid: 7d383a9e85d0247e0b78aa274100e50b, type: 3}
-  - {fileID: 6752286353947904421, guid: 736f347948c614cff9bf3a0c6051ae93, type: 3}
+  - {fileID: 724705099397400807, guid: 438c50be7aa6a414fbbba90638c369ca, type: 3}
+  - {fileID: 724705099397400807, guid: b43ca9778c99b4c9ca5fa801c8bca584, type: 3}
+  - {fileID: 724705099397400807, guid: 73edf3ddef749488598c4f03b09e2f8a, type: 3}
+  - {fileID: 724705099397400807, guid: 4f2760c8b32914dff963853bcd448f99, type: 3}
   - {fileID: 6752286353947904421, guid: b588708dd62434a0f8825e001955415f, type: 3}
+  - {fileID: 6752286353947904421, guid: 736f347948c614cff9bf3a0c6051ae93, type: 3}
   - {fileID: 6752286353947904421, guid: 494b0224e714b468c974c573c1ef773a, type: 3}
+  - {fileID: 1806527762191941141, guid: 7ef7248823f894b2581cd55cc17ede53, type: 3}
+  - {fileID: 1806527762191941141, guid: 389d74166ccc242fe9a2f8058c081ca3, type: 3}
+  - {fileID: 1919927637254597301, guid: b57b397ba02024515a0f6e5aae353045, type: 3}
+  - {fileID: 443949098663607000, guid: adbd796bd4dd74fbe902bd27fc460ba1, type: 3}
+  - {fileID: 443949098663607000, guid: 22cb48b326cbd4b4f9c6d76ac7ae6fd8, type: 3}
+  - {fileID: 4352258176012802925, guid: ee5ade58c05244a348bb15e66b965f12, type: 3}
+  - {fileID: 4352258176012802925, guid: ee9c877f218e04817a19c35ebbb2850f, type: 3}
+  - {fileID: 5787169592403323582, guid: bf410c4142dfa4a8a9b825e65ceb4ef7, type: 3}
+  - {fileID: 5994042636073286348, guid: b26e9294ac38841e6ab3768e0a72f1de, type: 3}
   builtObjects: []
 --- !u!114 &1250292333
 MonoBehaviour:
@@ -11268,6 +11285,7 @@ MonoBehaviour:
   text: {fileID: 2018658107}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
   moneyController: {fileID: 0}
+  id: 0
   isInteractable: 0
 --- !u!114 &1967263521
 MonoBehaviour:
@@ -11683,6 +11701,7 @@ MonoBehaviour:
   text: {fileID: 1333587389}
   defaultColor: {r: 1, g: 0.7490196, b: 0, a: 0}
   moneyController: {fileID: 0}
+  id: 0
   isInteractable: 1
 --- !u!114 &2026649627
 MonoBehaviour:
