@@ -13,6 +13,8 @@ public class TowerEquipManager : MonoBehaviour
     public TextMeshProUGUI equippedCountText;
     public List<Tower> equippedTowers = new();
     public List<GameObject> towerClasses = new();
+    public List<Transform> slotTransform = new();
+    public List<GameObject> equippedButtons = new();
 
     public void AddTower()
     {
@@ -21,19 +23,29 @@ public class TowerEquipManager : MonoBehaviour
         if (tower == null) return;
         if (equippedTowers.Contains(tower)) return;
 
-        equippedCount++;
+        
         equippedCountText.text = $"Towers: ({equippedCount}/5)";
         equippedTowers.Add(tower);
-        equippedText.text += tower.TowerClassData.towerName + ", ";
+        GameObject buttonObject = Instantiate(tower.buttonPrefab, slotTransform[equippedCount]);
+        equippedButtons.Add(buttonObject);
+        
+        equippedCount++;
+        for (int i = index; i < equippedButtons.Count; i++)
+        {
+            equippedButtons[i].tranform.SetParent(slotTransform[i], false);
+        }
     }
     public void RemoveTower()
     {
         Tower tower = info.selectedTower;
         if (tower == null) return;
-        equippedTowers.Remove(tower);
+        int index = equippedButtons.IndexOf(tower);
+        Destroy(equippedButtons[index])
+        equippedTowers.RemoveAt(index);
+        equippedButtons.RemoveAt(index);
         equippedCount--;
+
         equippedCountText.text = $"Towers: ({equippedCount}/5)";
-        equippedText.text = string.Join(", ", equippedTowers.Select(t => t.TowerClassData.towerName));
     }
 
     public void StartGame()

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewTowerClass", menuName = "Tower Defense/Tower Class")]
 public class TowerClass : ScriptableObject
@@ -13,6 +14,7 @@ public class TowerClass : ScriptableObject
 
     [Header("Visuals")]
     public GameObject buttonPrefab;
+    public Image towerImage;
 
     [Header("Stats")]
     public float damage;
@@ -37,8 +39,6 @@ public class TowerClass : ScriptableObject
     public float critOverTimeDmg;
     public float critOverTimeDuration;
 
-    
-    public bool hiddenDetect = false;
 
     [Header("Display Tags")]
     public List<TowerTag> tags = new List<TowerTag>();

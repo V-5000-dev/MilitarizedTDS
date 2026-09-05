@@ -9,7 +9,7 @@ public abstract class Tower : MonoBehaviour
     private TowerClass nextTier;
 
     private int upgradeCost;
-
+    private Image towerImage;
     private string towerName;
     private string towerDisc;
     private string upgradeDisc;
@@ -43,6 +43,7 @@ public abstract class Tower : MonoBehaviour
     public string TowerDisc => towerDisc;
     public string UpgradeDisc => upgradeDisc;
 
+    private Image TowerImage => towerImage;
     private int UpgradeCost => upgradeCost;
     public GameObject ButtonPrefab => buttonPrefab;
     public float Damage => damage;
@@ -78,6 +79,7 @@ public abstract class Tower : MonoBehaviour
     public void ApplyClass(TowerClass newClass)
     {
         towerName = newClass.towerName;
+        towerImage = newClass.towerImage;
         buttonPrefab = newClass.buttonPrefab;
         nextTier = newClass.nextTier;
         upgradeCost = newClass.upgradeCost;

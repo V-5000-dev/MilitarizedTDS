@@ -127,6 +127,7 @@ public class Info : MonoBehaviour
         AppendStatChange(sb, "Critical Dmg Over T Duration", selectedTower.CritOverTimeDuration, nextTier.critOverTimeDuration);
 
         upgradeText.text = sb.ToString();
+        
 
         towerInfoUI.ShowUpgradeTags(selectedTower);
     }
