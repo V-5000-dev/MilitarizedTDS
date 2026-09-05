@@ -18,6 +18,7 @@ public class TowerEquipManager : MonoBehaviour
 
     public void AddTower()
     {
+        #commit
         Tower tower = info.selectedTower;
         if (equippedCount >= towerLimit) return;
         if (tower == null) return;
