@@ -17,6 +17,7 @@ MonoBehaviour:
     and prevent the tower from firing within 4 tiles.
   upgradeDisc: 
   buttonPrefab: {fileID: 5075097013231369489, guid: dcd45db124f804803a79a07598590b42, type: 3}
+  towerRank: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
   damage: 60
   fireRate: 1
   minRange: 5
@@ -38,7 +39,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}

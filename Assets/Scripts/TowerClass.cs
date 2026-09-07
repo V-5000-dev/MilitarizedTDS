@@ -14,7 +14,7 @@ public class TowerClass : ScriptableObject
 
     [Header("Visuals")]
     public GameObject buttonPrefab;
-    public Image towerImage;
+    public Sprite towerRank;
 
     [Header("Stats")]
     public float damage;

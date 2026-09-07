@@ -56,7 +56,7 @@ public class BulletController : MonoBehaviour
             finalDmgOverTime = critDmgOverTime;
             finalDmgOverTimeDuration = critDmgOverTimeDuration;
         }
-        target.GetComponent<EnemyHealthBar>().TakeDamage(finalDamage, armorPen, splashDamage, splashRange, finalDmgOverTime, finalDmgOverTimeDuration);
+        target.GetComponent<EnemyHealthBar>().TakeDamage(finalDamage, armorPen, splashDamage, splashRange, finalDmgOverTime, finalDmgOverTimeDuration, isCrit);
         Destroy(effect, 2f);
     }
 }

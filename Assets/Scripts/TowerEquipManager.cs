@@ -18,33 +18,35 @@ public class TowerEquipManager : MonoBehaviour
 
     public void AddTower()
     {
-        #commit
         Tower tower = info.selectedTower;
         if (equippedCount >= towerLimit) return;
         if (tower == null) return;
         if (equippedTowers.Contains(tower)) return;
 
         
-        equippedCountText.text = $"Towers: ({equippedCount}/5)";
+        
         equippedTowers.Add(tower);
-        GameObject buttonObject = Instantiate(tower.buttonPrefab, slotTransform[equippedCount]);
+        GameObject buttonObject = Instantiate(tower.ButtonPrefab, slotTransform[equippedCount]);
         equippedButtons.Add(buttonObject);
         
         equippedCount++;
-        for (int i = index; i < equippedButtons.Count; i++)
-        {
-            equippedButtons[i].tranform.SetParent(slotTransform[i], false);
-        }
+        equippedCountText.text = $"Towers: ({equippedCount}/5)";
     }
     public void RemoveTower()
     {
         Tower tower = info.selectedTower;
         if (tower == null) return;
-        int index = equippedButtons.IndexOf(tower);
-        Destroy(equippedButtons[index])
+        int index = equippedTowers.IndexOf(tower);
+        if (index < 0) return;
+        Destroy(equippedButtons[index]);
         equippedTowers.RemoveAt(index);
         equippedButtons.RemoveAt(index);
         equippedCount--;
+
+        for (int i = index; i < equippedButtons.Count; i++)
+        {
+            equippedButtons[i].transform.SetParent(slotTransform[i], false);
+        }
 
         equippedCountText.text = $"Towers: ({equippedCount}/5)";
     }

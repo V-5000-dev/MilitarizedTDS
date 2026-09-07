@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c571c63befb564d8b96f522a79376910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
-  defaultHealth: 10
+  defaultHealth: 100
   health: 0
   armorLevel: 0
   speed: 0

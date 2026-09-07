@@ -17,6 +17,7 @@ MonoBehaviour:
     slow fire rate an high cost.
   upgradeDisc: 
   buttonPrefab: {fileID: 4833319746699211082, guid: 957665c525a83447cb07eca744eb8cad, type: 3}
+  towerRank: {fileID: 21300000, guid: 263d4d174f092429eace0f02a45c3847, type: 3}
   damage: 150
   fireRate: 1
   minRange: 2
@@ -38,7 +39,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: 8446373baad414712a8dcc36b79696fe, type: 2}

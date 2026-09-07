@@ -15,7 +15,8 @@ MonoBehaviour:
   towerName: Heavy Rifle Tower - Rapid Reload
   towerDisc: Quicker reload reduces the tower's reload speed.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
+  buttonPrefab: {fileID: 0}
+  towerRank: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
   damage: 40
   fireRate: 4
   minRange: 1
@@ -37,7 +38,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
   - {fileID: 11400000, guid: e2c57b0b7a75d4713acf426427cd265f, type: 2}

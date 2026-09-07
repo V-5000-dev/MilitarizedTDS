@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEditor.XR;
 
 public class EnemyHealthBar : MonoBehaviour
 {
@@ -24,7 +25,6 @@ public class EnemyHealthBar : MonoBehaviour
     public float duration = 2f;
     public float fadeSpeed = 1.5f;
     private float durationTimer;
-    private float timeSinceDamage = 0f;
     public Camera cam;
 
     private float rangeMultiplier = 0.45f;
@@ -104,7 +104,7 @@ public class EnemyHealthBar : MonoBehaviour
 
     }
     private float finalDamage;
-    public void TakeDamage(float damage, int armorPen, float splashDamage, float splashRange, float dmgoverT, float dmgoverTDuration)
+    public void TakeDamage(float damage, int armorPen, float splashDamage, float splashRange, float dmgoverT, float dmgoverTDuration, bool isCrit)
     {
 
         if (armorPen >= enemyManager.armorLevel)
@@ -132,16 +132,18 @@ public class EnemyHealthBar : MonoBehaviour
                     enemy.health -= splashDamage;
                     enemy.damageText.text = "-" + splashDamage;
                     enemy.lerpTimer = 0f;
-                    enemy.timeSinceDamage = 0f;
                     enemy.durationTimer = 0;
                 }
             }
         }
 
         health -= finalDamage;
-        damageText.text = "-" + finalDamage;
+        if(isCrit)
+             damageText.text = "CRIT! -" + Mathf.Round(finalDamage);
+        else
+            damageText.text = "-" + Mathf.Round(finalDamage);
+
         lerpTimer = 0f;
-        timeSinceDamage = 0f;
         durationTimer = 0;
 
         if (dmgoverT > 0f && dmgoverTDuration > 0f)
@@ -164,7 +166,6 @@ public class EnemyHealthBar : MonoBehaviour
             health -= dmgPerSecond;
             damageText.text = "-" + dmgPerSecond;
             lerpTimer = 0f;
-            timeSinceDamage = 0f;
             durationTimer = 0;
         }
         dotCoroutine = null;

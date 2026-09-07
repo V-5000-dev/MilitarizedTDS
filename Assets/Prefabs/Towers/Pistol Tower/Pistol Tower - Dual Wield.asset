@@ -17,6 +17,7 @@ MonoBehaviour:
     and mag size, but increasing reload speed.
   upgradeDisc: 
   buttonPrefab: {fileID: 7450461105174538312, guid: 1a76c31c0e8344820ab89274bcdb2de2, type: 3}
+  towerRank: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
   damage: 35
   fireRate: 6
   minRange: 1
@@ -38,7 +39,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}

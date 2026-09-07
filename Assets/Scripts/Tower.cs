@@ -1,109 +1,61 @@
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Tower : MonoBehaviour
 {
     [SerializeField] private TowerClass towerClass;
-    private TowerClass nextTier;
 
-    private int upgradeCost;
-    private Image towerImage;
-    private string towerName;
-    private string towerDisc;
-    private string upgradeDisc;
-    private GameObject buttonPrefab;
-    private float damage;
-    private float fireRate;
-    private float range;
-    private int cost;
-    private int magSize;
-    private float reloadSpeed;
-    private float overTimeDmg;
-    private float overTimeDuration;
-    private float spashRange;
-    private float spashDamage;
-    private float critChance;
-    private float critDamage;
-    private float critSplashDamage;
-    private float critSplashRange;
-    private float critOverTimeDmg;
-    private float critOverTimeDuration;
-    private int armorPen;
-    private bool roundsReload;
-
+    
     public const float rotationSpeed = 10f;
     public const float projectileSpeed = 10f;
 
+    public TowerData towerData;
     public TowerClass TowerClassData => towerClass;
-    public TowerClass NextTier => nextTier;
+    public TowerClass NextTier => towerClass.nextTier;
+  
+    public Sprite towerRank => towerClass.towerRank;
+    public string TowerName => towerClass.towerName;
+    public string TowerDisc => towerClass.towerDisc;
+    public string UpgradeDisc => towerClass.upgradeDisc;
+    private int UpgradeCost => towerClass.upgradeCost;
+    public GameObject ButtonPrefab => towerClass.buttonPrefab;
+    public float Damage => towerClass.damage;
+    public float FireRate => towerClass.fireRate;
+    public float Range => towerClass.range;
+    public int Cost => towerClass.cost;
+    public int MagSize => towerClass.magSize;
 
-    public string TowerName => towerName;
-    public string TowerDisc => towerDisc;
-    public string UpgradeDisc => upgradeDisc;
+    public float OverTimeDmg => towerClass.overTimeDmg;
+    public float OverTimeDuration => towerClass.overTimeDuration;
+    public float ReloadSpeed => towerClass.reloadSpeed;
+    public float SplashRange => towerClass.splashRange;
+    public float SplashDamage => towerClass.spashDamage;
+    public float CritChance => towerClass.critChance;
+    public float CritDamage => towerClass.critDamage;
+    public float CritSplashDamage => towerClass.critSplashDamage;
+    public float CritSplashRange => towerClass.critSplashRange;
+    public float CritOverTimeDmg => towerClass.critOverTimeDmg;
+    public float CritOverTimeDuration => towerClass.critOverTimeDuration;
 
-    private Image TowerImage => towerImage;
-    private int UpgradeCost => upgradeCost;
-    public GameObject ButtonPrefab => buttonPrefab;
-    public float Damage => damage;
-    public float FireRate => fireRate;
-    public float Range => range;
-    public int Cost => cost;
-    public int MagSize => magSize;
+    public int ArmorPen => towerClass.armorPen;
+    public bool RoundsReload => towerClass.roundsReload;
 
-    public float OverTimeDmg => overTimeDmg;
-    public float OverTimeDuration => overTimeDuration;
-    public float ReloadSpeed => reloadSpeed;
-    public float SplashRange => spashRange;
-    public float SplashDamage => spashDamage;
-    public float CritChance => critChance;
-    public float CritDamage => critDamage;
-    public float CritSplashDamage => critSplashDamage;
-    public float CritSplashRange => critSplashRange;
-    public float CritOverTimeDmg => critOverTimeDmg;
-    public float CritOverTimeDuration => critOverTimeDuration;
-
-    public int ArmorPen => armorPen;
-    public bool RoundsReload => roundsReload;
-
-    public IReadOnlyList<TowerTag> Tags =>
-        towerClass != null ? towerClass.tags : System.Array.Empty<TowerTag>();
+    public IReadOnlyList<TowerTag> Tags => towerClass.tags;
 
     protected virtual void Awake()
     {
+        towerData = GetComponent<TowerData>();
         if (towerClass != null)
-            ApplyClass(towerClass);
+            OnClassApplied();
     }
 
     public void ApplyClass(TowerClass newClass)
     {
-        towerName = newClass.towerName;
-        towerImage = newClass.towerImage;
-        buttonPrefab = newClass.buttonPrefab;
-        nextTier = newClass.nextTier;
-        upgradeCost = newClass.upgradeCost;
-        towerDisc = newClass.towerDisc;
-        upgradeDisc = newClass.upgradeDisc;
         towerClass = newClass;
-        damage = newClass.damage;
-        fireRate = newClass.fireRate;
-        range = newClass.range;
-        cost = newClass.cost;
-        magSize = newClass.magSize;
-        reloadSpeed = newClass.reloadSpeed;
-        roundsReload = newClass.roundsReload;
-        armorPen = newClass.armorPen;
-        overTimeDmg = newClass.overTimeDmg;
-        overTimeDuration = newClass.overTimeDuration;
-        spashRange = newClass.splashRange;
-        spashDamage = newClass.spashDamage;
-        critChance = newClass.critChance;
-        critDamage = newClass.critDamage;
-        critSplashDamage = newClass.critSplashDamage;
-        critSplashRange = newClass.critSplashRange;
-        critOverTimeDmg = newClass.critOverTimeDmg;
-        critOverTimeDuration = newClass.critOverTimeDuration;
+        towerData.towerImage.sprite = newClass.towerRank;
 
         OnClassApplied();
     }

@@ -16,7 +16,8 @@ MonoBehaviour:
   towerDisc: Armor piercing rounds allow this tower to deal full damage to armor
     II enemies.
   upgradeDisc: 
-  towerIcon: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
+  buttonPrefab: {fileID: 0}
+  towerRank: {fileID: 21300000, guid: 16656155cbf714b478d2df1e780b8458, type: 3}
   damage: 40
   fireRate: 4
   minRange: 1
@@ -38,7 +39,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 199776ffcb2e04906907c5918b2d4354, type: 2}
   - {fileID: 11400000, guid: 8446373baad414712a8dcc36b79696fe, type: 2}

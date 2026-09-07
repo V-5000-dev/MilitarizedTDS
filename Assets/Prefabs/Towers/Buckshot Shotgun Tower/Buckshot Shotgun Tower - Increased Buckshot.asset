@@ -16,6 +16,7 @@ MonoBehaviour:
   towerDisc: Higher spread buckshot rounds deal more splash damage.
   upgradeDisc: 
   buttonPrefab: {fileID: 4694316180250535830, guid: 960c4dc2747224cde81ce92fe8284107, type: 3}
+  towerRank: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
   damage: 100
   fireRate: 1
   minRange: 1
@@ -37,7 +38,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: 7bf3ce2c146094e5ba87e49208390de6, type: 2}

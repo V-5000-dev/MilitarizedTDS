@@ -16,6 +16,7 @@ MonoBehaviour:
   towerDisc: More personell can load a shell faster.
   upgradeDisc: 
   buttonPrefab: {fileID: 5075097013231369489, guid: dcd45db124f804803a79a07598590b42, type: 3}
+  towerRank: {fileID: 21300000, guid: 33424b34d20714cb5bbe2136cbfbd986, type: 3}
   damage: 40
   fireRate: 1
   minRange: 4
@@ -37,7 +38,6 @@ MonoBehaviour:
   critSplashRange: 0
   critOverTimeDmg: 0
   critOverTimeDuration: 0
-  hiddenDetect: 0
   tags:
   - {fileID: 11400000, guid: 3970e058528a9400fa7c93d20e69400f, type: 2}
   - {fileID: 11400000, guid: 7763b5b35278e4740b0150f7099ddf51, type: 2}
