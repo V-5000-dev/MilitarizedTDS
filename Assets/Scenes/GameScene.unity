@@ -4067,7 +4067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7242247977445954749, guid: 409295931b17f4044926b929a39ea845, type: 3}
       propertyPath: m_Name
-      value: EnemyNormalArmor0_1
+      value: EnemyJeep
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
