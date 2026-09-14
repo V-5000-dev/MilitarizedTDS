@@ -226,8 +226,8 @@ MonoBehaviour:
   connectedBuilding: {fileID: 0}
   text: {fileID: 962494250487588494}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  moneyController: {fileID: 0}
   id: 0
+  cost: 50
   isInteractable: 0
 --- !u!1 &8143848977387831300
 GameObject:

@@ -54,9 +54,17 @@ public abstract class Tower : MonoBehaviour
 
     public void ApplyClass(TowerClass newClass)
     {
-        towerClass = newClass;
-        towerData.towerImage.sprite = newClass.towerRank;
-
+        if(MoneyController.money < newClass.cost)
+        {
+            StartCoroutine(MoneyController.NotEnoughMoney());
+            return;
+        }
+        else
+        {
+            MoneyController.RemoveMoney(newClass.cost);
+            towerClass = newClass;
+            towerData.towerImage.sprite = newClass.towerRank;
+        }
         OnClassApplied();
     }
 

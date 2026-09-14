@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class BuyButton : MonoBehaviour
 {
@@ -12,9 +13,9 @@ public class BuyButton : MonoBehaviour
     public Building connectedBuilding;
     public TextMeshProUGUI text;
     public Color defaultColor;
-    public MoneyController moneyController;
     private BuildBuilding buildBuilding;
     public int id;
+    public int cost;
 
 
     private Button btn;
@@ -47,24 +48,19 @@ public class BuyButton : MonoBehaviour
     }
     void Start()
     {
-        btn.onClick.AddListener(() => buildBuilding.OnButtonCreateBuilding(connectedBuildingID));
-    }
-    public void Update()
-    {
-
-        /* if(resources.wood >= connectedBuilding.price.price_wood && resources.stone >= connectedBuilding.price.price_stone)
-         {
-             isInteractable = true;
-
-         }
-         btn.interactable = isInteractable;
-      */
-
-
-
-
-    }
-
+        btn.onClick.AddListener(() => 
+        {
+            if(MoneyController.money < cost)
+            {
+                StartCoroutine(MoneyController.NotEnoughMoney());
+                return;
+            }
         
-
+            else
+            {
+                buildBuilding.OnButtonCreateBuilding(connectedBuildingID);
+                MoneyController.RemoveMoney(cost);
+            }
+        });
+    }   
 }

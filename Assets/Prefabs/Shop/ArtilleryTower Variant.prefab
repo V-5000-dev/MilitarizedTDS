@@ -93,6 +93,10 @@ PrefabInstance:
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8132182695938718246, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
+      propertyPath: cost
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132182695938718246, guid: abcc9a66ae4304861bf05699ad4db96f, type: 3}
       propertyPath: connectedBuildingID
       value: 17
       objectReference: {fileID: 0}
